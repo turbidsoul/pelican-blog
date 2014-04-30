@@ -4,7 +4,11 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Turbidsoul'
 SITENAME = u"Turbidsoul's \u5c0f\u9ed1\u5c4b"
-SITEURL = 'http://blog.turbidsoul.me/pelican-blog'
+SITEURL = ''
+
+ARTICLE_DIR='posts/'
+PAGE_DIR='pages/'
+OUTPUT_PATH=''
 
 TIMEZONE = 'Europe/Paris'
 

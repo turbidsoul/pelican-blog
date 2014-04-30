@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Turbidsoul's 小黑屋</title><link href="http://blog.turbidsoul.me/pelican-blog/" rel="alternate"></link><link href="http://blog.turbidsoul.me/pelican-blog/feeds/nginx.atom.xml" rel="self"></link><id>http://blog.turbidsoul.me/pelican-blog/</id><updated>2014-01-26T00:00:00+01:00</updated><entry><title>Nginx实现文件下载自动打包成zip文件</title><link href="http://blog.turbidsoul.me/pelican-blog/nginx-shi-xian-wen-jian-xia-zai-zi-dong-da-bao-cheng-zip-wen-jian.html" rel="alternate"></link><updated>2014-01-26T00:00:00+01:00</updated><author><name>Turbidsoul</name></author><id>tag:blog.turbidsoul.me/pelican-blog,2014-01-26:nginx-shi-xian-wen-jian-xia-zai-zi-dong-da-bao-cheng-zip-wen-jian.html</id><summary type="html">&lt;h2&gt;来源和介绍&lt;/h2&gt;
+&lt;p&gt;问题的来源是需要对已有的资料在下载的时候进行添加广告，但是对于doc文件操作麻烦的情况，采用在下载的时候将广告文件和资料一起打包成zip文件.&lt;/p&gt;
+&lt;p&gt;在apache服务器中有个mod_zip的模块就是完成这个功能，同样nginx有大神已经实现了这个模块，我们只需要拿来用就可以了:&lt;a href="https://github.com/evanmiller/mod_zip"&gt;mod_zip&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;应用&lt;/h2&gt;
+&lt;p&gt;此模块并不是nginx的默认模块所以需要用户自己编译安装。&lt;/p&gt;
+&lt;p&gt;安装完成之后，不需要修改任何nginx的任何配置，完成打包都在服务点返回的信息中，下面请看我用python实现的示例：&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;bottle&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;route&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;response&lt;/span&gt;
+&lt;span class="nd"&gt;@route&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;/download&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;download&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;X-Archive-Files&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;zip&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Content-Type&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;application/octet-stream&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;X-Accel-Chareset&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;utf-8&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="n"&gt;response&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;set_header&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;Content-Disposition&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s"&gt;r&amp;quot;attachment; filename*=test.zip&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s"&gt;&amp;quot;&amp;quot;&amp;quot;618792700 135 /test.lua 4.lua&lt;/span&gt;
+&lt;span class="s"&gt;3521768339 2865 /ngx_openresty-1.4.2.8/README 5.txt&amp;quot;&amp;quot;&amp;quot;&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="n"&gt;__name__&lt;/span&gt; &lt;span class="o"&gt;==&lt;/span&gt; &lt;span class="s"&gt;&amp;#39;__main__&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;
+    &lt;span class="n"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;host&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;#39;192.168.1.196&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;port&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="mi"&gt;9000&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;debug&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;reloader&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="bp"&gt;True&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;这里需要主意两点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;response.set_header('X-Archive-Files', 'zip') 这一行就是告诉nginx需要打包成zip文件&lt;/li&gt;
+&lt;li&gt;就是return返回的那个多行字符串,这里是告诉nginx都要打包那些文件，一行表示一个文件，这里一共四个字段，按顺序依次是 CRC32校验值， 文件大小，源文件路径，打包之后的文件名。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;对于第二点还需要在说明一下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CRC32的校验值并不是必须的，如果没有可以用'-'代替，但不能什么都不写&lt;/li&gt;
+&lt;li&gt;原文件的路径是相对nginx设置的路径的绝对路径，即就是nginx的root设置的路径，如果没有设置那就是/*/nginx/html这个路径。&lt;/li&gt;
+&lt;li&gt;nginx中设置root的时候需要把放置在location外面，放置里面是无法生效的。&lt;/li&gt;
+&lt;li&gt;如果源文件的路径是错误的，那么会产生一个404错误或者下载下来的文件无法解压的损坏文件。&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="nginx"></category><category term="python"></category></entry></feed>
