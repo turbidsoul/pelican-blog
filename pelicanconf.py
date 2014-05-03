@@ -3,14 +3,14 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Turbidsoul'
-SITENAME = u"Turbidsoul's \u5c0f\u9ed1\u5c4b"
+SITENAME = u"Turbidsoul's 小黑屋"
 SITEURL = ''
 
 ARTICLE_DIR='posts/'
 PAGE_DIR='pages/'
 OUTPUT_PATH=''
 
-TIMEZONE = 'Europe/Paris'
+TIMEZONE = 'Asia/Chongqing'
 
 DEFAULT_LANG = u'cn'
 
@@ -20,7 +20,7 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
 # Blogroll
-LINKS =  (('Pelican', 'http://getpelican.com/'),
+LINKS =  (('Turbidsoul\'s 小黑屋', 'http://blog.turbidsoul.me'),
           ('Python.org', 'http://python.org/'),
           ('Jinja2', 'http://jinja.pocoo.org/'),
           ('You can modify those links in your config file', '#'),)
@@ -29,7 +29,10 @@ LINKS =  (('Pelican', 'http://getpelican.com/'),
 SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
-DEFAULT_PAGINATION = 10
+DEFAULT_PAGINATION = 3
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+ARTICLE_URL='posts/{slug}.html'
+ARTICLE_SAVE_AS='posts/{slug}.html'

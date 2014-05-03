@@ -13,12 +13,6 @@ from pelicanconf import *
 SITEURL = 'http://blog.turbidsoul.me/pelican-blog'
 RELATIVE_URLS = False
 
-ARTICLE_DIR='posts/'
-PAGE_DIR='pages/'
-OUTPUT_PATH=''
-
-
-
 FEED_ALL_ATOM = 'feeds/all.atom.xml'
 CATEGORY_FEED_ATOM = 'feeds/%s.atom.xml'
 

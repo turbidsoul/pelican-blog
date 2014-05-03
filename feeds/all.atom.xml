@@ -1,10 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Turbidsoul's 小黑屋</title><link href="http://blog.turbidsoul.me/pelican-blog/" rel="alternate"></link><link href="http://blog.turbidsoul.me/pelican-blog/feeds/all.atom.xml" rel="self"></link><id>http://blog.turbidsoul.me/pelican-blog/</id><updated>2014-04-30T00:00:00+02:00</updated><entry><title>Hello World!</title><link href="http://blog.turbidsoul.me/pelican-blog/hello-world.html" rel="alternate"></link><updated>2014-04-30T00:00:00+02:00</updated><author><name>Turbidsoul</name></author><id>tag:blog.turbidsoul.me/pelican-blog,2014-04-30:hello-world.html</id><summary type="html">&lt;h2&gt;Hello World&lt;/h2&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry><entry><title>ffmpeg,rtmpdump和nginx rtmp实现录屏，直播和录制</title><link href="http://blog.turbidsoul.me/pelican-blog/ffmpeg-rtmpdump-he-nginx-rtmp-shi-xian-lu-ping--zhi-bo-he-lu-zhi.html" rel="alternate"></link><updated>2014-04-19T00:00:00+02:00</updated><author><name>Turbidsoul</name></author><id>tag:blog.turbidsoul.me/pelican-blog,2014-04-19:ffmpeg-rtmpdump-he-nginx-rtmp-shi-xian-lu-ping--zhi-bo-he-lu-zhi.html</id><summary type="html">&lt;p&gt;公司最近在做视频直播的项目，我这里分配到对直播的视频进行录制，录制的方式是通过rtmpdump对rtmp的视频流进行录制&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Turbidsoul's 小黑屋</title><link href="http://blog.turbidsoul.me/pelican-blog/" rel="alternate"></link><link href="http://blog.turbidsoul.me/pelican-blog/feeds/all.atom.xml" rel="self"></link><id>http://blog.turbidsoul.me/pelican-blog/</id><updated>2014-04-30T00:00:00+08:00</updated><entry><title>Hello World!</title><link href="http://blog.turbidsoul.me/pelican-blog/posts/hello-world.html" rel="alternate"></link><updated>2014-04-30T00:00:00+08:00</updated><author><name>Turbidsoul</name></author><id>tag:blog.turbidsoul.me/pelican-blog,2014-04-30:posts/hello-world.html</id><summary type="html">&lt;h2&gt;Hello World&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;hello world!&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;em&gt;斜体&lt;/em&gt;  &lt;strong&gt;粗体&lt;/strong&gt;  ~删除~&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;111&lt;/li&gt;
+&lt;li&gt;222&lt;/li&gt;
+&lt;li&gt;333&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+    &lt;span class="k"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Hello world!&amp;quot;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;foo&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;h3&gt;Table:&lt;/h3&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;name&lt;/th&gt;
+&lt;th&gt;age&lt;/th&gt;
+&lt;th&gt;description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Turbidsoul&lt;/td&gt;
+&lt;td&gt;30&lt;/td&gt;
+&lt;td&gt;Code Monkey&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Merge&lt;/td&gt;
+&lt;td&gt;22&lt;/td&gt;
+&lt;td&gt;PLMM&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</summary><category term="pelican"></category><category term="publishing"></category></entry><entry><title>ffmpeg,rtmpdump和nginx rtmp实现录屏，直播和录制</title><link href="http://blog.turbidsoul.me/pelican-blog/posts/ffmpeg-rtmpdump-he-nginx-rtmp-shi-xian-lu-ping--zhi-bo-he-lu-zhi.html" rel="alternate"></link><updated>2014-04-19T00:00:00+08:00</updated><author><name>Turbidsoul</name></author><id>tag:blog.turbidsoul.me/pelican-blog,2014-04-19:posts/ffmpeg-rtmpdump-he-nginx-rtmp-shi-xian-lu-ping--zhi-bo-he-lu-zhi.html</id><summary type="html">&lt;p&gt;公司最近在做视频直播的项目，我这里分配到对直播的视频进行录制，录制的方式是通过rtmpdump对rtmp的视频流进行录制&lt;/p&gt;
 &lt;h2&gt;前置的知识&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;ffmpeg: &lt;a href="http://ffmpeg.org/ffmpeg.html"&gt;http://ffmpeg.org/ffmpeg.html&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;rtmpdump:&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="lffmpeg"></category><category term="rtmp"></category><category term="rtmpdump"></category><category term="nginx"></category></entry><entry><title>使用awk做实时的统计</title><link href="http://blog.turbidsoul.me/pelican-blog/shi-yong-awk-zuo-shi-shi-de-tong-ji.html" rel="alternate"></link><updated>2014-04-10T00:00:00+02:00</updated><author><name>Turbidsoul</name></author><id>tag:blog.turbidsoul.me/pelican-blog,2014-04-10:shi-yong-awk-zuo-shi-shi-de-tong-ji.html</id><summary type="html">&lt;h2&gt;缘由&lt;/h2&gt;
+&lt;/ul&gt;</summary><category term="lffmpeg"></category><category term="rtmp"></category><category term="rtmpdump"></category><category term="nginx"></category></entry><entry><title>使用awk做实时的统计</title><link href="http://blog.turbidsoul.me/pelican-blog/posts/shi-yong-awk-zuo-shi-shi-de-tong-ji.html" rel="alternate"></link><updated>2014-04-10T00:00:00+08:00</updated><author><name>Turbidsoul</name></author><id>tag:blog.turbidsoul.me/pelican-blog,2014-04-10:posts/shi-yong-awk-zuo-shi-shi-de-tong-ji.html</id><summary type="html">&lt;h2&gt;缘由&lt;/h2&gt;
 &lt;p&gt;之前头让搞一个24小时内帖子或者视频的点击量，当时为了省事，就随便写了一个，虽然是实时的，但是却没有满足 &lt;strong&gt;24小时内&lt;/strong&gt; 这个条件, 数据会在每天0点清零重新计算，前几天被头发现了，所以就只能从新写一个了。&lt;/p&gt;
 &lt;p&gt;思来想去最后还是决定用&lt;code&gt;awk&lt;/code&gt;解析日志来完成这个功能，这样最简单。&lt;/p&gt;
 &lt;h2&gt;之前的准备&lt;/h2&gt;
@@ -82,7 +120,7 @@
 &lt;p&gt;上面的代码中关键的地方都有加注释，这是不完全的代码，只是实现了解析出各个帖子id并统计，并没有限制24小时之内的，但是这并不影响我们对代码的理解.&lt;/p&gt;
 &lt;p&gt;除了这些以外awk还支持格式化输出，内建函数，内建变量，正则表达式等等&lt;/p&gt;
 &lt;h2&gt;总结&lt;/h2&gt;
-&lt;p&gt;awk说他是神器一点都不为过，处理文本的速度很快，至少比python处理起来要快很多，而且我相信只要愿意awk可以完成复杂的统计任务&lt;/p&gt;</summary><category term="linux"></category><category term="python"></category></entry><entry><title>Nginx实现文件下载自动打包成zip文件</title><link href="http://blog.turbidsoul.me/pelican-blog/nginx-shi-xian-wen-jian-xia-zai-zi-dong-da-bao-cheng-zip-wen-jian.html" rel="alternate"></link><updated>2014-01-26T00:00:00+01:00</updated><author><name>Turbidsoul</name></author><id>tag:blog.turbidsoul.me/pelican-blog,2014-01-26:nginx-shi-xian-wen-jian-xia-zai-zi-dong-da-bao-cheng-zip-wen-jian.html</id><summary type="html">&lt;h2&gt;来源和介绍&lt;/h2&gt;
+&lt;p&gt;awk说他是神器一点都不为过，处理文本的速度很快，至少比python处理起来要快很多，而且我相信只要愿意awk可以完成复杂的统计任务&lt;/p&gt;</summary><category term="linux"></category><category term="python"></category></entry><entry><title>Nginx实现文件下载自动打包成zip文件</title><link href="http://blog.turbidsoul.me/pelican-blog/posts/nginx-shi-xian-wen-jian-xia-zai-zi-dong-da-bao-cheng-zip-wen-jian.html" rel="alternate"></link><updated>2014-01-26T00:00:00+08:00</updated><author><name>Turbidsoul</name></author><id>tag:blog.turbidsoul.me/pelican-blog,2014-01-26:posts/nginx-shi-xian-wen-jian-xia-zai-zi-dong-da-bao-cheng-zip-wen-jian.html</id><summary type="html">&lt;h2&gt;来源和介绍&lt;/h2&gt;
 &lt;p&gt;问题的来源是需要对已有的资料在下载的时候进行添加广告，但是对于doc文件操作麻烦的情况，采用在下载的时候将广告文件和资料一起打包成zip文件.&lt;/p&gt;
 &lt;p&gt;在apache服务器中有个mod_zip的模块就是完成这个功能，同样nginx有大神已经实现了这个模块，我们只需要拿来用就可以了:&lt;a href="https://github.com/evanmiller/mod_zip"&gt;mod_zip&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;应用&lt;/h2&gt;
