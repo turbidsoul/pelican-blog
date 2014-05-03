@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+        <meta charset="utf-8" />
+        <title>Turbidsoul's 小黑屋 - code</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Turbidsoul's 小黑屋 </a></h1>
+                <nav><ul>
+                    <li><a href="/category/jquery.html">jquery</a></li>
+                    <li><a href="/category/linux.html">Linux</a></li>
+                    <li><a href="/category/math.html">Math</a></li>
+                    <li><a href="/category/nginx.html">Nginx</a></li>
+                    <li><a href="/category/posts.html">posts</a></li>
+                    <li><a href="/category/python.html">Python</a></li>
+                    <li><a href="/category/rtmp.html">RTMP</a></li>
+                    <li><a href="/category/selenium.html">Selenium</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/posts/python-logging-mo-kuai-de-filter.html">python logging 模块的 filter</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2013-11-22T00:00:00">
+                周五 22 十一月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="/category/python.html">Python</a>. </p>
+<p>tags: <a href="/tag/python.html">python</a><a href="/tag/logging.html">logging</a><a href="/tag/filter.html">filter</a><a href="/tag/code.html">code</a></p>
+</footer><!-- /.post-info --><p>前两天同事问我，如果针对不同的IP记录日志，并把更具IP记录到不同的日志文件中，在网上搜了一下这个问题，有很多人都在问，我查了一下python的logging的api，发现有个filter的，这个filter可以根据日志的信息来决定这条日志是否记录到日志文件中，下面来说说如果实现这个功能。</p>
+<p>通常我们配置日志都是如下代码：</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">)</span>
+<span class="n">hdlr</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="s">&#39;test.log&#39;</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">hdlr</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%(asctime)s</span><span class="s">  </span><span class="si">%(levelname)s</span><span class="s">  Line#</span><span class="si">%(lineno)d</span><span class="s"> - </span><span class="si">%(msecs)d</span><span class="s"> - </span><span class="si">%(message)s</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">hdlr</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">fmt</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s">&#39;test 111111&#39;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>这是我们通常用来配置记录日志到文件的代码，但是如果我们要把日志记根据条件记录到不同的日志文件中就需要用到 <strong><a href="http://docs.python.org/2/library/logging.html?highlight=filter#logging.Filter">logging.Filter</a></strong></p>
+<p>我们可以对上面的代码做一点点的修改，创建一个过滤器，这个过滤器是根据IP进行过滤的，只有IP是创建过滤器时指定的IP才能被记录下来，下面来看看我创建的过滤器:</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="k">class</span> <span class="nc">MyFilter</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">Filter</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ip</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ip</span> <span class="o">=</span> <span class="n">ip</span>
+
+    <span class="k">def</span> <span class="nf">filter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">record</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">record</span><span class="o">.</span><span class="n">msg</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">ip</span><span class="p">):</span>
+            <span class="k">return</span> <span class="bp">True</span>
+        <span class="k">return</span> <span class="bp">False</span>
+</pre></div>
+
+
+<p>我的过滤器创建好之后就是要把这个过滤器加入到我们的日志处理句柄上，这里我创建了两个Handler，用来存储不同IP的日志，每个Handler添加不同的过滤器，如下:</p>
+<div class="highlight"><pre><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="s">&quot;test&quot;</span><span class="p">)</span>
+<span class="n">fmt</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">Formatter</span><span class="p">(</span><span class="s">&quot;</span><span class="si">%(asctime)s</span><span class="s">  </span><span class="si">%(levelname)s</span><span class="s"> - </span><span class="si">%(message)s</span><span class="s">&quot;</span><span class="p">)</span>
+<span class="n">hdlr1</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="s">&#39;127.0.0.1.log&#39;</span><span class="p">)</span>
+<span class="n">hdlr1</span><span class="o">.</span><span class="n">addFilter</span><span class="p">(</span><span class="n">MyFilter</span><span class="p">(</span><span class="s">&#39;127.0.0.1&#39;</span><span class="p">))</span>
+<span class="n">hdlr1</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">fmt</span><span class="p">)</span>
+<span class="n">hdlr2</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">FileHandler</span><span class="p">(</span><span class="s">&#39;192.168.0.2.log&#39;</span><span class="p">)</span>
+<span class="n">hdlr2</span><span class="o">.</span><span class="n">addFilter</span><span class="p">(</span><span class="n">MyFilter</span><span class="p">(</span><span class="s">&#39;192.168.0.2&#39;</span><span class="p">))</span>
+<span class="n">hdlr2</span><span class="o">.</span><span class="n">setFormatter</span><span class="p">(</span><span class="n">fmt</span><span class="p">)</span>
+
+<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">hdlr1</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">addHandler</span><span class="p">(</span><span class="n">hdlr2</span><span class="p">)</span>
+<span class="n">logger</span><span class="o">.</span><span class="n">setLevel</span><span class="p">(</span><span class="n">logging</span><span class="o">.</span><span class="n">INFO</span><span class="p">)</span>
+</pre></div>
+
+
+<p>如上代码，对127.0.0.1开头的日志存到127.0.0.1.log文件中，同样192.168.0.2开头的日志存到192.168.0.2.log文件中</p>
+<div class="highlight"><pre><span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">13</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET / HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">612</span> <span class="s">&quot;-&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">14</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /favicon.ico HTTP/1.1&quot;</span> <span class="mi">404</span> <span class="mi">168</span> <span class="s">&quot;-&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">14</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /favicon.ico HTTP/1.1&quot;</span> <span class="mi">404</span> <span class="mi">168</span> <span class="s">&quot;-&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">14</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /favicon.ico HTTP/1.1&quot;</span> <span class="mi">404</span> <span class="mi">168</span> <span class="s">&quot;-&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">20</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /codemirror.html HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">6783</span> <span class="s">&quot;-&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">21</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /codemirror/lib/codemirror.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">5705</span> <span class="s">&quot;http://localhost/codemirror.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">21</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /codemirror/theme/rubyblue.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">1294</span> <span class="s">&quot;http://localhost/codemirror.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">21</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /codemirror/theme/ambiance.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">26029</span> <span class="s">&quot;http://localhost/codemirror.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">21</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /codemirror/theme/eclipse.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">1050</span> <span class="s">&quot;http://localhost/codemirror.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">21</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /codemirror/theme/ambiance-mobile.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">103</span> <span class="s">&quot;http://localhost/codemirror.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">21</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /codemirror/theme/erlang-dark.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">1223</span> <span class="s">&quot;http://localhost/codemirror.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">21</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /codemirror/theme/elegant.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">593</span> <span class="s">&quot;http://localhost/codemirror.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">21</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /codemirror/theme/blackboard.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">1237</span> <span class="s">&quot;http://localhost/codemirror.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">21</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /codemirror/theme/midnight.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">1709</span> <span class="s">&quot;http://localhost/codemirror.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">21</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /codemirror/theme/monokai.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">1162</span> <span class="s">&quot;http://localhost/codemirror.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">21</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /codemirror/theme/lesser-dark.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">1991</span> <span class="s">&quot;http://localhost/codemirror.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">21</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /codemirror/theme/cobalt.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">1048</span> <span class="s">&quot;http://localhost/codemirror.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+<span class="mf">127.0.0.1</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">14</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">20</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">21</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /codemirror/theme/night.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">1129</span> <span class="s">&quot;http://localhost/codemirror.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:21.0) Gecko/20100101 Firefox/21.0&quot;</span>
+  <span class="p">.</span>
+  <span class="p">.</span>
+  <span class="p">.</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">39</span><span class="o">:</span><span class="mi">20</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/pygments.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">3348</span> <span class="s">&quot;http://test.turbidsoul.me/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">40</span><span class="o">:</span><span class="mi">40</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET / HTTP/1.1&quot;</span> <span class="mi">304</span> <span class="mi">0</span> <span class="s">&quot;http://test.turbidsoul.me/pages.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">40</span><span class="o">:</span><span class="mi">40</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/1.4.0/bootstrap.css HTTP/1.1&quot;</span> <span class="mi">304</span> <span class="mi">0</span> <span class="s">&quot;http://test.turbidsoul.me/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">40</span><span class="o">:</span><span class="mi">40</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/style.css?body=1 HTTP/1.1&quot;</span> <span class="mi">304</span> <span class="mi">0</span> <span class="s">&quot;http://test.turbidsoul.me/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">40</span><span class="o">:</span><span class="mi">40</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/pygments.css HTTP/1.1&quot;</span> <span class="mi">304</span> <span class="mi">0</span> <span class="s">&quot;http://test.turbidsoul.me/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">40</span><span class="o">:</span><span class="mi">47</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET / HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">4041</span> <span class="s">&quot;http://test.turbidsoul.me/pages.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">40</span><span class="o">:</span><span class="mi">47</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/1.4.0/bootstrap.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">47729</span> <span class="s">&quot;http://test.turbidsoul.me/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">40</span><span class="o">:</span><span class="mi">47</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/style.css?body=1 HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">1657</span> <span class="s">&quot;http://test.turbidsoul.me/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">40</span><span class="o">:</span><span class="mi">47</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/pygments.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">3348</span> <span class="s">&quot;http://test.turbidsoul.me/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">41</span><span class="o">:</span><span class="mi">32</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET / HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">3768</span> <span class="s">&quot;http://test.turbidsoul.me/pages.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">41</span><span class="o">:</span><span class="mi">32</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/1.4.0/bootstrap.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">47729</span> <span class="s">&quot;http://test.turbidsoul.me/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">41</span><span class="o">:</span><span class="mi">32</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/style.css?body=1 HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">1657</span> <span class="s">&quot;http://test.turbidsoul.me/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">41</span><span class="o">:</span><span class="mi">32</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/pygments.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">3348</span> <span class="s">&quot;http://test.turbidsoul.me/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">24</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET / HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">3969</span> <span class="s">&quot;http://test.turbidsoul.me/pages.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">24</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/1.4.0/bootstrap.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">47729</span> <span class="s">&quot;http://test.turbidsoul.me/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">24</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/pygments.css HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">3348</span> <span class="s">&quot;http://test.turbidsoul.me/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">24</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/style.css?body=1 HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">1657</span> <span class="s">&quot;http://test.turbidsoul.me/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">26</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /java/2013/05/16/spring-configuration-file-and-annotation-load-question HTTP/1.1&quot;</span> <span class="mi">301</span> <span class="mi">184</span> <span class="s">&quot;http://test.turbidsoul.me/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">26</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /java/2013/05/16/spring-configuration-file-and-annotation-load-question/ HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">14041</span> <span class="s">&quot;http://test.turbidsoul.me/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">26</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/1.4.0/bootstrap.css HTTP/1.1&quot;</span> <span class="mi">304</span> <span class="mi">0</span> <span class="s">&quot;http://test.turbidsoul.me/java/2013/05/16/spring-configuration-file-and-annotation-load-question/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">26</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/style.css?body=1 HTTP/1.1&quot;</span> <span class="mi">304</span> <span class="mi">0</span> <span class="s">&quot;http://test.turbidsoul.me/java/2013/05/16/spring-configuration-file-and-annotation-load-question/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">49</span><span class="o">:</span><span class="mi">26</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/pygments.css HTTP/1.1&quot;</span> <span class="mi">304</span> <span class="mi">0</span> <span class="s">&quot;http://test.turbidsoul.me/java/2013/05/16/spring-configuration-file-and-annotation-load-question/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">54</span><span class="o">:</span><span class="mi">11</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /tags.html HTTP/1.1&quot;</span> <span class="mi">200</span> <span class="mi">9499</span> <span class="s">&quot;http://test.turbidsoul.me/java/2013/05/16/spring-configuration-file-and-annotation-load-question/&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">54</span><span class="o">:</span><span class="mi">11</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/1.4.0/bootstrap.css HTTP/1.1&quot;</span> <span class="mi">304</span> <span class="mi">0</span> <span class="s">&quot;http://test.turbidsoul.me/tags.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">54</span><span class="o">:</span><span class="mi">11</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/style.css?body=1 HTTP/1.1&quot;</span> <span class="mi">304</span> <span class="mi">0</span> <span class="s">&quot;http://test.turbidsoul.me/tags.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+<span class="mf">192.168.0.2</span> <span class="o">-</span> <span class="o">-</span> <span class="p">[</span><span class="mi">16</span><span class="o">/</span><span class="n">May</span><span class="o">/</span><span class="mi">2013</span><span class="o">:</span><span class="mi">21</span><span class="o">:</span><span class="mi">54</span><span class="o">:</span><span class="mi">11</span> <span class="o">+</span><span class="mi">0800</span><span class="p">]</span> <span class="s">&quot;GET /assets/themes/twitter/css/pygments.css HTTP/1.1&quot;</span> <span class="mi">304</span> <span class="mi">0</span> <span class="s">&quot;http://test.turbidsoul.me/tags.html&quot;</span> <span class="s">&quot;Mozilla/5.0 (Windows NT 6.1; rv:22.0) Gecko/20100101 Firefox/22.0&quot;</span>
+  <span class="p">.</span>
+  <span class="p">.</span>
+  <span class="p">.</span>
+</pre></div>
+
+
+<p>这是我的nginx的access.log中的一段日志，我用这段日志来做测试，最终得到的结果和我最初预设的是一样的，我在这里就不再贴出测试的结果，有兴趣的朋友可以自己测试一下。</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/posts/shi-yong-seleniumjin-xing-webce-shi-ru-men-he-shi-yong-webdriverkai-fa-webce-shi-dai-ma-ru-men.html" rel="bookmark"
+                           title="Permalink to 使用selenium进行web测试入门和使用WebDriver开发web测试代码入门">使用selenium进行web测试入门和使用WebDriver开发web测试代码入门</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-10-17T00:00:00">
+                周四 17 十月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="/category/selenium.html">Selenium</a>. </p>
+<p>tags: <a href="/tag/selenium.html">selenium</a><a href="/tag/python.html">python</a><a href="/tag/java.html">java</a><a href="/tag/webdriver.html">webdriver</a><a href="/tag/test.html">test</a><a href="/tag/code.html">code</a></p>
+</footer><!-- /.post-info -->                <p>前段时间我们头在搞一个分布式测试，使用的就是 <strong>Selenium</strong> 可以坑太多，最后应该是放弃了，因为我没见到回音，说实话这东西是bug挺多，而且在firefox上的版本兼容也有很大的问题，不过这不是我们讨论的问题，我们这里要讨论的是使用它来做简单的web测试。</p>
+<h2>Selenium 入门</h2>
+<h4>安装</h4>
+<p>我使用的是 Firefox Aurora 现在的版本就是ff26,这下面是正常的，我不知道在每日编译版下是否正常，虽然我机子上也安装了，但是并没有在起下面做个测试，不过应该是没有问题的。</p>
+<p>在 <a href="about:addons">about:addons</a> 或者 <a href="http://addons.mozilla.org/">http://addons.mozilla.org/</a> 上搜索 <em>selenium</em> 点击安装，安装的时候同时还会附带安装几个其他的插件，这些都是 Selenium 的一些附属插件，我在之后的会有介绍。</p>
+<p>安装完之后可以在 <code>菜单 &gt;&gt; 工具 &gt;&gt; Selenium IDE</code> 打开或者在 <em>附加组建栏</em> 点击 Selenium IDE 按钮打开，如何附加组建栏没有 ...</p>
+                <a class="readmore" href="/posts/shi-yong-seleniumjin-xing-webce-shi-ru-men-he-shi-yong-webdriverkai-fa-webce-shi-dai-ma-ru-men.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/posts/python-27-de-can-shu-jie-xi-mo-kuai-argparse.html" rel="bookmark"
+                           title="Permalink to python 2.7 的参数解析模块 argparse">python 2.7 的参数解析模块 argparse</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-09-27T00:00:00">
+                周五 27 九月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="/category/python.html">Python</a>. </p>
+<p>tags: <a href="/tag/python.html">python</a><a href="/tag/code.html">code</a><a href="/tag/argparse.html">argparse</a><a href="/tag/python27.html">python27</a></p>
+</footer><!-- /.post-info -->                <p>今天下午没事，就优化了一下以前写的一些工作上用的小工具，当然大多数都是python写的命令行下的小工具，之前命令行参数都是自己解析，虽然不是什么复杂的事情，但是自己临时写出来的东西毕竟不如人家写出来的好，正好前短时间看到python2.7把 <strong>argparse</strong> 加入到了标准模块中，所以这次对这些工具的代码重构就是使用了 <strong>argparse</strong> 替代自己写的那个简陋名两行解析工具。</p>
+<h2>入门</h2>
+<p>上面已经说了在 <strong>Python 2.7</strong> 中已经内置了这个模块，所以就不用安装了。可以直接使用<code>import argparse</code>导入模块使用，我们先看一个简单的例子：</p>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">argparse</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="s">&#39;test argparse&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-s&#39;</span><span class="p">,</span> <span class="s">&#39;--start&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&#39;start number&#39;</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">int</span><span class="p">,</span> <span class="n">default</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s">&#39;-e&#39;</span><span class="p">,</span> <span class="s">&#39;--end&#39;</span><span class="p">,</span> <span class="n">help</span><span class="o">=</span><span class="s">&#39;end ...</span></pre></div>
+                <a class="readmore" href="/posts/python-27-de-can-shu-jie-xi-mo-kuai-argparse.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/posts/pythonmo-kuai-html2bbcode.html" rel="bookmark"
+                           title="Permalink to python模块html2bbcode">python模块html2bbcode</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-08-30T00:00:00">
+                周五 30 八月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="/category/python.html">Python</a>. </p>
+<p>tags: <a href="/tag/python.html">python</a><a href="/tag/code.html">code</a></p>
+</footer><!-- /.post-info -->                <p>公司最近在调整网站的模块，把网站的公告模块去掉，公告的数据移到Discuz做的论坛中，整体功能都很简单，写了一个python脚本，执行一下就能完成数据迁移。在数据迁移的过程中有个小问题，我们公告的正文是用富文本编辑器写的，代码是 <em>html</em> 代码，但是在Discuz中确是用 <em>bbcode</em> 所以就需要对公告正文进行转换，这里就要使用到python的一个模块: <strong>html2bbcode</strong></p>
+<h4>安装</h4>
+<p>执行:<code>pip install html2bbcode</code> 安装模块</p>
+<h4>使用</h4>
+<p>下面是<a href="https://bitbucket.org/amigo/html2bbcode" title="HTML to BBCode converter">bitbucket.org</a>的例子：</p>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">parser</span> <span class="o">=</span> <span class="n">HTML2BBCode</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">parser</span><span class="o">.</span><span class="n">feed</span><span class="p">(</span><span class="s">&#39;&lt;ul&gt;&lt;li&gt;one&lt;/li&gt;&lt;li&gt;two&lt;/li&gt;&lt;/ul&gt;&#39;</span><span class="p">))</span>
+<span class="go">&#39;[list][li]one[/li][li]two[/li][/list]&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">parser ...</span></pre></div>
+                <a class="readmore" href="/posts/pythonmo-kuai-html2bbcode.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/posts/develop-jquery-plugin.html" rel="bookmark"
+                           title="Permalink to 开发jquery插件">开发jquery插件</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-12-01T00:00:00">
+                周四 01 十二月 2011
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="/category/jquery.html">jquery</a>. </p>
+<p>tags: <a href="/tag/jquery.html">jquery</a><a href="/tag/javascript.html">javascript</a><a href="/tag/code.html">code</a></p>
+</footer><!-- /.post-info -->                <p>公司网站首页广告位需要一个鼠标悬浮切换的特效，但是公司不让使用jquery已经实现过的特效，而公司的这方面的高手又没有时间做，所以只能自己去实现一个这样的特效插件。</p>
+<p>下面是先说下JQuery 插件大概的结构:</p>
+<div class="highlight"><pre><span class="c1">// 这里这个匿名函数，是为了避免冲突</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
+  <span class="c1">// 为JQuery 附加一个新的方法</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="c1">//这里需要开发的插件的名字</span>
+    <span class="nx">fv_adv</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="c1">// 这里就是插件的具体实现代码</span>
+    <span class="p">},</span>
+    <span class="err">……</span>
+    <span class="c1">// 这里可以继续增加插件</span>
+  <span class="p">});</span>
+<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
+</pre></div>
+
+
+<p>本来想把代码大概的说下的，但是觉得这个插件很简单，没有什么值得特别说说的，jquery的 插件结构就项上面说的那样，一个插件名，对应一个具体的实现，在function里写插件的具体代码，这些东西在网上被人都快说烂了，但是我觉得有些说的 实在不清晰，至少我没看明白，我在这里不像说太多的，有时候对于程序员来说具体的代码，比一本书更管用！</p>
+<p>源代码：<a href="http://www.rayfile.com/zh-cn/files/b82a5e82-1a71-11e1-88b6-0015c55db73d/">jquery_plugin.7z</a></p>
+                <a class="readmore" href="/posts/develop-jquery-plugin.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+            </ol><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://blog.turbidsoul.me">Turbidsoul's 小黑屋</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -1,1 +1,1 @@
-make serve
+make devserver

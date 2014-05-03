@@ -15,14 +15,20 @@
         <header id="banner" class="body">
                 <h1><a href="http://blog.turbidsoul.me/pelican-blog/">Turbidsoul's 小黑屋 </a></h1>
                 <nav><ul>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jquery.html">jquery</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/linux.html">Linux</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/math.html">Math</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/nginx.html">Nginx</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/posts.html">posts</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">Python</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/rtmp.html">RTMP</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/selenium.html">Selenium</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
             <aside id="featured" class="body">
                 <article>
-                    <h1 class="entry-title"><a href="http://blog.turbidsoul.me/pelican-blog/posts/shi-yong-awk-zuo-shi-shi-de-tong-ji.html">使用awk做实时的统计</a></h1>
+                    <h1 class="entry-title"><a href="http://blog.turbidsoul.me/pelican-blog/posts/shi-yong-awkzuo-shi-shi-de-tong-ji.html">使用awk做实时的统计</a></h1>
 <footer class="post-info">
         <abbr class="published" title="2014-04-10T00:00:00">
                 周四 10 四月 2014
@@ -31,8 +37,8 @@
         <address class="vcard author">
                 By <a class="url fn" href="http://blog.turbidsoul.me/pelican-blog/author/turbidsoul.html">Turbidsoul</a>
         </address>
-<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/posts.html">posts</a>. </p>
-<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/linux.html">linux</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/python.html">python</a></p>
+<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/linux.html">Linux</a>. </p>
+<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/linux.html">linux</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/awk.html">awk</a></p>
 </footer><!-- /.post-info --><h2>缘由</h2>
 <p>之前头让搞一个24小时内帖子或者视频的点击量，当时为了省事，就随便写了一个，虽然是实时的，但是却没有满足 <strong>24小时内</strong> 这个条件, 数据会在每天0点清零重新计算，前几天被头发现了，所以就只能从新写一个了。</p>
 <p>思来想去最后还是决定用<code>awk</code>解析日志来完成这个功能，这样最简单。</p>

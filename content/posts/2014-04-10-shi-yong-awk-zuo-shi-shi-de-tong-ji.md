@@ -1,7 +1,7 @@
 Title: 使用awk做实时的统计
+Category: Linux
+Tags: linux, awk
 Date: 2014-04-10
-tags: linux,python
-Slug: shi-yong-awk-zuo-shi-shi-de-tong-ji
 Author: Turbidsoul
 
 ## 缘由 ##

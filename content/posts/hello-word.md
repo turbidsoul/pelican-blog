@@ -23,6 +23,12 @@ def foo():
 foo()
 ```
 
+```javascript
+function alert() {
+    alert('Hello World!');
+}
+```
+
 ### Table: ###
 
 |    name    | age | description |

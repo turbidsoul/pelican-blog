@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+        <meta charset="utf-8" />
+        <title>Turbidsoul's 小黑屋 - Turbidsoul</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Turbidsoul's 小黑屋 </a></h1>
+                <nav><ul>
+                    <li><a href="/category/jquery.html">jquery</a></li>
+                    <li><a href="/category/linux.html">Linux</a></li>
+                    <li><a href="/category/math.html">Math</a></li>
+                    <li><a href="/category/nginx.html">Nginx</a></li>
+                    <li><a href="/category/posts.html">posts</a></li>
+                    <li><a href="/category/python.html">Python</a></li>
+                    <li><a href="/category/rtmp.html">RTMP</a></li>
+                    <li><a href="/category/selenium.html">Selenium</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+                <section id="content" class="body">
+                    <ol id="posts-list" class="hfeed" start="9">
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/posts/cheng-xu-yuan-shu-xue-ling-de-gu-shi.html" rel="bookmark"
+                           title="Permalink to 程序员数学 - 零的故事">程序员数学 - 零的故事</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-08-14T00:00:00">
+                周三 14 八月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="/category/math.html">Math</a>. </p>
+<p>tags: <a href="/tag/math.html">math</a><a href="/tag/zero.html">zero</a><a href="/tag/reading.html">reading</a><a href="/tag/notes.html">notes</a></p>
+</footer><!-- /.post-info -->                <p>之前买了几本关于数学的书，这两天看了《程序员数学》第一章 0的故事，以前只是知道0，却不知道0在数学中的作用和意义。</p>
+<h4>计数法</h4>
+<p>在10进制中，每一位的数字表示的是这一位上的个数，如书中的2503：</p>
+<blockquote>
+<p>2 =&gt; $2 xx 1000$ =&gt; $2 xx 10^3$</p>
+<p>5 =&gt; $5 xx 100$ =&gt; $5 xx 10^5$</p>
+<p>0 =&gt; $0 xx 10$ =&gt; $0 xx 10^1$</p>
+<p>3 =&gt; $3 xx 1$ =&gt; $3 xx 10^0$</p>
+</blockquote>
+<p>如上面引用中的，把每一行的结果加起来就是 <strong>2503</strong>，这里我觉得在中文中表示数字其实更准确： <em>两千五百零三</em> ，在每一位都表示了这一位的单位，在阅读上更容易理解和准确 ...</p>
+                <a class="readmore" href="/posts/cheng-xu-yuan-shu-xue-ling-de-gu-shi.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/posts/develop-jquery-plugin.html" rel="bookmark"
+                           title="Permalink to 开发jquery插件">开发jquery插件</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2011-12-01T00:00:00">
+                周四 01 十二月 2011
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="/category/jquery.html">jquery</a>. </p>
+<p>tags: <a href="/tag/jquery.html">jquery</a><a href="/tag/javascript.html">javascript</a><a href="/tag/code.html">code</a></p>
+</footer><!-- /.post-info -->                <p>公司网站首页广告位需要一个鼠标悬浮切换的特效，但是公司不让使用jquery已经实现过的特效，而公司的这方面的高手又没有时间做，所以只能自己去实现一个这样的特效插件。</p>
+<p>下面是先说下JQuery 插件大概的结构:</p>
+<div class="highlight"><pre><span class="c1">// 这里这个匿名函数，是为了避免冲突</span>
+<span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
+  <span class="c1">// 为JQuery 附加一个新的方法</span>
+  <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+    <span class="c1">//这里需要开发的插件的名字</span>
+    <span class="nx">fv_adv</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+      <span class="c1">// 这里就是插件的具体实现代码</span>
+    <span class="p">},</span>
+    <span class="err">……</span>
+    <span class="c1">// 这里可以继续增加插件</span>
+  <span class="p">});</span>
+<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
+</pre></div>
+
+
+<p>本来想把代码大概的说下的，但是觉得这个插件很简单，没有什么值得特别说说的，jquery的 插件结构就项上面说的那样，一个插件名，对应一个具体的实现，在function里写插件的具体代码，这些东西在网上被人都快说烂了，但是我觉得有些说的 实在不清晰，至少我没看明白，我在这里不像说太多的，有时候对于程序员来说具体的代码，比一本书更管用！</p>
+<p>源代码：<a href="http://www.rayfile.com/zh-cn/files/b82a5e82-1a71-11e1-88b6-0015c55db73d/">jquery_plugin.7z</a></p>
+                <a class="readmore" href="/posts/develop-jquery-plugin.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+            </ol><!-- /#posts-list -->
+<p class="paginator">
+        <a href="/author\turbidsoul.html">&laquo;</a>
+    Page 2 / 2
+</p>
+            </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://blog.turbidsoul.me">Turbidsoul's 小黑屋</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

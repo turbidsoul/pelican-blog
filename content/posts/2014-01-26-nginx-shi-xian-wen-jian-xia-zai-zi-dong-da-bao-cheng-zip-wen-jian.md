@@ -1,9 +1,8 @@
+title: Nginx实现文件下载自动打包成zip文件
 category: Nginx
-Title: Nginx实现文件下载自动打包成zip文件
-Date: 2014-01-26
 tags: nginx, python
-Slug: nginx-shi-xian-wen-jian-xia-zai-zi-dong-da-bao-cheng-zip-wen-jian
 Author: Turbidsoul
+Date: 2014-01-26
 
 ## 来源和介绍 ##
 
