@@ -1,10 +1,7 @@
----
-layout: post
-title: "jekyll模版的中文问题"
-description: "jekyll模版的中文问题"
+title: jekyll模版的中文问题
 category: Jekyll
-tags: [jekyll, ruby, code]
----
+tags: jekyll, ruby, code
+Date: 2013-05-31
 
 今天在给blog添加[Creative Commons](http://creativecommons.org/licenses/by/3.0/cn/)(简称CC)时，发现在jekyll的模版中不能加入中文。大概看了一下build时报的错，可以确定应该和jekyll不能发带有中文的文章的问题是一样的，不过出问题的地方不一样。
 

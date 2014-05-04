@@ -15,14 +15,23 @@
         <header id="banner" class="body">
                 <h1><a href="http://blog.turbidsoul.me/pelican-blog/">Turbidsoul's 小黑屋 </a></h1>
                 <nav><ul>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/firefox.html">firefox</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/java.html">Java</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jekyll.html">jekyll</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jquery.html">jquery</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/linux.html">Linux</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/markdown.html">Markdown</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/math.html">Math</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/maven.html">Maven</a></li>
                     <li class="active"><a href="http://blog.turbidsoul.me/pelican-blog/category/nginx.html">Nginx</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/posts.html">posts</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">Python</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/rtmp.html">RTMP</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/selenium.html">Selenium</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime.html">Sublime</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime2.html">Sublime2</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/webrtc.html">WebRTC</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/xian-liao.html">闲聊</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
@@ -71,11 +80,54 @@
 <li>nginx中设置root的时候需要把放置在location外面，放置里面是无法生效的。</li>
 <li>如果源文件的路径是错误的，那么会产生一个404错误或者下载下来的文件无法解压的损坏文件。</li>
 </ul>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://blog.turbidsoul.me/pelican-blog/posts/ru-he-pei-zhi-zai-nginxhe-casshang-pei-zhi-ssl.html" rel="bookmark"
+                           title="Permalink to 如何配置在nginx和cas上配置ssl？">如何配置在nginx和cas上配置ssl？</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-05-08T00:00:00">
+                周三 08 五月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://blog.turbidsoul.me/pelican-blog/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/nginx.html">Nginx</a>. </p>
+<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/nginx.html">nginx</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/cas.html">cas</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/ssl.html">ssl</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/java.html">java</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/https.html">https</a></p>
+</footer><!-- /.post-info -->                <p>公司准备对登录服务采用https，而登录服务采用的是cas，前段的是用nginx代理， 所以就有了之后的几个问题。</p>
+<p><strong>主要碰到了下面3个问题</strong> ：</p>
+<ol>
+<li>nginx中配置ssl</li>
+<li>cas中开启ssl</li>
+<li>java中导入证书</li>
+</ol>
+<hr />
+<p>首先是生成我们的证书，我使用的是openssl：</p>
+<ol>
+<li>首先是生成私钥： openssl genrsa -out server.key</li>
+<li>接下来要生成CSR文件： openssl req -new -key server.key -out server.csr</li>
+<li>最后就是生成证书文件： openssl x509 -req -days 365 -in server.csr -signkey server.key -out server.crt</li>
+</ol>
+<p>这里有我一个笔记是openssl的简单教程：<a href="https://www.evernote.com/shard/s25/sh/233c0eda-2f70-4756-8907-50dc0bff82c2/92861a2bd473f1d703bcead620080d27">openssl简单教程</a></p>
+<hr />
+<p>生成证书后，就可以配置nginx了，打开nginx.conf，加入以下几行:</p>
+<div class="highlight"><pre><span class="k">listen</span>                 <span class="mi">443 ...</span></pre></div>
+                <a class="readmore" href="http://blog.turbidsoul.me/pelican-blog/posts/ru-he-pei-zhi-zai-nginxhe-casshang-pei-zhi-ssl.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+            </ol><!-- /#posts-list -->
 <p class="paginator">
     Page 1 / 1
 </p>
-            </aside><!-- /#featured -->
-            </ol><!-- /#posts-list -->
             </section><!-- /#content -->
         <section id="extras" class="body">
                 <div class="blogroll">

@@ -1,10 +1,7 @@
----
-layout: post
-title: "Spring配置文件加载的疑问和annotation加载的问题"
-description: "Spring配置文件加载的疑问和annotation加载的问题"
+title: Spring配置文件加载的疑问和annotation加载的问题
 category: Java
-tags: [java, sprint, annotation]
----
+tags: java, sprint, annotation
+Date: 2012-02-24
 
 前几天在做一个异步的模块，简单点说就是上传文件后，后台异步解析，前台定时请求解析的日志，并显示，算是一个实时的给用户看到解析的情况和日志，很简单的一个工作，但是我却遇到了一个让我郁闷了2天的问题。
 
@@ -29,7 +26,7 @@ tags: [java, sprint, annotation]
             <!--
             /WEB-INF/spring/application-content-schedule.xml -->
         </param-value>
-    </context-param> 
+    </context-param>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
@@ -54,7 +51,7 @@ tags: [java, sprint, annotation]
 ```java
 public class SpringAsyncTest {
     AbstractApplicationContext ctx = new ClassPathXmlApplicationContext("root-context.xml");
- 
+
     @Test
     public void asyncTest() throws Exception {
         IImportMng mng = (IImportMng) ctx.getBean("importMng");

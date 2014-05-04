@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+        <meta charset="utf-8" />
+        <title>Turbidsoul's 小黑屋 - ruby</title>
+        <link rel="stylesheet" href="http://blog.turbidsoul.me/pelican-blog/theme/css/main.css" />
+        <link href="http://blog.turbidsoul.me/pelican-blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Turbidsoul's 小黑屋 Atom Feed" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://blog.turbidsoul.me/pelican-blog/">Turbidsoul's 小黑屋 </a></h1>
+                <nav><ul>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/firefox.html">firefox</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/java.html">Java</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jekyll.html">jekyll</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jquery.html">jquery</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/linux.html">Linux</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/markdown.html">Markdown</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/math.html">Math</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/maven.html">Maven</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/nginx.html">Nginx</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/posts.html">posts</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">Python</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/rtmp.html">RTMP</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/selenium.html">Selenium</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime.html">Sublime</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime2.html">Sublime2</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/webrtc.html">WebRTC</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/xian-liao.html">闲聊</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="http://blog.turbidsoul.me/pelican-blog/posts/jekyllmo-ban-de-zhong-wen-wen-ti.html">jekyll模版的中文问题</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2013-05-31T00:00:00">
+                周五 31 五月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://blog.turbidsoul.me/pelican-blog/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/jekyll.html">Jekyll</a>. </p>
+<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/jekyll.html">jekyll</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/ruby.html">ruby</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/code.html">code</a></p>
+</footer><!-- /.post-info --><p>今天在给blog添加<a href="http://creativecommons.org/licenses/by/3.0/cn/">Creative Commons</a>(简称CC)时，发现在jekyll的模版中不能加入中文。大概看了一下build时报的错，可以确定应该和jekyll不能发带有中文的文章的问题是一样的，不过出问题的地方不一样。</p>
+<h4>jekyll不能发有中文的文章</h4>
+<p>出问题的地方是在convertible.rb#31 行：</p>
+<div class="highlight"><pre><span class="nb">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="nb">name</span><span class="p">),</span> <span class="ss">:encoding</span> <span class="o">=&gt;</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>如上面的代码在最后加入编码参数，以utf8读取文件即可，即用上面的代码替换原来的代码就可以了</p>
+<h4>jekyll模版不能包含中文</h4>
+<p>这问题出在 tags/include.rb#23 行：</p>
+<div class="highlight"><pre><span class="n">source</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="vi">@file</span><span class="p">,</span> <span class="ss">:encoding</span> <span class="o">=&gt;</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>同样的方式，替换原来的代码即可。</p>
+<h4>结论</h4>
+<p>同样的问题，应该都可以用同样的方式解决，jekyll作者应该并没有在这里考虑中文的问题，不过我们可以自己解决这个问题，如果有更新jekyll最新版，记得也要改响应的问题位置的相关编码问题。</p>                </article>
+            </aside><!-- /#featured -->
+                <section id="content" class="body">
+                    <h1>Other articles</h1>
+                    <hr />
+                    <ol id="posts-list" class="hfeed">
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://blog.turbidsoul.me/pelican-blog/posts/jekyllde-zhong-wen-biao-ti-zhuan-huan-pin-yin-jie-jue-fang-an.html" rel="bookmark"
+                           title="Permalink to jekyll的中文标题转换拼音解决方案">jekyll的中文标题转换拼音解决方案</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-05-23T00:00:00">
+                周四 23 五月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://blog.turbidsoul.me/pelican-blog/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/jekyll.html">jekyll</a>. </p>
+<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/jekyll.html">jekyll</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/code.html">code</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/ruby.html">ruby</a></p>
+</footer><!-- /.post-info -->                <p>整这个并不是什么刚需，纯粹是怕麻烦，直接把中文转换成拼音更方便一点。</p>
+<p>其实很简单，问题是出在Rakefile文件中，请看项目下的Rakefile的第52行：</p>
+<div class="highlight"><pre><span class="n">task</span> <span class="ss">:post</span> <span class="k">do</span>
+  <span class="nb">abort</span><span class="p">(</span><span class="s2">&quot;rake aborted: &#39;</span><span class="si">#{</span><span class="no">CONFIG</span><span class="o">[</span><span class="s1">&#39;posts&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2">&#39; directory not found.&quot;</span><span class="p">)</span> <span class="k">unless</span> <span class="no">FileTest</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="no">CONFIG</span><span class="o">[</span><span class="s1">&#39;posts&#39;</span><span class="o">]</span><span class="p">)</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;title&quot;</span><span class="o">]</span> <span class="o">||</span> <span class="s2">&quot;new-post&quot;</span>
+  <span class="n">tags</span> <span class="o">=</span> <span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;tags&quot;</span><span class="o">]</span> <span class="o">||</span> <span class="s2">&quot;[]&quot;</span>
+  <span class="n">category</span> <span class="o">=</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;category&#39;</span><span class="o">]</span> <span class="o">||</span> <span class="s2">&quot;&quot;</span>
+  <span class="n">slug</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">downcase</span><span class="o">.</span><span class="n">strip</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/[^\w-]/</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+  <span class="k">begin</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="p">(</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;date&#39;</span><span class="o">]</span> <span class="p">?</span> <span class="no">Time</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;date&#39;</span><span class="o">]</span><span class="p">)</span> <span class="p">:</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="p">)</span><span class="o">.</span><span class="n">strftime ...</span></pre></div>
+                <a class="readmore" href="http://blog.turbidsoul.me/pelican-blog/posts/jekyllde-zhong-wen-biao-ti-zhuan-huan-pin-yin-jie-jue-fang-an.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+            </ol><!-- /#posts-list -->
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://blog.turbidsoul.me">Turbidsoul's 小黑屋</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://blog.turbidsoul.me/pelican-blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

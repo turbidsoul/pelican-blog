@@ -1,10 +1,7 @@
----
-layout: post
-title: "python实现morse编码与解码"
-description: "python实现morse编码与解码"
+title: python实现morse编码与解码
 category: Python
-tags: [python, morse, code]
----
+tags: python, morse, code
+Date: 2013-06-04
 
 写这个完全是闲着无聊，看了一片趣文[趣文：表白后女生发给我一串五层加密的密码](http://blog.jobbole.com/40628/?utm_source=rss&utm_medium=rss&utm_campaign=draft-created-on-20130531-at-1028-am) 这篇文章来源自百度贴吧的的有一个帖子[传送门](http://tieba.baidu.com/f?kz=529691897)，文章的内容还是很欢乐的。
 

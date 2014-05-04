@@ -1,11 +1,7 @@
----
-layout: post
-title: "WebSocket+WebRTC实现视频通讯"
-description: "WebSocket+WebRTC实现视频通讯"
+title: WebSocket+WebRTC实现视频通讯
 category: WebRTC
-tags: [webrtc, websocket, python]
----
-
+tags: webrtc, websocket, python
+Date: 2013-02-28
 
 这篇文章本来早就该写了，但是电脑坏了，在加上工作比较忙，所以就一直拖到今天。
 

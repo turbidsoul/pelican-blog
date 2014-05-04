@@ -1,10 +1,7 @@
----
-layout: post
-title: "java8的闭包Lambda语句小探 "
-description: "java8的闭包Lambda语句小探 "
+title: java8的闭包Lambda语句小探
 category: Java
-tags: [java, lambda, closure, code]
----
+tags: java, lambda, closure, code
+Date: 2012-02-14
 
 这是我上个礼拜相对较闲的时候自己做的简单测试，应为那天正好在oschina上看到jdk1.8发布了开发者预览版，正好左右没事，就去下了一个，实验了一下java 的闭包。
 

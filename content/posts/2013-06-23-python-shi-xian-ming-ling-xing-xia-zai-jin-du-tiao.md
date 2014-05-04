@@ -1,10 +1,7 @@
----
-layout: post
-title: "python实现命令行下载进度条"
-description: "python实现命令行下载进度条"
+title: python实现命令行下载进度条
 category: python
-tags: [python, cmd, ftp, progressbar]
----
+tags: python, cmd, ftp, progressbar
+Date: 2013-06-23
 
 这是昨晚下班之后同事问我的一个问题，不过当时已经7点，如果在不出公司就会赶不上最后一趟公交车，所以就给同事说回家研究研究礼拜一给他答案，昨晚无事就看了一下。
 

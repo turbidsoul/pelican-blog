@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+        <meta charset="utf-8" />
+        <title>Python实现排列和组合</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Turbidsoul's 小黑屋 </a></h1>
+                <nav><ul>
+                    <li><a href="/category/firefox.html">firefox</a></li>
+                    <li><a href="/category/java.html">Java</a></li>
+                    <li><a href="/category/jekyll.html">jekyll</a></li>
+                    <li><a href="/category/jquery.html">jquery</a></li>
+                    <li><a href="/category/linux.html">Linux</a></li>
+                    <li><a href="/category/markdown.html">Markdown</a></li>
+                    <li><a href="/category/math.html">Math</a></li>
+                    <li><a href="/category/maven.html">Maven</a></li>
+                    <li><a href="/category/nginx.html">Nginx</a></li>
+                    <li><a href="/category/posts.html">posts</a></li>
+                    <li class="active"><a href="/category/python.html">Python</a></li>
+                    <li><a href="/category/rtmp.html">RTMP</a></li>
+                    <li><a href="/category/selenium.html">Selenium</a></li>
+                    <li><a href="/category/sublime.html">Sublime</a></li>
+                    <li><a href="/category/sublime2.html">Sublime2</a></li>
+                    <li><a href="/category/webrtc.html">WebRTC</a></li>
+                    <li><a href="/category/xian-liao.html">闲聊</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="/posts/pythonshi-xian-pai-lie-he-zu-he.html" rel="bookmark"
+           title="Permalink to Python实现排列和组合">Python实现排列和组合</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-03-24T00:00:00">
+                周日 24 三月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="/category/python.html">Python</a>. </p>
+<p>tags: <a href="/tag/python.html">python</a><a href="/tag/arithmetic.html">arithmetic</a></p>
+</footer><!-- /.post-info -->      <p>无事可做用python实现的的排列和组合的算法，顺便也复习以下2.7中yield的用法</p>
+<div class="highlight"><pre><span class="c"># coding: utf8</span>
+
+<span class="k">def</span> <span class="nf">perm</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">v</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_items</span> <span class="o">=</span> <span class="n">items</span><span class="p">[:</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">items</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">perm</span><span class="p">(</span><span class="n">_items</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">v</span> <span class="o">+</span> <span class="n">p</span>
+
+<span class="k">def</span> <span class="nf">comp</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">n</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+        <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">items</span><span class="p">)):</span>
+        <span class="n">v</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+            <span class="k">yield</span> <span class="n">v</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">_items</span> <span class="o">=</span> <span class="n">items</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">:]</span>
+            <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">comp</span><span class="p">(</span><span class="n">_items</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">yield</span> <span class="n">v</span> <span class="o">+</span> <span class="n">p</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">perm</span><span class="p">(</span><span class="s">&#39;123&#39;</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="s">&#39;-&#39;</span> <span class="o">*</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">comp</span><span class="p">(</span><span class="s">&#39;123&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://blog.turbidsoul.me">Turbidsoul's 小黑屋</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

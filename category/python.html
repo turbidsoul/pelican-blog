@@ -15,14 +15,23 @@
         <header id="banner" class="body">
                 <h1><a href="http://blog.turbidsoul.me/pelican-blog/">Turbidsoul's 小黑屋 </a></h1>
                 <nav><ul>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/firefox.html">firefox</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/java.html">Java</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jekyll.html">jekyll</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jquery.html">jquery</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/linux.html">Linux</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/markdown.html">Markdown</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/math.html">Math</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/maven.html">Maven</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/nginx.html">Nginx</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/posts.html">posts</a></li>
                     <li class="active"><a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">Python</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/rtmp.html">RTMP</a></li>
                     <li><a href="http://blog.turbidsoul.me/pelican-blog/category/selenium.html">Selenium</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime.html">Sublime</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime2.html">Sublime2</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/webrtc.html">WebRTC</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/xian-liao.html">闲聊</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
@@ -257,9 +266,177 @@
                 <a class="readmore" href="http://blog.turbidsoul.me/pelican-blog/posts/python-332-mingw-gcc-471-an-zhuang-misakamo-kuai-shi-bian-yi-bao-cuo.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://blog.turbidsoul.me/pelican-blog/posts/pythonshi-xian-ldaphe-rtxzhi-jian-de-zu-zhi-he-yong-hu-shu-ju-tong-bu.html" rel="bookmark"
+                           title="Permalink to python实现ldap和rtx之间的组织和用户数据同步">python实现ldap和rtx之间的组织和用户数据同步</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-07-15T00:00:00">
+                周一 15 七月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://blog.turbidsoul.me/pelican-blog/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">python</a>. </p>
+<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/python.html">python</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/ldap.html">ldap</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/rtx.html">rtx</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/win32com.html">win32com</a></p>
+</footer><!-- /.post-info -->                <p>最近公司正在准备使用 <strong>AD</strong> ( <strong><a href="https://zh.wikipedia.org/wiki/Active_Directory" title="Active Directory">Activate Directory</a></strong> )服务来进行公司员工的帐号管理，这样就避免不了需要对AD的帐号和<a href="http://rtx.tencent.com/rtx/index.shtml" title="RTX">RTX</a>的帐号和组织关系进行同步，所以才有了这篇文章。</p>
+<h4>Python-Ldap</h4>
+<p><a href="http://www.python-ldap.org/" title="LDAP client API for Python">Python-Ldap</a>是python用来操作ldap的模块，可以对ldap进行查询，添加，修改，删除等操作，如下代码：</p>
+<div class="highlight"><pre><span class="n">ldap_host</span> <span class="o">=</span> <span class="s">&quot;127.0.0.1&quot;</span>
+<span class="n">ldap_port</span> <span class="o">=</span> <span class="mi">389</span>
+<span class="n">ldap_who</span> <span class="o">=</span> <span class="s">&quot;turbidsoul.me</span><span class="se">\\</span><span class="s">test&quot;</span>
+<span class="n">ldap_cred</span> <span class="o">=</span> <span class="s">&quot;test&quot;</span>
+<span class="n">ldap_baseondn</span> <span class="o">=</span> <span class="s">&quot;OU=XXXX,DC=turbidsoul,DC=me&quot;</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">ldap</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">ldap_host</span><span class="p">,</span> <span class="n">ldap_port</span><span class="p">)</span>
+    <span class="n">l</span><span class="o">.</span><span class="n">simple_bind_s</span><span class="p">(</span><span class="n">ldap_who</span><span class="p">,</span> <span class="n">ldap_cred</span><span class="p">)</span>
+    <span class="n">result_id</span> <span class="o">=</span> <span class="n">l</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">ldap_baseondn ...</span></pre></div>
+                <a class="readmore" href="http://blog.turbidsoul.me/pelican-blog/posts/pythonshi-xian-ldaphe-rtxzhi-jian-de-zu-zhi-he-yong-hu-shu-ju-tong-bu.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://blog.turbidsoul.me/pelican-blog/posts/pythonshi-xian-ming-ling-xing-xia-zai-jin-du-tiao.html" rel="bookmark"
+                           title="Permalink to python实现命令行下载进度条">python实现命令行下载进度条</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-06-23T00:00:00">
+                周日 23 六月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://blog.turbidsoul.me/pelican-blog/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">python</a>. </p>
+<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/python.html">python</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/cmd.html">cmd</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/ftp.html">ftp</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/progressbar.html">progressbar</a></p>
+</footer><!-- /.post-info -->                <p>这是昨晚下班之后同事问我的一个问题，不过当时已经7点，如果在不出公司就会赶不上最后一趟公交车，所以就给同事说回家研究研究礼拜一给他答案，昨晚无事就看了一下。</p>
+<h4>需要用到的模块</h4>
+<ul>
+<li>使用 <strong>pip</strong> 安装progressbar <code>pip install progressbar</code></li>
+<li>这里我是从ftp上下载一个或者多个文件，所以我们要用到 <strong>ftplib</strong>。这是python的标准模块，在代码前导入即可</li>
+<li>我在最后要把代码编译成exe文件所以要用 <strong>py2exe</strong> <code>pip install py2exe</code></li>
+</ul>
+<h4>原理</h4>
+<p>我们先来看一下progressbar的是原理，如下代码：</p>
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">51</span><span class="p">):</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s">&quot;Computing: [</span><span class="si">%s%s</span><span class="s">] </span><span class="si">%i%%</span><span class="se">\r</span><span class="s">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="s">&#39;#&#39;</span> <span class="o">*</span> <span class="n">x</span> <span class="p">,</span> <span class="s">&#39;-&#39;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">50</span> <span class="o">-</span> <span class="n">x</span><span class="p">)</span> <span class="p">,</span> <span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">))</span>
+    <span class="n">sys</span><span class="o">.</span><span class="n">stdout ...</span></pre></div>
+                <a class="readmore" href="http://blog.turbidsoul.me/pelican-blog/posts/pythonshi-xian-ming-ling-xing-xia-zai-jin-du-tiao.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://blog.turbidsoul.me/pelican-blog/posts/leibnizgong-shi-he-wallizgong-shi-gu-suan-pide-zhi.html" rel="bookmark"
+                           title="Permalink to Leibniz公式和Walliz公式估算Pi的值">Leibniz公式和Walliz公式估算Pi的值</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-06-08T00:00:00">
+                周六 08 六月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://blog.turbidsoul.me/pelican-blog/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">Python</a>. </p>
+<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/pi.html">pi</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/python.html">python</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/leibniz.html">leibniz</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/walliz.html">walliz</a></p>
+</footer><!-- /.post-info -->                <p>前两天和同事在聊天的时候说道了 $pi$ 的算法，回家之后在<a href="https://zh.wikipedia.org/wiki/圓周率">维基</a>上看了一下关于 $pi$ 的公式，正好这回没事干，就用Python实现了两个比较简单的公式，分别是Leibniz 和 Walliz.</p>
+<h2>Leibniz</h2>
+<p>公式如下：</p>
+<p>$1 - 1/3 + 1/5 - 1/7 + 1/9 - ... = pi/4$</p>
+<p>这个公式也可以用另外一种方式表示：</p>
+<p>$pi/4 = sum_{n=0}^{oo} (-1)^n/(2n+1)$</p>
+<p>从公式中能看出来，Leibniz是当n趋向于无穷大的时候，计算 $(-1)^n/(2n+1)$的和，用python代码实现如下：</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">leibniz_pi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">n ...</span></pre></div>
+                <a class="readmore" href="http://blog.turbidsoul.me/pelican-blog/posts/leibnizgong-shi-he-wallizgong-shi-gu-suan-pide-zhi.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://blog.turbidsoul.me/pelican-blog/posts/pythonshi-xian-morsebian-ma-yu-jie-ma.html" rel="bookmark"
+                           title="Permalink to python实现morse编码与解码">python实现morse编码与解码</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-06-04T00:00:00">
+                周二 04 六月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://blog.turbidsoul.me/pelican-blog/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">Python</a>. </p>
+<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/python.html">python</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/morse.html">morse</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/code.html">code</a></p>
+</footer><!-- /.post-info -->                <p>写这个完全是闲着无聊，看了一片趣文<a href="http://blog.jobbole.com/40628/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=draft-created-on-20130531-at-1028-am">趣文：表白后女生发给我一串五层加密的密码</a> 这篇文章来源自百度贴吧的的有一个帖子<a href="http://tieba.baidu.com/f?kz=529691897">传送门</a>，文章的内容还是很欢乐的。</p>
+<p>言归正传，<a href="http://zh.wikipedia.org/zh/%E6%91%A9%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81">Morse Code</a> 的算法是根据维基得来的，说白了就是键值对，编码解码也都是按照键值对进行匹配的。</p>
+<p>编码如下：</p>
+<div class="highlight"><pre><span class="n">__morse_code__</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;A&#39;</span><span class="p">:</span> <span class="s">&#39;.-&#39;</span><span class="p">,</span> <span class="s">&#39;B&#39;</span><span class="p">:</span> <span class="s">&#39;-...&#39;</span><span class="p">,</span> <span class="s">&#39;C&#39;</span><span class="p">:</span> <span class="s">&#39;-.-.&#39;</span><span class="p">,</span> <span class="s">&#39;D&#39;</span><span class="p">:</span> <span class="s">&#39;-..&#39;</span><span class="p">,</span> <span class="s">&#39;E&#39;</span><span class="p">:</span> <span class="s">&#39;.&#39;</span><span class="p">,</span> <span class="s">&#39;F&#39;</span><span class="p">:</span> <span class="s">&#39;..-.&#39;</span><span class="p">,</span> <span class="s">&#39;G&#39;</span><span class="p">:</span> <span class="s">&#39;--.&#39;</span><span class="p">,</span>
+    <span class="s">&#39;H&#39;</span><span class="p">:</span> <span class="s">&#39;....&#39;</span><span class="p">,</span> <span class="s">&#39;I&#39;</span><span class="p">:</span> <span class="s">&#39;..&#39;</span><span class="p">,</span> <span class="s">&#39;J&#39;</span><span class="p">:</span> <span class="s">&#39;.---&#39;</span><span class="p">,</span> <span class="s">&#39;K&#39;</span><span class="p">:</span> <span class="s">&#39;-.-&#39;</span><span class="p">,</span> <span class="s">&#39;L&#39;</span><span class="p">:</span> <span class="s">&#39;.-..&#39;</span><span class="p">,</span> <span class="s">&#39;M&#39;</span><span class="p">:</span> <span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="s">&#39;N&#39;</span><span class="p">:</span> <span class="s">&#39;-.&#39;</span><span class="p">,</span>
+    <span class="s">&#39;O&#39;</span><span class="p">:</span> <span class="s">&#39;---&#39;</span><span class="p">,</span> <span class="s">&#39;P&#39;</span><span class="p">:</span> <span class="s">&#39;.--.&#39;</span><span class="p">,</span> <span class="s">&#39;Q&#39;</span><span class="p">:</span> <span class="s">&#39;--.-&#39;</span><span class="p">,</span> <span class="s">&#39;R&#39;</span><span class="p">:</span> <span class="s">&#39;.-.&#39;</span><span class="p">,</span> <span class="s">&#39;S&#39;</span><span class="p">:</span> <span class="s">&#39;...&#39;</span><span class="p">,</span> <span class="s">&#39;T&#39;</span><span class="p">:</span> <span class="s">&#39;-&#39;</span><span class="p">,</span> <span class="s">&#39;U&#39;</span><span class="p">:</span> <span class="s">&#39;..-&#39;</span><span class="p">,</span>
+    <span class="s">&#39;V&#39;</span><span class="p">:</span> <span class="s">&#39;...-&#39;</span><span class="p">,</span> <span class="s">&#39;W&#39;</span><span class="p">:</span> <span class="s">&#39;.--&#39;</span><span class="p">,</span> <span class="s">&#39;X&#39;</span><span class="p">:</span> <span class="s">&#39;-..-&#39;</span><span class="p">,</span> <span class="s">&#39;Y&#39;</span><span class="p">:</span> <span class="s">&#39;-.--&#39;</span><span class="p">,</span> <span class="s">&#39;Z&#39;</span><span class="p">:</span> <span class="s">&#39;--..&#39;</span><span class="p">,</span>
+
+    <span class="s">&#39;1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;.----&#39;</span><span class="p">,</span> <span class="s">&#39;.-&#39;</span><span class="p">],</span> <span class="s">&#39;2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;..---&#39;</span><span class="p">,</span> <span class="s">&#39;..-&#39;</span><span class="p">],</span> <span class="s">&#39;3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;...--&#39;</span><span class="p">,</span> <span class="s">&#39;...-&#39;</span><span class="p">],</span> <span class="s">&#39;4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;....-&#39;</span><span class="p">,</span> <span class="s">&#39;....-&#39;</span><span class="p">],</span> <span class="s">&#39;5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;.....&#39;</span><span class="p">,</span> <span class="s">&#39;.&#39;</span><span class="p">],</span>
+    <span class="s">&#39;6&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;-....&#39;</span><span class="p">,</span> <span class="s">&#39;-....&#39;</span><span class="p">],</span> <span class="s">&#39;7&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;--...&#39;</span><span class="p">,</span> <span class="s">&#39;-...&#39;</span><span class="p">],</span> <span class="s">&#39;8&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;---..&#39;</span><span class="p">,</span> <span class="s">&#39;-..&#39;</span><span class="p">],</span> <span class="s">&#39;9 ...</span></pre></div>
+                <a class="readmore" href="http://blog.turbidsoul.me/pelican-blog/posts/pythonshi-xian-morsebian-ma-yu-jie-ma.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="http://blog.turbidsoul.me/pelican-blog/posts/misakapygmentsshi-xian-markdownsheng-cheng-htmlye-mian-bing-yu-fa-gao-liang.html" rel="bookmark"
+                           title="Permalink to Misaka+pygments实现markdown生成html页面并语法高亮">Misaka+pygments实现markdown生成html页面并语法高亮</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-05-14T00:00:00">
+                周二 14 五月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://blog.turbidsoul.me/pelican-blog/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">Python</a>. </p>
+<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/python.html">python</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/misaka.html">misaka</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/pygments.html">pygments</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/markdown.html">markdown</a></p>
+</footer><!-- /.post-info -->                <h2>来由</h2>
+<p>最近新blog开发到文章页面生成这块，看上了GFM这样的方式，使用markdown编辑页面，也很适合程序猿。使用富文本编辑始终太重量级，并不适合程序猿写文章，所以我也很推崇jekyll，用他来写文章、blog确实很geek也很舒适。</p>
+<p>经过几次简单的测试，最后决定使用<code>Misaka</code>+<code>pygments</code>，下面我简单说一下实现方法。</p>
+<h2>开始之前</h2>
+<p>我的测试例子中使用到了三个包，分别是 web.py , Misaka , pygments ,如果在开始之前需要使用pip安装这三个包</p>
+<h3>Web.py</h3>
+<p><a href="http://webpy.org" title="web.py">Web.py</a>是python的一个轻量级web框架，我只是简单的使用了一下，有兴趣的人可以去它的<a href="http://webpy.org" title="web.py">官网</a>,它的官方有一个<a href="http://webpy.org/docs/0.3/tutorial.zh-cn" title="web.py tutorial">中文教程</a>说的很详细。</p>
+<p>我这里使用他做一个简单的web服务：</p>
+<div class="highlight"><pre><span class="k">class</span> <span class="nc">Index</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">GET</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s">&quot;Hello World!&quot;</span>
+<span class="n">urls</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s">&#39;/&#39;</span><span class="p">,</span> <span class="s">&#39;Index&#39;</span>
+<span class="p">)</span>
+
+<span class="k">if</span> <span class="n">__name__</span> <span class="o">==</span> <span class="s">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app ...</span></pre></div>
+                <a class="readmore" href="http://blog.turbidsoul.me/pelican-blog/posts/misakapygmentsshi-xian-markdownsheng-cheng-htmlye-mian-bing-yu-fa-gao-liang.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
             </ol><!-- /#posts-list -->
 <p class="paginator">
-    Page 1 / 1
+    Page 1 / 2
+        <a href="http://blog.turbidsoul.me/pelican-blog/category\python2.html">&raquo;</a>
 </p>
             </section><!-- /#content -->
         <section id="extras" class="body">

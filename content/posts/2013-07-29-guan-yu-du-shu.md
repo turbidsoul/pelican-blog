@@ -1,11 +1,8 @@
----
-layout: post
-title: "关于读书"
-description: "关于读书"
+title: 关于读书
 category: 闲聊
-tags: [闲聊, math, code, programer, developer]
-published: true
----
+tags: 闲聊, math, code, programer, developer
+Author: Turbidsoul
+Date: 2013-07-29
 
 上个月的这个时候我买了 **Kindle Paperwrite**，看了一些关于历史的书和人物传记，最近两天又买了几本关于数学的书和一本C语言的入门书籍。我想我需要用6-8个月的时间看完这些书，然后在从中得到升华。
 

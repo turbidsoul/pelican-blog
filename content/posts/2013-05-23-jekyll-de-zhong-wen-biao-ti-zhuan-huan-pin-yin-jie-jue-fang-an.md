@@ -1,10 +1,7 @@
----
-layout: post
-title: "jekyll的中文标题转换拼音解决方案"
-description: "jekyll的中文标题转换拼音解决方案"
+title: jekyll的中文标题转换拼音解决方案
 category: jekyll
-tags: [jekyll, code, ruby]
----
+tags: jekyll, code, ruby
+Date: 2013-05-23
 
 整这个并不是什么刚需，纯粹是怕麻烦，直接把中文转换成拼音更方便一点。
 
@@ -27,7 +24,7 @@ task :post do
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
-  
+
   puts "Creating new post: #{filename}"
   open(filename, 'w') do |post|
     post.puts "---"
@@ -77,7 +74,7 @@ task :post do
   if File.exist?(filename)
     abort("rake aborted!") if ask("#{filename} already exists. Do you want to overwrite?", ['y', 'n']) == 'n'
   end
-  
+
   puts "Creating new post: #{filename}"
   open(filename, 'w') do |post|
     post.puts "---"

@@ -1,10 +1,7 @@
----
-layout: post
-title: "sublime插件emmet启动失败"
-description: "sublime插件emmet启动失败"
+title: sublime插件emmet启动失败
 category: Sublime
-tags: [sublime, python, emmet]
----
+tags: sublime, python, emmet
+Date: 2013-06-05
 
 最近发现我的sublime的emmet失效，查看了控制台，发现在sublime启动的失败，启动的时候报了如下的错误：
 

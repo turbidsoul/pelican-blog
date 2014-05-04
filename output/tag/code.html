@@ -14,14 +14,23 @@
         <header id="banner" class="body">
                 <h1><a href="/">Turbidsoul's 小黑屋 </a></h1>
                 <nav><ul>
+                    <li><a href="/category/firefox.html">firefox</a></li>
+                    <li><a href="/category/java.html">Java</a></li>
+                    <li><a href="/category/jekyll.html">jekyll</a></li>
                     <li><a href="/category/jquery.html">jquery</a></li>
                     <li><a href="/category/linux.html">Linux</a></li>
+                    <li><a href="/category/markdown.html">Markdown</a></li>
                     <li><a href="/category/math.html">Math</a></li>
+                    <li><a href="/category/maven.html">Maven</a></li>
                     <li><a href="/category/nginx.html">Nginx</a></li>
                     <li><a href="/category/posts.html">posts</a></li>
                     <li><a href="/category/python.html">Python</a></li>
                     <li><a href="/category/rtmp.html">RTMP</a></li>
                     <li><a href="/category/selenium.html">Selenium</a></li>
+                    <li><a href="/category/sublime.html">Sublime</a></li>
+                    <li><a href="/category/sublime2.html">Sublime2</a></li>
+                    <li><a href="/category/webrtc.html">WebRTC</a></li>
+                    <li><a href="/category/xian-liao.html">闲聊</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
 
@@ -231,46 +240,239 @@
 
             <li><article class="hentry">
                 <header>
-                    <h1><a href="/posts/develop-jquery-plugin.html" rel="bookmark"
-                           title="Permalink to 开发jquery插件">开发jquery插件</a></h1>
+                    <h1><a href="/posts/guan-yu-du-shu.html" rel="bookmark"
+                           title="Permalink to 关于读书">关于读书</a></h1>
                 </header>
 
                 <div class="entry-content">
 <footer class="post-info">
-        <abbr class="published" title="2011-12-01T00:00:00">
-                周四 01 十二月 2011
+        <abbr class="published" title="2013-07-29T00:00:00">
+                周一 29 七月 2013
         </abbr>
 
         <address class="vcard author">
                 By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
         </address>
-<p>In <a href="/category/jquery.html">jquery</a>. </p>
-<p>tags: <a href="/tag/jquery.html">jquery</a><a href="/tag/javascript.html">javascript</a><a href="/tag/code.html">code</a></p>
-</footer><!-- /.post-info -->                <p>公司网站首页广告位需要一个鼠标悬浮切换的特效，但是公司不让使用jquery已经实现过的特效，而公司的这方面的高手又没有时间做，所以只能自己去实现一个这样的特效插件。</p>
-<p>下面是先说下JQuery 插件大概的结构:</p>
-<div class="highlight"><pre><span class="c1">// 这里这个匿名函数，是为了避免冲突</span>
-<span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
-  <span class="c1">// 为JQuery 附加一个新的方法</span>
-  <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
-    <span class="c1">//这里需要开发的插件的名字</span>
-    <span class="nx">fv_adv</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
-      <span class="c1">// 这里就是插件的具体实现代码</span>
-    <span class="p">},</span>
-    <span class="err">……</span>
-    <span class="c1">// 这里可以继续增加插件</span>
-  <span class="p">});</span>
-<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
+<p>In <a href="/category/xian-liao.html">闲聊</a>. </p>
+<p>tags: <a href="/tag/xian-liao.html">闲聊</a><a href="/tag/math.html">math</a><a href="/tag/code.html">code</a><a href="/tag/programer.html">programer</a><a href="/tag/developer.html">developer</a></p>
+</footer><!-- /.post-info -->                <p>上个月的这个时候我买了 <strong>Kindle Paperwrite</strong>，看了一些关于历史的书和人物传记，最近两天又买了几本关于数学的书和一本C语言的入门书籍。我想我需要用6-8个月的时间看完这些书，然后在从中得到升华。</p>
+<blockquote>
+<p>以史博古、以史通今、以史通事、以史通政、以史通智、以史知辱、以史知道</p>
+<p>成为优秀的开发人员，可以没有数学技能，但成为卓越的开发人员，不能没有</p>
+</blockquote>
+<p>从上个月的的19号到今天我一共看了三本书，一本历史和两本任务传记：</p>
+<ul>
+<li><strong>《文革十年史》</strong></li>
+<li><strong>《晚年周恩来》</strong></li>
+<li><strong>《蒋介石传》</strong></li>
+</ul>
+<p>我并不想对这三本书做介绍，对于这三本书的内容是否真实，我也不想说太多，相不相信我觉得完全在自己。对于一个 <em>Code Monkey</em> (程序猿，代码猴)，我一直想把自己排除在政治之外，我也是一直都这么做的，但是我依然认为不管是做什么职业，生活在那个阶层，什么年龄段，都应该读史书，以史明鉴，只有知道了真实的历史，我们才能更加明白自己的前路在何方！</p>
+<p>至于读数学的书是因为上面那句话，我希望我自己能成为一个卓越的“ <em>Code Monkey</em> ”，但是我知道我并不聪明，也不如其他人努力，所以想让自己的名字前面加上 <strong>卓越</strong> 两个字的可能性并不大 ...</p>
+                <a class="readmore" href="/posts/guan-yu-du-shu.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/posts/pythonshi-xian-morsebian-ma-yu-jie-ma.html" rel="bookmark"
+                           title="Permalink to python实现morse编码与解码">python实现morse编码与解码</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-06-04T00:00:00">
+                周二 04 六月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="/category/python.html">Python</a>. </p>
+<p>tags: <a href="/tag/python.html">python</a><a href="/tag/morse.html">morse</a><a href="/tag/code.html">code</a></p>
+</footer><!-- /.post-info -->                <p>写这个完全是闲着无聊，看了一片趣文<a href="http://blog.jobbole.com/40628/?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=draft-created-on-20130531-at-1028-am">趣文：表白后女生发给我一串五层加密的密码</a> 这篇文章来源自百度贴吧的的有一个帖子<a href="http://tieba.baidu.com/f?kz=529691897">传送门</a>，文章的内容还是很欢乐的。</p>
+<p>言归正传，<a href="http://zh.wikipedia.org/zh/%E6%91%A9%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81">Morse Code</a> 的算法是根据维基得来的，说白了就是键值对，编码解码也都是按照键值对进行匹配的。</p>
+<p>编码如下：</p>
+<div class="highlight"><pre><span class="n">__morse_code__</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;A&#39;</span><span class="p">:</span> <span class="s">&#39;.-&#39;</span><span class="p">,</span> <span class="s">&#39;B&#39;</span><span class="p">:</span> <span class="s">&#39;-...&#39;</span><span class="p">,</span> <span class="s">&#39;C&#39;</span><span class="p">:</span> <span class="s">&#39;-.-.&#39;</span><span class="p">,</span> <span class="s">&#39;D&#39;</span><span class="p">:</span> <span class="s">&#39;-..&#39;</span><span class="p">,</span> <span class="s">&#39;E&#39;</span><span class="p">:</span> <span class="s">&#39;.&#39;</span><span class="p">,</span> <span class="s">&#39;F&#39;</span><span class="p">:</span> <span class="s">&#39;..-.&#39;</span><span class="p">,</span> <span class="s">&#39;G&#39;</span><span class="p">:</span> <span class="s">&#39;--.&#39;</span><span class="p">,</span>
+    <span class="s">&#39;H&#39;</span><span class="p">:</span> <span class="s">&#39;....&#39;</span><span class="p">,</span> <span class="s">&#39;I&#39;</span><span class="p">:</span> <span class="s">&#39;..&#39;</span><span class="p">,</span> <span class="s">&#39;J&#39;</span><span class="p">:</span> <span class="s">&#39;.---&#39;</span><span class="p">,</span> <span class="s">&#39;K&#39;</span><span class="p">:</span> <span class="s">&#39;-.-&#39;</span><span class="p">,</span> <span class="s">&#39;L&#39;</span><span class="p">:</span> <span class="s">&#39;.-..&#39;</span><span class="p">,</span> <span class="s">&#39;M&#39;</span><span class="p">:</span> <span class="s">&#39;--&#39;</span><span class="p">,</span> <span class="s">&#39;N&#39;</span><span class="p">:</span> <span class="s">&#39;-.&#39;</span><span class="p">,</span>
+    <span class="s">&#39;O&#39;</span><span class="p">:</span> <span class="s">&#39;---&#39;</span><span class="p">,</span> <span class="s">&#39;P&#39;</span><span class="p">:</span> <span class="s">&#39;.--.&#39;</span><span class="p">,</span> <span class="s">&#39;Q&#39;</span><span class="p">:</span> <span class="s">&#39;--.-&#39;</span><span class="p">,</span> <span class="s">&#39;R&#39;</span><span class="p">:</span> <span class="s">&#39;.-.&#39;</span><span class="p">,</span> <span class="s">&#39;S&#39;</span><span class="p">:</span> <span class="s">&#39;...&#39;</span><span class="p">,</span> <span class="s">&#39;T&#39;</span><span class="p">:</span> <span class="s">&#39;-&#39;</span><span class="p">,</span> <span class="s">&#39;U&#39;</span><span class="p">:</span> <span class="s">&#39;..-&#39;</span><span class="p">,</span>
+    <span class="s">&#39;V&#39;</span><span class="p">:</span> <span class="s">&#39;...-&#39;</span><span class="p">,</span> <span class="s">&#39;W&#39;</span><span class="p">:</span> <span class="s">&#39;.--&#39;</span><span class="p">,</span> <span class="s">&#39;X&#39;</span><span class="p">:</span> <span class="s">&#39;-..-&#39;</span><span class="p">,</span> <span class="s">&#39;Y&#39;</span><span class="p">:</span> <span class="s">&#39;-.--&#39;</span><span class="p">,</span> <span class="s">&#39;Z&#39;</span><span class="p">:</span> <span class="s">&#39;--..&#39;</span><span class="p">,</span>
+
+    <span class="s">&#39;1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;.----&#39;</span><span class="p">,</span> <span class="s">&#39;.-&#39;</span><span class="p">],</span> <span class="s">&#39;2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;..---&#39;</span><span class="p">,</span> <span class="s">&#39;..-&#39;</span><span class="p">],</span> <span class="s">&#39;3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;...--&#39;</span><span class="p">,</span> <span class="s">&#39;...-&#39;</span><span class="p">],</span> <span class="s">&#39;4&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;....-&#39;</span><span class="p">,</span> <span class="s">&#39;....-&#39;</span><span class="p">],</span> <span class="s">&#39;5&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;.....&#39;</span><span class="p">,</span> <span class="s">&#39;.&#39;</span><span class="p">],</span>
+    <span class="s">&#39;6&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;-....&#39;</span><span class="p">,</span> <span class="s">&#39;-....&#39;</span><span class="p">],</span> <span class="s">&#39;7&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;--...&#39;</span><span class="p">,</span> <span class="s">&#39;-...&#39;</span><span class="p">],</span> <span class="s">&#39;8&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s">&#39;---..&#39;</span><span class="p">,</span> <span class="s">&#39;-..&#39;</span><span class="p">],</span> <span class="s">&#39;9 ...</span></pre></div>
+                <a class="readmore" href="/posts/pythonshi-xian-morsebian-ma-yu-jie-ma.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/posts/jekyllmo-ban-de-zhong-wen-wen-ti.html" rel="bookmark"
+                           title="Permalink to jekyll模版的中文问题">jekyll模版的中文问题</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-05-31T00:00:00">
+                周五 31 五月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="/category/jekyll.html">Jekyll</a>. </p>
+<p>tags: <a href="/tag/jekyll.html">jekyll</a><a href="/tag/ruby.html">ruby</a><a href="/tag/code.html">code</a></p>
+</footer><!-- /.post-info -->                <p>今天在给blog添加<a href="http://creativecommons.org/licenses/by/3.0/cn/">Creative Commons</a>(简称CC)时，发现在jekyll的模版中不能加入中文。大概看了一下build时报的错，可以确定应该和jekyll不能发带有中文的文章的问题是一样的，不过出问题的地方不一样。</p>
+<h4>jekyll不能发有中文的文章</h4>
+<p>出问题的地方是在convertible.rb#31 行：</p>
+<div class="highlight"><pre><span class="nb">self</span><span class="o">.</span><span class="n">content</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="nb">name</span><span class="p">),</span> <span class="ss">:encoding</span> <span class="o">=&gt;</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
 </pre></div>
 
 
-<p>本来想把代码大概的说下的，但是觉得这个插件很简单，没有什么值得特别说说的，jquery的 插件结构就项上面说的那样，一个插件名，对应一个具体的实现，在function里写插件的具体代码，这些东西在网上被人都快说烂了，但是我觉得有些说的 实在不清晰，至少我没看明白，我在这里不像说太多的，有时候对于程序员来说具体的代码，比一本书更管用！</p>
-<p>源代码：<a href="http://www.rayfile.com/zh-cn/files/b82a5e82-1a71-11e1-88b6-0015c55db73d/">jquery_plugin.7z</a></p>
-                <a class="readmore" href="/posts/develop-jquery-plugin.html">read more</a>
+<p>如上面的代码在最后加入编码参数，以utf8读取文件即可，即用上面的代码替换原来的代码就可以了</p>
+<h4>jekyll模版不能包含中文</h4>
+<p>这问题出在 tags/include.rb#23 行：</p>
+<div class="highlight"><pre><span class="n">source</span> <span class="o">=</span> <span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="vi">@file</span><span class="p">,</span> <span class="ss">:encoding</span> <span class="o">=&gt;</span> <span class="s2">&quot;utf-8&quot;</span><span class="p">)</span>
+</pre></div>
+
+
+<p>同样的方式，替换原来的代码即可。</p>
+<h4>结论</h4>
+<p>同样的问题，应该都可以用同样的方式解决，jekyll作者应该并没有在这里考虑中文的问题，不过我们可以自己解决这个问题，如果有更新jekyll最新版，记得也要改响应的问题位置的相关编码问题。</p>
+                <a class="readmore" href="/posts/jekyllmo-ban-de-zhong-wen-wen-ti.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/posts/jekyllde-zhong-wen-biao-ti-zhuan-huan-pin-yin-jie-jue-fang-an.html" rel="bookmark"
+                           title="Permalink to jekyll的中文标题转换拼音解决方案">jekyll的中文标题转换拼音解决方案</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-05-23T00:00:00">
+                周四 23 五月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="/category/jekyll.html">jekyll</a>. </p>
+<p>tags: <a href="/tag/jekyll.html">jekyll</a><a href="/tag/code.html">code</a><a href="/tag/ruby.html">ruby</a></p>
+</footer><!-- /.post-info -->                <p>整这个并不是什么刚需，纯粹是怕麻烦，直接把中文转换成拼音更方便一点。</p>
+<p>其实很简单，问题是出在Rakefile文件中，请看项目下的Rakefile的第52行：</p>
+<div class="highlight"><pre><span class="n">task</span> <span class="ss">:post</span> <span class="k">do</span>
+  <span class="nb">abort</span><span class="p">(</span><span class="s2">&quot;rake aborted: &#39;</span><span class="si">#{</span><span class="no">CONFIG</span><span class="o">[</span><span class="s1">&#39;posts&#39;</span><span class="o">]</span><span class="si">}</span><span class="s2">&#39; directory not found.&quot;</span><span class="p">)</span> <span class="k">unless</span> <span class="no">FileTest</span><span class="o">.</span><span class="n">directory?</span><span class="p">(</span><span class="no">CONFIG</span><span class="o">[</span><span class="s1">&#39;posts&#39;</span><span class="o">]</span><span class="p">)</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;title&quot;</span><span class="o">]</span> <span class="o">||</span> <span class="s2">&quot;new-post&quot;</span>
+  <span class="n">tags</span> <span class="o">=</span> <span class="no">ENV</span><span class="o">[</span><span class="s2">&quot;tags&quot;</span><span class="o">]</span> <span class="o">||</span> <span class="s2">&quot;[]&quot;</span>
+  <span class="n">category</span> <span class="o">=</span> <span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;category&#39;</span><span class="o">]</span> <span class="o">||</span> <span class="s2">&quot;&quot;</span>
+  <span class="n">slug</span> <span class="o">=</span> <span class="n">title</span><span class="o">.</span><span class="n">downcase</span><span class="o">.</span><span class="n">strip</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">gsub</span><span class="p">(</span><span class="sr">/[^\w-]/</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+  <span class="k">begin</span>
+    <span class="n">date</span> <span class="o">=</span> <span class="p">(</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;date&#39;</span><span class="o">]</span> <span class="p">?</span> <span class="no">Time</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="no">ENV</span><span class="o">[</span><span class="s1">&#39;date&#39;</span><span class="o">]</span><span class="p">)</span> <span class="p">:</span> <span class="no">Time</span><span class="o">.</span><span class="n">now</span><span class="p">)</span><span class="o">.</span><span class="n">strftime ...</span></pre></div>
+                <a class="readmore" href="/posts/jekyllde-zhong-wen-biao-ti-zhuan-huan-pin-yin-jie-jue-fang-an.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/posts/java8de-bi-bao-lambdayu-ju-xiao-tan.html" rel="bookmark"
+                           title="Permalink to java8的闭包Lambda语句小探">java8的闭包Lambda语句小探</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-02-14T00:00:00">
+                周二 14 二月 2012
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="/category/java.html">Java</a>. </p>
+<p>tags: <a href="/tag/java.html">java</a><a href="/tag/lambda.html">lambda</a><a href="/tag/closure.html">closure</a><a href="/tag/code.html">code</a></p>
+</footer><!-- /.post-info -->                <p>这是我上个礼拜相对较闲的时候自己做的简单测试，应为那天正好在oschina上看到jdk1.8发布了开发者预览版，正好左右没事，就去下了一个，实验了一下java 的闭包。</p>
+<p>java 闭包，也就是Lambda表达式，和python中的lambda是一样的，语法也挺相似：</p>
+<div class="highlight"><pre><span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="s">&quot;Hello, &quot;</span> <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">&quot;!&quot;</span><span class="o">;</span>
+</pre></div>
+
+
+<p>下面我们来看个具体的例子：</p>
+<p>首先定义一个接口:</p>
+<div class="highlight"><pre><span class="kd">interface</span> <span class="nc">Lamb</span> <span class="o">{</span>
+    <span class="n">String</span> <span class="nf">str</span><span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">);</span>
+<span class="o">}</span>
+</pre></div>
+
+
+<p>之后我们就能在main方法中写下面的代码，编译并运行：</p>
+<div class="highlight"><pre><span class="n">Lamb</span> <span class="n">str</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">-&gt;</span> <span class="s">&quot;Hello, &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="o">;</span>
+<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">str</span><span class="o">.</span><span class="na">str</span><span class="o">(</span><span class="s">&quot;aaa&quot;</span><span class="o">));</span>
+</pre></div>
+
+
+<p>运行结果：
+<code>Hello, aaa</code>
+上面是最简单的hello world！</p>
+<p>在看一个多参数的例子:</p>
+<div class="highlight"><pre><span class="kd">interface</span> <span class="nc">MathLamb</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="nf">add ...</span></pre></div>
+                <a class="readmore" href="/posts/java8de-bi-bao-lambdayu-ju-xiao-tan.html">read more</a>
+                </div><!-- /.entry-content -->
+            </article></li>
+
+            <li><article class="hentry">
+                <header>
+                    <h1><a href="/posts/itextzhong-wen-chu-li-wen-ti.html" rel="bookmark"
+                           title="Permalink to IText中文处理问题！！！">IText中文处理问题！！！</a></h1>
+                </header>
+
+                <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2012-02-01T00:00:00">
+                周三 01 二月 2012
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="/category/java.html">Java</a>. </p>
+<p>tags: <a href="/tag/itext.html">itext</a><a href="/tag/java.html">java</a><a href="/tag/code.html">code</a></p>
+</footer><!-- /.post-info -->                <blockquote>
+<p>这篇文章是很早之前写的，是我在去第一个公司的时候遇到的问题</p>
+</blockquote>
+<p>这里说的IText中文处理问题，是指两种生成PDF文档是对中文处理的问题：</p>
+<ol>
+<li>是直接通过从数据库查询或者自己拼接中文字符串生成PDF文档。</li>
+<li>第二种是将一个HTML文档转换成PDF文档时的中文处理。</li>
+</ol>
+<p>首先说第一种：
+    这种很简单，我们只需为加上这样一句：</p>
+<div class="highlight"><pre><span class="n">BaseFont</span> <span class="n">bf</span> <span class="o">=</span> <span class="n">BaseFont</span><span class="o">.</span><span class="na">createFont</span><span class="o">(</span><span class="s">&quot;STSong-Light&quot;</span><span class="o">,</span><span class="s">&quot;UniGB-UCS2-H&quot;</span><span class="o">,</span><span class="n">BaseFont</span><span class="o">.</span><span class="na">NOT_EMBEDDED</span><span class="o">);</span>
+</pre></div>
+
+
+<p>在之后的给Document添加节点是为Paragraph设置字体时设置成BF就可以，如下：</p>
+<div class="highlight"><pre><span class="n">document</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="k">new</span> <span class="n">Paragraph</span><span class="o">(</span><span class="s">&quot;混沌之神&quot;</span><span class="o">,</span> <span class="k">new</span> <span class="n">Font</span><span class="o">(</span><span class="n">bf</span><span class="o">)));</span>
+</pre></div>
+
+
+<p>源码：</p>
+<div class="highlight"><pre><span class="cm">/**</span>
+<span class="cm"> * 生成PDF文件解决中文的例子</span>
+<span class="cm"> *</span>
+<span class="cm"> * @throws DocumentException</span>
+<span class="cm"> * @author &lt;b&gt;Innate Solitary&lt;/b&gt;&lt;br /&gt;</span>
+<span class="cm"> *         创建时间：&lt;b&gt;2008-6-4 下午09:47:37&lt;/b&gt;&lt;br /&gt;</span>
+<span class="cm"> * @throws IOException</span>
+<span class="cm"> */</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kt">void ...</span></pre></div>
+                <a class="readmore" href="/posts/itextzhong-wen-chu-li-wen-ti.html">read more</a>
                 </div><!-- /.entry-content -->
             </article></li>
             </ol><!-- /#posts-list -->
 <p class="paginator">
-    Page 1 / 1
+    Page 1 / 2
+        <a href="/tag\code2.html">&raquo;</a>
 </p>
             </section><!-- /#content -->
         <section id="extras" class="body">

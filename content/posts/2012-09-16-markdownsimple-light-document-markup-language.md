@@ -1,10 +1,7 @@
----
-layout: post
-title: "markdown：简单，轻量级的文档标记语言"
-description: "markdown：简单，轻量级的文档标记语言"
+title: markdown：简单，轻量级的文档标记语言
 category: Markdown
-tags: [markdown]
----
+tags: markdown
+Date: 2012-09-16
 
 
 最近喜欢喜欢上了markdown这东西，我觉得他简单，轻量级，易学，是非常适合开发人员用来写文档的工具，也尝试用他写了一些文档，配合这网上找的好的css样式，写出来的文档还是很漂亮和整洁的！

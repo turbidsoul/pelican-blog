@@ -1,10 +1,8 @@
----
-layout: post
-title: "python实现ldap和rtx之间的组织和用户数据同步"
-description: "python实现ldap和rtx之间的组织和用户数据同步"
+title: python实现ldap和rtx之间的组织和用户数据同步
 category: python
-tags: [python, ldap, rtx, win32com]
----
+tags: python, ldap, rtx, win32com
+Date: 2013-07-15
+
 
 
 最近公司正在准备使用 **AD** ( **[Activate Directory][]** )服务来进行公司员工的帐号管理，这样就避免不了需要对AD的帐号和[RTX][]的帐号和组织关系进行同步，所以才有了这篇文章。

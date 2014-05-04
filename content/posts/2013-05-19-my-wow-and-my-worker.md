@@ -1,10 +1,7 @@
----
-layout: post
-title: "我的魔兽世界，我的工作，我的生活"
-description: "我的魔兽世界，我的工作，我的生活"
-categorys: [wow, 闲聊]
-tags: [wow, work, 闲聊]
----
+title: 我的魔兽世界，我的工作，我的生活
+categorys:  闲聊
+tags: wow, work, 闲聊
+Date: 2013-05-19
 
 ### WOW
 

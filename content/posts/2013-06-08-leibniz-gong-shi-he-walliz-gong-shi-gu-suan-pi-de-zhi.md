@@ -1,10 +1,7 @@
----
-layout: post
-title: "Leibniz公式和Walliz公式估算Pi的值"
-description: "Leibniz公式和Walliz公式估算Pi的值"
+title: Leibniz公式和Walliz公式估算Pi的值
 category: Python
-tags: [pi, python, leibniz, walliz]
----
+tags: pi, python, leibniz, walliz
+Date: 2013-06-08
 
 前两天和同事在聊天的时候说道了 $pi$ 的算法，回家之后在[维基](https://zh.wikipedia.org/wiki/圓周率)上看了一下关于 $pi$ 的公式，正好这回没事干，就用Python实现了两个比较简单的公式，分别是Leibniz 和 Walliz.
 

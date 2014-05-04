@@ -1,11 +1,7 @@
----
-layout: post
-title: "Jquery分页插件"
-description: ""
+title: Jquery分页插件
 category: jquery
-tags: [jquery, javascript, code]
----
-
+tags: jquery, javascript, code
+Date: 2011-12-07
 
 我们头不让我们使用外面的页面特效脚本，因为页面加载的时候使用太多的不相关页面会影响页面加载的速度。so，只能自己动手去写一个分页插件。
 
@@ -30,7 +26,7 @@ var refresh_data = function($data, cur_page) {
             $(this).parent().hide();
         });
     });
- 
+
     $('#content_comment_more > dl').remove();
     $('#content_comment_more').append($data);
     if (cur_page == 1) {
@@ -66,9 +62,9 @@ var refresh_data = function($data, cur_page) {
         $prev_page.removeClass('disabled');
         $prev_page.unbind('click');
         $prev_page.bind('click', prev_page_click);
- 
+
         refresh_num_bar(cur_page);
- 
+
         $next_page.find('a').remove();
         $next_page.text('');
         var a_next = $('<a></a>');
@@ -98,13 +94,13 @@ var refresh_num_bar = function(cur_page) {
             }, num_page_click);
             $num_page_bar.append(a);
         }
- 
+
         if (cur_page + k > max_page) {
                      // 如果当前页是+k已经超过最大页的时候忽略当前循环，但是这个会造成当前那个页是倒数第三页且是最后一个按钮时，
                      // 会造成最后一个按钮无法显示出來，所以在前面的条件是加入这个按钮                     continue;
         }
- 
- 
+
+
         if (cur_page - 1 < 5 && cur_page == i) {
             $num_page_bar.append("<span class='num_page current'>" + cur_page + "</span>");
         } else if (cur_page - 1 >= 5 && i == 2) {
@@ -137,7 +133,7 @@ var refresh_num_bar = function(cur_page) {
                 }, num_page_click);
                 $num_page_bar.append(a);
             }
- 
+
         } else if (i < 5) {
             var a = $("<a class='num_page'>" + i + "</a>");
             a.bind("click", {
@@ -161,7 +157,7 @@ var refresh_num_bar = function(cur_page) {
             }, num_page_click);
             $num_page_bar.append(a);
         }
- 
+
         if (cur_page == 4 && i >= 5 && i <= 6) {
             var a = $("<a class='num_page'>" + i + "</a>");
             a.bind("click", {
@@ -169,7 +165,7 @@ var refresh_num_bar = function(cur_page) {
             }, num_page_click);
             $num_page_bar.append(a);
         }
- 
+
         if (cur_page == 5 && i >= 6 && i <= 7) {
             var a = $("<a class='num_page'>" + i + "</a>");
             a.bind("click", {
@@ -177,8 +173,8 @@ var refresh_num_bar = function(cur_page) {
             }, num_page_click);
             $num_page_bar.append(a);
         }
- 
- 
+
+
         k++;
     }
 };

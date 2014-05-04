@@ -228,34 +228,18 @@
 	"buffers":
 	[
 		{
-			"file": "pelicanconf.py",
+			"file": "content/posts/2013-08-14-cheng-xu-yuan-shu-xue---ling-de-gu-shi.md",
 			"settings":
 			{
-				"buffer_size": 877,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "fabfile.py",
-			"settings":
-			{
-				"buffer_size": 1481,
+				"buffer_size": 1150,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "publishconf.py",
+			"file": "/G/work/blogs/turbidsoul.github.io/_site/2013/08/14/cheng-xu-yuan-shu-xue---ling-de-gu-shi/index.html",
 			"settings":
 			{
-				"buffer_size": 603,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "Makefile",
-			"settings":
-			{
-				"buffer_size": 3751,
+				"buffer_size": 5544,
 				"line_ending": "Unix"
 			}
 		}
@@ -267,12 +251,20 @@
 		"selected_items":
 		[
 			[
-				"side",
-				"View: Toggle Side Bar"
+				"markdown",
+				"Set Syntax: Markdown GFM"
 			],
 			[
-				"markdown",
-				"Set Syntax: Markdown"
+				"gitig",
+				"Gitignore: New gitignore"
+			],
+			[
+				"git: pul",
+				"Git: Pull Current Branch"
+			],
+			[
+				"side",
+				"View: Toggle Side Bar"
 			],
 			[
 				"giti",
@@ -551,14 +543,34 @@
 	},
 	"file_history":
 	[
+		"/G/work/blogs/pelican-blog/content/posts/2013-10-17-shi-yong-selenium-jin-xing-web-ce-shi-ru-men-he-shi-yong-webdriver-kai-fa-web-ce-shi-dai-ma-ru-men.md",
+		"/G/work/blogs/turbidsoul.github.io/_site/2014/04/10/shi-yong-awk-zuo-shi-shi-de-tong-ji/index.html",
+		"/G/work/blogs/pelican-blog/content/posts/2013-08-16-python-332-mingw-gcc-471--an-zhuang-misaka-mo-kuai-shi-bian-yi-bao-cuo.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-08-14-cheng-xu-yuan-shu-xue---ling-de-gu-shi.md",
+		"/G/work/blogs/turbidsoul.github.io/_layouts/post.html",
+		"/G/work/blogs/turbidsoul.github.io/_layouts/default.html",
+		"/G/work/blogs/pelican-blog/content/posts/2013-11-13-nginx-uwsgi-bottlepy-pei-zhi-bu-shu-python-ying-yong.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-09-27-python-27-de-can-shu-jie-xi-mo-kuai-argparse.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-08-30-python-mo-kuai-html2bbcode.md",
+		"/G/work/blogs/pelican-blog/Makefile",
+		"/G/work/blogs/pelican-blog/publishconf.py",
+		"/G/work/blogs/pelican-blog/fabfile.py",
+		"/G/work/blogs/pelican-blog/develop_server.sh",
+		"/G/work/blogs/pelican-blog/pelicanconf.py",
+		"/G/work/blogs/pelican-blog/content/pages/about.html",
+		"/G/work/blogs/pelican-blog/content/posts/hello-word.md",
+		"/G/work/blogs/pelican-blog/content/posts/2014-01-26-nginx-shi-xian-wen-jian-xia-zai-zi-dong-da-bao-cheng-zip-wen-jian.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-11-22-python-logging-mo-kuai-de-filter.md",
+		"/G/work/blogs/pelican-blog/content/posts/2011-12-01-develop-jquery-plugin.md",
+		"/G/work/blogs/pelican-blog/content/posts/2014-04-10-shi-yong-awk-zuo-shi-shi-de-tong-ji.md",
+		"/G/work/blogs/pelican-blog/content/posts/2014-04-19-ffmpeg-rtmpdump-he-nginx-rtmp-shi-xian-lu-ping--zhi-bo-he-lu-zhi.md",
+		"/G/work/blogs/pelican-blog/content/posts2/shi-yong-awkzuo-shi-shi-de-tong-ji.html",
 		"/G/work/blogs/pelican-blog/serve.bat",
 		"/G/work/blogs/pelican-blog/content/hello-word.md",
 		"/F/Python27/Lib/site-packages/pelican/tools/templates/pelicanconf.py.in",
 		"/G/work/blogs/pelican-blog/content/2014-01-26-nginx-shi-xian-wen-jian-xia-zai-zi-dong-da-bao-cheng-zip-wen-jian.md",
 		"/G/work/blogs/pelican-blog/content/2014-04-19-ffmpeg-rtmpdump-he-nginx-rtmp-shi-xian-lu-ping--zhi-bo-he-lu-zhi.md",
 		"/G/work/blogs/pelican-blog/content/2014-04-10-shi-yong-awk-zuo-shi-shi-de-tong-ji.md",
-		"/G/work/blogs/pelican-blog/Makefile",
-		"/G/work/blogs/pelican-blog/fabfile.py",
 		"/F/Python27/Scripts/ghp-import",
 		"/F/Python27/Scripts/colout",
 		"/G/tool/cmder/vendor/Readme.md",
@@ -658,27 +670,7 @@
 		"/D/SublimeText3/Data/Packages/User/jinja2.sublime-settings",
 		"/D/SublimeText3/Data/Packages/EncodingHelper/EncodingHelper.sublime-settings",
 		"/D/SublimeText3/Data/Packages/Default/Default (Windows).sublime-keymap",
-		"/D/SublimeText3/Data/Packages/User/AutoUpdateSourceHeader.sublime-settings",
-		"/D/SublimeText3/Data/Packages/AutoUpdateSourceHeader/AutoUpdateSourceHeader.sublime-settings",
-		"/D/SublimeText3/Data/Packages/User/SyntaxMgr.sublime-settings",
-		"/E/work/python/glowing-reader/handler/__init__.py",
-		"/E/work/python/glowing-reader/__init__.py",
-		"/C/Users/Turbidsoul/Desktop/test_remote.py",
-		"/C/Users/Turbidsoul/Desktop/test_webdriver.py",
-		"/E/work/blogs/turbidsoul.github.io/about.md",
-		"/E/work/blogs/turbidsoul.github.io/_posts/2013-10-17-shi-yong-selenium-jin-xing-web-ce-shi-ru-men-he-shi-yong-webdriver-kai-fa-web-ce-shi-dai-ma-ru-men.md",
-		"/E/work/python/test/test2.py",
-		"/E/work/python/test/sample.py",
-		"/E/work/python/test/test3.py",
-		"/E/work/blogs/turbidsoul.github.io/_layouts/post.html",
-		"/E/work/blogs/turbidsoul.github.io/Rakefile",
-		"/E/work/blogs/turbidsoul.github.io/_config.yml",
-		"/E/work/blogs/turbidsoul.github.io/_posts/2013-05-16-about-morphia-storage-redundancy.md",
-		"/E/work/blogs/turbidsoul.github.io/_posts/2013-05-16-websocket-and-webrtc-to-implement-video-communications.md",
-		"/E/work/blogs/turbidsoul.github.io/_posts/2013-06-05-sublime-cha-jian-emmet-qi-dong-shi-bai.md",
-		"/E/work/blogs/turbidsoul.github.io/_posts/2013-05-16-how-can-configuration-sll-on-nginx-and-cas.md",
-		"/E/work/blogs/turbidsoul.github.io/_posts/2013-05-16-spring-configuration-file-and-annotation-load-question.md",
-		"/E/work/blogs/turbidsoul.github.io/_posts/2013-05-16-ftp-port-pasv-fxp-and-use-in-java-question.md"
+		"/D/SublimeText3/Data/Packages/User/AutoUpdateSourceHeader.sublime-settings"
 	],
 	"find":
 	{
@@ -756,91 +748,11 @@
 			[
 				{
 					"buffer": 0,
-					"file": "pelicanconf.py",
+					"file": "content/posts/2013-08-14-cheng-xu-yuan-shu-xue---ling-de-gu-shi.md",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 877,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								634,
-								634
-							]
-						],
-						"settings":
-						{
-							"c_time":
-							[
-								128,
-								3,
-								99,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								113,
-								0,
-								67,
-								10,
-								7,
-								222,
-								4,
-								30,
-								21,
-								21,
-								5,
-								0,
-								0,
-								0,
-								113,
-								1,
-								133,
-								113,
-								2,
-								82,
-								113,
-								3,
-								46
-							],
-							"encoding_helper_encoding": "cp936",
-							"incomplete_sync": null,
-							"origin_encoding": "ASCII",
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "fabfile.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1481,
+						"buffer_size": 1150,
 						"regions":
 						{
 						},
@@ -882,11 +794,11 @@
 								10,
 								7,
 								222,
-								4,
-								30,
-								23,
-								44,
-								15,
+								5,
+								3,
+								22,
+								19,
+								54,
 								0,
 								0,
 								0,
@@ -902,178 +814,98 @@
 							],
 							"encoding_helper_encoding": "UTF-8",
 							"incomplete_sync": null,
-							"origin_encoding": "ASCII",
+							"origin_encoding": "UTF-8",
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/Python/Python.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/G/work/blogs/turbidsoul.github.io/_site/2013/08/14/cheng-xu-yuan-shu-xue---ling-de-gu-shi/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5544,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								927,
+								927
+							]
+						],
+						"settings":
+						{
+							"c_time":
+							[
+								128,
+								3,
+								99,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								100,
+								97,
+								116,
+								101,
+								116,
+								105,
+								109,
+								101,
+								10,
+								113,
+								0,
+								67,
+								10,
+								7,
+								222,
+								4,
+								22,
+								22,
+								39,
+								13,
+								0,
+								0,
+								0,
+								113,
+								1,
+								133,
+								113,
+								2,
+								82,
+								113,
+								3,
+								46
+							],
+							"encoding_helper_encoding": "UTF-8",
+							"incomplete_sync": null,
+							"origin_encoding": "UTF-8",
+							"remote_loading": false,
+							"synced": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": -0.0,
+						"translation.y": 855.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "publishconf.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 603,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								504,
-								504
-							]
-						],
-						"settings":
-						{
-							"c_time":
-							[
-								128,
-								3,
-								99,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								113,
-								0,
-								67,
-								10,
-								7,
-								222,
-								4,
-								30,
-								21,
-								21,
-								5,
-								0,
-								0,
-								0,
-								113,
-								1,
-								133,
-								113,
-								2,
-								82,
-								113,
-								3,
-								46
-							],
-							"encoding_helper_encoding": "cp936",
-							"incomplete_sync": null,
-							"origin_encoding": "ASCII",
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Python/Python.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "Makefile",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3751,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2526,
-								2526
-							]
-						],
-						"settings":
-						{
-							"c_time":
-							[
-								128,
-								3,
-								99,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								113,
-								0,
-								67,
-								10,
-								7,
-								222,
-								4,
-								30,
-								21,
-								21,
-								5,
-								0,
-								0,
-								0,
-								113,
-								1,
-								133,
-								113,
-								2,
-								82,
-								113,
-								3,
-								46
-							],
-							"encoding_helper_encoding": "cp936",
-							"incomplete_sync": null,
-							"origin_encoding": "ASCII",
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/Makefile/Makefile.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 720.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -1120,7 +952,7 @@
 	},
 	"output.git":
 	{
-		"height": 102.0
+		"height": 124.0
 	},
 	"output.git-pull":
 	{

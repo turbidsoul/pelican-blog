@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+        <meta charset="utf-8" />
+        <title>fn实现无限计算等比级数</title>
+        <link rel="stylesheet" href="http://blog.turbidsoul.me/pelican-blog/theme/css/main.css" />
+        <link href="http://blog.turbidsoul.me/pelican-blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Turbidsoul's 小黑屋 Atom Feed" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="http://blog.turbidsoul.me/pelican-blog/">Turbidsoul's 小黑屋 </a></h1>
+                <nav><ul>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/firefox.html">firefox</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/java.html">Java</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jekyll.html">jekyll</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jquery.html">jquery</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/linux.html">Linux</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/markdown.html">Markdown</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/math.html">Math</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/maven.html">Maven</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/nginx.html">Nginx</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/posts.html">posts</a></li>
+                    <li class="active"><a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">Python</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/rtmp.html">RTMP</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/selenium.html">Selenium</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime.html">Sublime</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime2.html">Sublime2</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/webrtc.html">WebRTC</a></li>
+                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/xian-liao.html">闲聊</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+  <article>
+    <header>
+      <h1 class="entry-title">
+        <a href="http://blog.turbidsoul.me/pelican-blog/posts/fnshi-xian-wu-xian-ji-suan-deng-bi-ji-shu.html" rel="bookmark"
+           title="Permalink to fn实现无限计算等比级数">fn实现无限计算等比级数</a></h1>
+    </header>
+
+    <div class="entry-content">
+<footer class="post-info">
+        <abbr class="published" title="2013-04-28T00:00:00">
+                周日 28 四月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="http://blog.turbidsoul.me/pelican-blog/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">Python</a>. </p>
+<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/python.html">python</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/arithmetic.html">arithmetic</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/functional.html">functional</a></p>
+</footer><!-- /.post-info -->      <p>今天看InfoQ上的一篇关于 <a href="http://www.infoq.com/cn/articles/fn.py-functional-programming-python">Fn.py</a> 的文章，Fn中的Stream可以实现无限序列，例如文章中的代码：</p>
+<div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">()</span>
+<span class="n">fib</span> <span class="o">=</span> <span class="n">f</span> <span class="o">&lt;&lt;</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">drop</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span>
+</pre></div>
+
+
+<p>这是实现了一个无限的斐波那契数列，我根据这个实现了一个等比级数，等比级数的公式是f = b^(n-1), b是基数，n=1 f=1, n&gt;=2 f=b^(n-1)。</p>
+<p>我实现的方法使用了生成器：</p>
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">geo_sequence</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
+    <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="k">yield</span> <span class="n">b</span> <span class="o">**</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
+        <span class="n">n</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+
+
+<p>如上面代码，这是一个无限循环的生成器，每次调用next的时候都会得到下一个等比级数</p>
+<div class="highlight"><pre><span class="n">gs</span> <span class="o">=</span> <span class="n">geo_sequence</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">gs</span><span class="o">.</span><span class="n">next</span><span class="p">()</span> <span class="c"># output 3</span>
+<span class="k">print</span> <span class="n">gs</span><span class="o">.</span><span class="n">next</span><span class="p">()</span> <span class="c"># output 9</span>
+<span class="k">print</span> <span class="n">gs</span><span class="o">.</span><span class="n">next</span><span class="p">()</span> <span class="c"># output 27</span>
+<span class="k">print</span> <span class="n">gs</span><span class="o">.</span><span class="n">next</span><span class="p">()</span> <span class="c"># output 81</span>
+</pre></div>
+
+
+<p>如何使用Stream实现无限序列呢？很简单，如下：</p>
+<div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">()</span>
+<span class="n">f</span> <span class="o">&lt;&lt;</span> <span class="n">geo_sequence</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="k">print</span> <span class="n">f</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="k">print</span> <span class="nb">list</span><span class="p">(</span><span class="n">f</span><span class="p">[:</span><span class="mi">5</span><span class="p">])</span>
+<span class="k">print</span> <span class="nb">list</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">5</span><span class="p">])</span>
+<span class="k">print</span> <span class="nb">list</span><span class="p">(</span><span class="n">f</span><span class="p">[</span><span class="mi">5</span><span class="p">:</span><span class="mi">10</span><span class="p">])</span>
+</pre></div>
+
+
+<p>output:</p>
+<div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="mi">81</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">243</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">81</span><span class="p">,</span> <span class="mi">243</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="mi">729</span><span class="p">,</span> <span class="mi">2187</span><span class="p">,</span> <span class="mi">6561</span><span class="p">,</span> <span class="mi">19683</span><span class="p">,</span> <span class="mi">59049</span><span class="p">]</span>
+</pre></div>
+
+
+<p>就这样！</p>
+    </div><!-- /.entry-content -->
+
+  </article>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://blog.turbidsoul.me">Turbidsoul's 小黑屋</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+                            <li><a href="http://blog.turbidsoul.me/pelican-blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

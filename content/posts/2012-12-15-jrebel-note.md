@@ -1,11 +1,7 @@
----
-layout: post
-title: "JRebel小记"
-description: "JRebel小记"
+title: JRebel小记
 category: Java
-tags: [java, jrebel]
----
-
+tags: java, jrebel
+Date: 2012-12-15
 
 
 
@@ -15,19 +11,19 @@ tags: [java, jrebel]
 
 首先说一下如何在通过RunJettyRun使用JRebel,其实很简单，只需要在启动的配置的 Arguments > VM Arguments 中加入 “${jrebel_args}”就可以了， 这样在启动的时候就能看到JRebel启动：
 
-    [2012-12-15 22:32:17] 
+    [2012-12-15 22:32:17]
     [2012-12-15 22:32:17] #############################################################
-    [2012-12-15 22:32:17] 
+    [2012-12-15 22:32:17]
     [2012-12-15 22:32:17]  JRebel 5.0.0 (201206080930)
     [2012-12-15 22:32:17]  (c) Copyright ZeroTurnaround OU, Estonia, Tartu.
-    [2012-12-15 22:32:17] 
-    [2012-12-15 22:32:17]  Over the last 1 days JRebel prevented 
+    [2012-12-15 22:32:17]
+    [2012-12-15 22:32:17]  Over the last 1 days JRebel prevented
     [2012-12-15 22:32:17]  at least 2 redeploys/restarts saving you about 0.1 hours.
-    [2012-12-15 22:32:17] 
+    [2012-12-15 22:32:17]
     [2012-12-15 22:32:17]  This product is licensed to Unlimited
     [2012-12-15 22:32:17]  For FUN! Unlimited! Enjoy!
-    [2012-12-15 22:32:17] 
-    [2012-12-15 22:32:17]  The following plugins are disabled at the moment: 
+    [2012-12-15 22:32:17]
+    [2012-12-15 22:32:17]  The following plugins are disabled at the moment:
     [2012-12-15 22:32:17]  * Apache MyFaces plugin (set -Drebel.myfaces_plugin=true to enable)
     [2012-12-15 22:32:17]  * Click plugin (set -Drebel.click_plugin=true to enable)
     [2012-12-15 22:32:17]  * JRuby Plugin (set -Drebel.jruby_plugin=true to enable)
@@ -36,13 +32,13 @@ tags: [java, jrebel]
     [2012-12-15 22:32:17]  * Oracle ADF Faces plugin (set -Drebel.adf_faces_plugin=true to enable)
     [2012-12-15 22:32:17]  * Seam-Wicket plugin (set -Drebel.seam_wicket_plugin=true to enable)
     [2012-12-15 22:32:17]  * WebObjects plugin (set -Drebel.webobjects_plugin=true to enable)
-    [2012-12-15 22:32:17] 
+    [2012-12-15 22:32:17]
     [2012-12-15 22:32:17] #############################################################
-    [2012-12-15 22:32:17] 
-    [2012-12-15 22:32:17] 
-    [2012-12-15 22:32:17] JRebel: A newer version '5.1.1' is available for download 
+    [2012-12-15 22:32:17]
+    [2012-12-15 22:32:17]
+    [2012-12-15 22:32:17] JRebel: A newer version '5.1.1' is available for download
     [2012-12-15 22:32:17] JRebel: from http://www.zeroturnaround.com/jrebel/upgrade/
-    [2012-12-15 22:32:17] 
+    [2012-12-15 22:32:17]
 
 当看到上面的信息就说明JRebel已经启动成功了，也就是说现在JRebel已经生效了。
 

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="cn">
+<head>
+        <meta charset="utf-8" />
+        <title>Turbidsoul's 小黑屋 - aes</title>
+        <link rel="stylesheet" href="/theme/css/main.css" />
+
+        <!--[if IE]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="/">Turbidsoul's 小黑屋 </a></h1>
+                <nav><ul>
+                    <li><a href="/category/firefox.html">firefox</a></li>
+                    <li><a href="/category/java.html">Java</a></li>
+                    <li><a href="/category/jekyll.html">jekyll</a></li>
+                    <li><a href="/category/jquery.html">jquery</a></li>
+                    <li><a href="/category/linux.html">Linux</a></li>
+                    <li><a href="/category/markdown.html">Markdown</a></li>
+                    <li><a href="/category/math.html">Math</a></li>
+                    <li><a href="/category/maven.html">Maven</a></li>
+                    <li><a href="/category/nginx.html">Nginx</a></li>
+                    <li><a href="/category/posts.html">posts</a></li>
+                    <li><a href="/category/python.html">Python</a></li>
+                    <li><a href="/category/rtmp.html">RTMP</a></li>
+                    <li><a href="/category/selenium.html">Selenium</a></li>
+                    <li><a href="/category/sublime.html">Sublime</a></li>
+                    <li><a href="/category/sublime2.html">Sublime2</a></li>
+                    <li><a href="/category/webrtc.html">WebRTC</a></li>
+                    <li><a href="/category/xian-liao.html">闲聊</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+
+            <aside id="featured" class="body">
+                <article>
+                    <h1 class="entry-title"><a href="/posts/opensslhe-java-aessuan-fa-de-de-wen-ti.html">OpenSSL和Java AES算法的的问题</a></h1>
+<footer class="post-info">
+        <abbr class="published" title="2013-03-13T00:00:00">
+                周三 13 三月 2013
+        </abbr>
+
+        <address class="vcard author">
+                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
+        </address>
+<p>In <a href="/category/java.html">Java</a>. </p>
+<p>tags: <a href="/tag/openssl.html">openssl</a><a href="/tag/java.html">java</a><a href="/tag/aes.html">aes</a><a href="/tag/arithmetic.html">arithmetic</a></p>
+</footer><!-- /.post-info --><p>开篇第一句话我想说， <strong>OpenSSL不支持与Java的对接</strong> ，这是多么蛋疼的一句话，不过确实是这样，原因是在c中的填充方式和Java中的填充方式不一样，Java不支持c中的/0的填充方式。</p>
+<p>具体信息请查看：<a href="http://blog.csdn.net/rocketball/article/details/6575677">OpenSSL和JAVA AES算法的问题总结</a></p>
+<p>至于我为什么会写这篇文章呢，是我们的项目中有部分在网络传输的内容需要加密，所以就选用了AES的，服务端使用的是<a href="http://openresty.org/">openresty</a> 这是淘宝的一个大牛写的，他里面集成了LuaJit， 加密的部分使用的是resty.aes，而resty使用的是OpenSSL的C代码实现的加密解密。为了和OpenSSL实现对接，我就蛋疼的去简单的链接了下OpenSSL，在上面的文章中才指导OpenSSL并不支持Java，查了无数人的文章，很多人都对这个问题很苦恼，最后在 stackoverflow 里找到了一个大牛给出了一个解码的实现 <a href="http://stackoverflow.com/questions/11783062/how-to-decrypt-an-encrypted-file-in-java-with-openssl-with-aes">stackoverflow </a>我根据这位大牛的代码简单的修改了一下，就做成了我需要的代码：</p>
+<script src="https://gist.github.com/turbidsoul/5227012.js"></script>
+
+<p>最后我想吐槽一下lua5.1居然不支持位运算，要5.2才支持，好吧，openresty集成的就是5.1所以我在实现lua的16位编码解码果然蛋疼了一下。</p>                </article>
+<p class="paginator">
+    Page 1 / 1
+</p>
+            </aside><!-- /#featured -->
+            </ol><!-- /#posts-list -->
+            </section><!-- /#content -->
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>blogroll</h2>
+                        <ul>
+                            <li><a href="http://blog.turbidsoul.me">Turbidsoul's 小黑屋</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

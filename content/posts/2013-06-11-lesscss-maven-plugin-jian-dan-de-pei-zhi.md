@@ -1,10 +1,7 @@
----
-layout: post
-title: "lesscss maven plugin简单的配置"
-description: "lesscss maven plugin简单的配置"
+title: lesscss maven plugin简单的配置
 category: Maven
-tags: [lesscss, maven, java]
----
+tags: lesscss, maven, java
+Date: 2013-06-11
 
 这其实是一个很简单的问题，本来并不打算写成一片文章的，因为这个文件和另外一个问题是一起的，就是我们在nginx上做css和js文件合并时遇到的，不过在这之前我还遇到了另外一个问题，就是我们开发环境是windows7，而nginx下有个静态文件合并的模块: **http\_concat\_module** ，是[淘宝][1]开源的，这个模块并不是nginx标准模块，所以要使用它需要自己重新编译nginx，具体如何编译我需要一段一点时间整理一下，在之后的文章中会写出来。
 

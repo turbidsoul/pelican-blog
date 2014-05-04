@@ -1,11 +1,7 @@
----
-layout: post
-title: "Misaka+pygments实现markdown生成html页面并语法高亮"
-description: "Misaka+pygments实现markdown生成html页面并语法高亮"
+title: Misaka+pygments实现markdown生成html页面并语法高亮
 category: Python
-tags: [python, misaka, pygments, markdown]
----
-
+tags: python, misaka, pygments, markdown
+Date: 2013-05-14
 
 ## 来由
 最近新blog开发到文章页面生成这块，看上了GFM这样的方式，使用markdown编辑页面，也很适合程序猿。使用富文本编辑始终太重量级，并不适合程序猿写文章，所以我也很推崇jekyll，用他来写文章、blog确实很geek也很舒适。
@@ -45,7 +41,7 @@ import misaka as m
 print m.html('A ~~complex~~ simple example.', extensions=m.EXT_STRIKETHROUGH)
 # <p>A <del>complex</del> simple example.</p>
 
-print m.html('The 2^(nd) ~~complex~~ simple example.', 
+print m.html('The 2^(nd) ~~complex~~ simple example.',
         extensions=m.EXT_STRIKETHROUGH | m.EXT_SUPERSCRIPT)
 # <p>The 2<sup>nd</sup> <del>complex</del> simple example.</p>
 

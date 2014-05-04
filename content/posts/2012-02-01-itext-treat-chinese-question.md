@@ -1,10 +1,7 @@
----
-layout: post
-title: "IText中文处理问题！！！ "
-description: "IText中文处理问题！！！ "
+title: IText中文处理问题！！！
 category: Java
-tags: [itext, java, code]
----
+tags: itext, java, code
+Date: 2012-02-01
 
 
 > 这篇文章是很早之前写的，是我在去第一个公司的时候遇到的问题

@@ -1,11 +1,7 @@
----
-layout: post
-title: "OpenSSL和Java AES算法的的问题"
-description: "OpenSSL和Java AES算法的的问题 "
+title: OpenSSL和Java AES算法的的问题
 category: Java
-tags: [openssl, java, aes, arithmetic]
----
-
+tags: openssl, java, aes, arithmetic
+Date: 2013-03-13
 
 
 

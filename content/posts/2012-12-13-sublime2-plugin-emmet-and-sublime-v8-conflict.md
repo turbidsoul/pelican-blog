@@ -1,10 +1,7 @@
----
-layout: post
-title: "Sublime2插件Emmet和SublimeV8冲突 "
-description: "Sublime2插件Emmet和SublimeV8冲突 "
+title: Sublime2插件Emmet和SublimeV8冲突
 category: Sublime2
-tags: [sublime2, emmet, sublimev8]
----
+tags: sublime2, emmet, sublimev8
+Date: 2012-12-13
 
 Zencode很久没有更新，最近在github上看到Zencode的作者[sergeche](https://github.com/sergeche)把Zencode更名为Emmet，并增加了很多新功能.
 

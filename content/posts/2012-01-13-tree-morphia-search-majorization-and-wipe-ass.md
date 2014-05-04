@@ -1,10 +1,7 @@
----
-layout: post
-title: "树，morphia，查询，优化和擦屁股！ "
-description: "树，morphia，查询，优化和擦屁股！ "
+title: 树，morphia，查询，优化和擦屁股！
 category: Java
-tags: [java, morphia, mongo, code]
----
+tags: java, morphia, mongo, code
+Date: 2012-01-13
 
 
 前天和昨天一直都在忙后台CMS树的优化和一些bug的修改，不过主要精力放在了树的优化上。

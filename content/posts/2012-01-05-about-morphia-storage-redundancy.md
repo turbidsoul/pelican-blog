@@ -1,11 +1,7 @@
----
-layout: post
-title: "关于Morphia在存储冗余类的时候出现的一个问题？"
-description: "关于Morphia在存储冗余类的时候出现的一个问题？"
+title: 关于Morphia在存储冗余类的时候出现的一个问题？
 category: Java
-tags: [java, morphia, code, mongo]
----
-
+tags: java, morphia, code, mongo
+Date: 2012-01-05
 
 昨天中午临吃午饭前，我对系统的业务功能代码进行重构之后，准备测试一下，通过就去吃饭，但是发生了一个让我很意外的问题，就是在存储的时候，系统 报出来，类型转换异常（`java.lang.ClassCaseException`）或者是这么一个错误信息（`object is not an instance of declaring class`），很纠结因为之前这里测试都好好的，而且给内容组，视频组和测试组部署的测试环境，还在正常运行，一时想不通那里出了问题。
 

@@ -1,11 +1,7 @@
----
-layout: post
-title: "fn实现无限计算等比级数"
-description: "fn实现无限计算等比级数"
+title: fn实现无限计算等比级数
 category: Python
-tags: [python, arithmetic, functional]
----
-
+tags: python, arithmetic, functional
+Date: 2013-04-28
 
 今天看InfoQ上的一篇关于 [Fn.py](http://www.infoq.com/cn/articles/fn.py-functional-programming-python) 的文章，Fn中的Stream可以实现无限序列，例如文章中的代码：
 
@@ -57,4 +53,4 @@ output:
 >>> [729, 2187, 6561, 19683, 59049]
 ```
 
-就这样！ 
+就这样！

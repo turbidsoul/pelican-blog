@@ -1,11 +1,7 @@
----
-layout: post
-title: "JDK8新特性 Calendar.Builder"
-description: "JDK8新特性 Calendar.Builder"
+title: JDK8新特性 Calendar.Builder
 category: Java
-tags: [java, jdk8]
-published: true
----
+tags: java, jdk8
+Date: 2013-05-29
 
 5月23号，Oracle 发布了 jdk8 **M7** 版，这是一个[Feature Complete](http://openjdk.java.net/projects/jdk8/milestones#Feature_Complete)，就是说它已经把所有特性和功能都加入。在翻看 **M7** 的文档时发现了 [*Locale.Builder*][locale_buidler] ，在jdk7的时候加入过一个类似的：[*Locale.Builder*][locale_buidler], 下面我们来看看 [*Calendar.Builder*][calendar_builder]。
 

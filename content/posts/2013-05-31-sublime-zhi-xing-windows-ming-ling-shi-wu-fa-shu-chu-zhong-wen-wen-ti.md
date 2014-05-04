@@ -1,10 +1,7 @@
----
-layout: post
-title: "sublime执行windows命令时无法输出中文问题"
-description: "sublime执行windows命令时无法输出中文问题"
+title: sublime执行windows命令时无法输出中文问题
 category: sublime
-tags: [sublime, python]
----
+tags: sublime, python
+Date: 2013-05-31
 
 这是一个很简单的问题，我最近在研究jdk8，使用sublime自定义的编译方式运行，是编译运行的结果显示到sublime控制台上，但是这里如果运行的话会提示 *Decode error* 虽然没有太大的影响但是看着总是很难受，而且有时候也不太方便，所以就自己找出问题解决掉。
 
@@ -24,7 +21,7 @@ D:\SublimeText\Data\Packages\GoSublime\gosubl\gs.py:
   672       return (res, 'Unexpected value type')
   673   except Exception as ex:
   674:      return (default, 'Decode Error: %s' % ex)
-  675  
+  675
   676  def json_encode(a):
 
 
