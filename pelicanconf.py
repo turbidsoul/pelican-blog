@@ -26,8 +26,11 @@ LINKS =  (('Turbidsoul\'s 小黑屋', 'http://blog.turbidsoul.me'),
           ('You can modify those links in your config file', '#'),)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+SOCIAL = (('Google+', 'https://plus.google.com/+TurbidsoulChen'),
+          ('Twitter', 'https://twitter.com/Turbidsoul'),
+          ('Facebook', 'https://facebook.com/turbidsoul'),
+          ('微博', 'http://weibo.com/turbidsoul'),
+          ('Instagram', 'http://instagram.com/turbidsoul'))
 
 DEFAULT_PAGINATION = 10
 
