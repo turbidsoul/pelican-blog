@@ -228,19 +228,11 @@
 	"buffers":
 	[
 		{
-			"file": "content/posts/2013-08-14-cheng-xu-yuan-shu-xue---ling-de-gu-shi.md",
+			"file": "pelicanconf.py",
 			"settings":
 			{
-				"buffer_size": 1150,
+				"buffer_size": 1138,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/G/work/blogs/turbidsoul.github.io/_site/2013/08/14/cheng-xu-yuan-shu-xue---ling-de-gu-shi/index.html",
-			"settings":
-			{
-				"buffer_size": 5544,
-				"line_ending": "Unix"
 			}
 		}
 	],
@@ -250,6 +242,10 @@
 		"height": 375.0,
 		"selected_items":
 		[
+			[
+				"side",
+				"View: Toggle Side Bar"
+			],
 			[
 				"markdown",
 				"Set Syntax: Markdown GFM"
@@ -261,10 +257,6 @@
 			[
 				"git: pul",
 				"Git: Pull Current Branch"
-			],
-			[
-				"side",
-				"View: Toggle Side Bar"
 			],
 			[
 				"giti",
@@ -507,7 +499,7 @@
 				"Git: Revert: unstage"
 			]
 		],
-		"width": 562.0
+		"width": 514.0
 	},
 	"console":
 	{
@@ -543,10 +535,50 @@
 	},
 	"file_history":
 	[
+		"/G/work/blogs/pelican-blog/content/posts/2013-05-17-acts-relocation-is-complete.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-05-15-first-post-on-jekyll.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-05-14-misaka-and-pygments-to-implements-markdown-generate-html-and-syntax-highlight.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-05-08-how-can-configuration-sll-on-nginx-and-cas.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-04-18-fn-unlimited-calculated-geometrically.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-03-24-python-to-implements-permutaion-and-combination.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-03-13-openssl-and-java-aes-arithmetic-question.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-02-28-websocket-and-webrtc-to-implement-video-communications.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-02-01-quickly-calculate-the-1-of-bits.md",
+		"/G/work/blogs/pelican-blog/content/posts/2012-12-29-ftp-port-pasv-fxp-and-use-in-java-question.md",
+		"/G/work/blogs/pelican-blog/content/posts/2012-12-15-jrebel-note.md",
+		"/G/work/blogs/pelican-blog/content/posts/2012-12-13-sublime2-plugin-emmet-and-sublime-v8-conflict.md",
+		"/G/work/blogs/pelican-blog/content/posts/2012-09-16-markdownsimple-light-document-markup-language.md",
+		"/G/work/blogs/pelican-blog/content/posts/2012-03-16-about-firefox-use-google-hijack-to-www51616net.md",
+		"/G/work/blogs/pelican-blog/content/posts/2012-02-24-spring-configuration-file-and-annotation-load-question.md",
+		"/G/work/blogs/pelican-blog/content/posts/2012-02-14-java-closure-lambda-explore.md",
+		"/G/work/blogs/pelican-blog/content/posts/2012-02-01-itext-treat-chinese-question.md",
+		"/G/work/blogs/pelican-blog/content/posts/2012-01-13-tree-morphia-search-majorization-and-wipe-ass.md",
+		"/G/work/blogs/pelican-blog/content/posts/2012-01-05-about-morphia-storage-redundancy.md",
+		"/G/work/blogs/pelican-blog/content/posts/2011-12-07-jquery-pagination-plugin.md",
+		"/G/work/blogs/pelican-blog/content/posts/2011-12-01-develop-jquery-plugin.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-05-15-hello-world.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-05-19-my-wow-and-my-worker.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-06-08-leibniz-gong-shi-he-walliz-gong-shi-gu-suan-pi-de-zhi.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-06-05-sublime-cha-jian-emmet-qi-dong-shi-bai.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-06-04-python-shi-xian-morse-bian-ma-yu-jie-ma.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-05-31-sublime-zhi-xing-windows-ming-ling-shi-wu-fa-shu-chu-zhong-wen-wen-ti.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-05-30-jekyll-mo-ban-de-zhong-wen-wen-ti.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-05-29-jdk8-xin-te-xing-calendar-builder.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-05-23-jekyll-de-zhong-wen-biao-ti-zhuan-huan-pin-yin-jie-jue-fang-an.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-06-06-thepast-yan-zheng.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-06-18-yi-ge-css-cuo-wu-yin-qi-de-maven-stackoverflowerror.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-06-23-python-shi-xian-ming-ling-xing-xia-zai-jin-du-tiao.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-06-11-lesscss-maven-plugin-jian-dan-de-pei-zhi.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-07-29-guan-yu-du-shu.md",
+		"/G/work/blogs/pelican-blog/content/posts/2013-07-15-python-shi-xian-ldap-he-rtx-zhi-jian-de-zu-zhi-he-yong-hu-shu-ju-tong-bu.md",
+		"/G/work/blogs/pelican-blog/content/posts/hello-word.md",
+		"/G/work/blogs/pelican-blog/posts/hello-world.html",
+		"/G/work/blogs/pelican-blog/pelicanconf.py",
+		"/G/work/blogs/pelican-blog/content/posts/2013-08-14-cheng-xu-yuan-shu-xue---ling-de-gu-shi.md",
+		"/G/work/blogs/turbidsoul.github.io/_site/2013/08/14/cheng-xu-yuan-shu-xue---ling-de-gu-shi/index.html",
 		"/G/work/blogs/pelican-blog/content/posts/2013-10-17-shi-yong-selenium-jin-xing-web-ce-shi-ru-men-he-shi-yong-webdriver-kai-fa-web-ce-shi-dai-ma-ru-men.md",
 		"/G/work/blogs/turbidsoul.github.io/_site/2014/04/10/shi-yong-awk-zuo-shi-shi-de-tong-ji/index.html",
 		"/G/work/blogs/pelican-blog/content/posts/2013-08-16-python-332-mingw-gcc-471--an-zhuang-misaka-mo-kuai-shi-bian-yi-bao-cuo.md",
-		"/G/work/blogs/pelican-blog/content/posts/2013-08-14-cheng-xu-yuan-shu-xue---ling-de-gu-shi.md",
 		"/G/work/blogs/turbidsoul.github.io/_layouts/post.html",
 		"/G/work/blogs/turbidsoul.github.io/_layouts/default.html",
 		"/G/work/blogs/pelican-blog/content/posts/2013-11-13-nginx-uwsgi-bottlepy-pei-zhi-bu-shu-python-ying-yong.md",
@@ -556,12 +588,9 @@
 		"/G/work/blogs/pelican-blog/publishconf.py",
 		"/G/work/blogs/pelican-blog/fabfile.py",
 		"/G/work/blogs/pelican-blog/develop_server.sh",
-		"/G/work/blogs/pelican-blog/pelicanconf.py",
 		"/G/work/blogs/pelican-blog/content/pages/about.html",
-		"/G/work/blogs/pelican-blog/content/posts/hello-word.md",
 		"/G/work/blogs/pelican-blog/content/posts/2014-01-26-nginx-shi-xian-wen-jian-xia-zai-zi-dong-da-bao-cheng-zip-wen-jian.md",
 		"/G/work/blogs/pelican-blog/content/posts/2013-11-22-python-logging-mo-kuai-de-filter.md",
-		"/G/work/blogs/pelican-blog/content/posts/2011-12-01-develop-jquery-plugin.md",
 		"/G/work/blogs/pelican-blog/content/posts/2014-04-10-shi-yong-awk-zuo-shi-shi-de-tong-ji.md",
 		"/G/work/blogs/pelican-blog/content/posts/2014-04-19-ffmpeg-rtmpdump-he-nginx-rtmp-shi-xian-lu-ping--zhi-bo-he-lu-zhi.md",
 		"/G/work/blogs/pelican-blog/content/posts2/shi-yong-awkzuo-shi-shi-de-tong-ji.html",
@@ -633,44 +662,7 @@
 		"/D/SublimeText3/Data/Packages/User/Markdown.sublime-settings",
 		"/E/work/python/glowing-reader/alembic/versions/419b5032ef0_create_database.py",
 		"/E/work/python/glowing-reader/alembic.ini",
-		"/E/work/python/glowing-reader/alembic/env.py",
-		"/E/work/python/glowing-reader/alembic/versions/41cdfa2bc5_create_database.py",
-		"/E/work/python/glowing-reader/db/db.sqlite",
-		"/E/work/python/glowing-reader/db/__init__.py",
-		"/E/work/python/glowing-reader/db/models.py",
-		"/E/work/blogs/turbidsoul.github.io/_site/index.html",
-		"/E/work/python/test/mul_logging.py",
-		"/E/work/blogs/turbidsoul.github.io/_posts/2013-11-22-python-logging-mo-kuai-de-filter.md",
-		"/D/SublimeText3/Data/Packages/User/Package Control.sublime-settings",
-		"/D/SublimeText3/Data/Packages/Default/Preferences.sublime-settings",
-		"/E/work/python/test/myplot.py",
-		"/E/work/python/glowing-reader/server.py",
-		"/E/work/blogs/turbidsoul.github.io/_posts/2013-11-13-nginx-uwsgi-bottlepy-pei-zhi-bu-shu-python-ying-yong.md",
-		"/E/work/python/glowing-reader/settings.py",
-		"/E/work/python/glowing-reader/handler/main.py",
-		"/E/work/python/glowing-reader/template/reader.html",
-		"/C/Users/Turbidsoul/Desktop/test.py",
-		"/E/work/python/glowing-reader/handler/reader.py",
-		"/E/work/python/glowing-reader/template/main.html",
-		"/E/work/python/glowing-reader/static/css/bootstrap.css",
-		"/E/work/python/glowing-reader/feed/__init__.py",
-		"/E/work/python/glowing-reader/template/base.html",
-		"/E/work/python/glowing-reader/test.py",
-		"/E/work/git/NewsBlur/apps/rss_feeds/models.py",
-		"/E/work/git/NewsBlur/apps/reader/models.py",
-		"/E/work/git/NewsBlur/apps/reader/managers.py",
-		"/E/work/python/glowing-reader/requirements.txt",
-		"/D/SublimeText3/Data/Installed Packages/requirementstxt.sublime-settings",
-		"/C/Users/TURBID~1/AppData/Local/Temp/7zEF5F6.tmp/requirementstxt.sublime-settings",
-		"/D/SublimeText3/Data/Packages/User/Default (Windows).sublime-keymap",
-		"/E/work/python/glowing-reader/test/test.py",
-		"/E/work/python/glowing-reader/test/__init__.py",
-		"/D/SublimeText3/Data/Packages/User/__del__.sublime-snippet",
-		"/D/SublimeText3/Data/Packages/User/pyclassmethod.sublime-snippet",
-		"/D/SublimeText3/Data/Packages/User/jinja2.sublime-settings",
-		"/D/SublimeText3/Data/Packages/EncodingHelper/EncodingHelper.sublime-settings",
-		"/D/SublimeText3/Data/Packages/Default/Default (Windows).sublime-keymap",
-		"/D/SublimeText3/Data/Packages/User/AutoUpdateSourceHeader.sublime-settings"
+		"/E/work/python/glowing-reader/alembic/env.py"
 	],
 	"find":
 	{
@@ -743,104 +735,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "content/posts/2013-08-14-cheng-xu-yuan-shu-xue---ling-de-gu-shi.md",
+					"file": "pelicanconf.py",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1150,
+						"buffer_size": 1138,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"c_time":
-							[
-								128,
-								3,
-								99,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								100,
-								97,
-								116,
-								101,
-								116,
-								105,
-								109,
-								101,
-								10,
-								113,
-								0,
-								67,
-								10,
-								7,
-								222,
-								5,
-								3,
-								22,
-								19,
-								54,
-								0,
-								0,
-								0,
-								113,
-								1,
-								133,
-								113,
-								2,
-								82,
-								113,
-								3,
-								46
-							],
-							"encoding_helper_encoding": "UTF-8",
-							"incomplete_sync": null,
-							"origin_encoding": "UTF-8",
-							"remote_loading": false,
-							"synced": false,
-							"syntax": "Packages/MarkdownEditing/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/G/work/blogs/turbidsoul.github.io/_site/2013/08/14/cheng-xu-yuan-shu-xue---ling-de-gu-shi/index.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5544,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								927,
-								927
+								717,
+								717
 							]
 						],
 						"settings":
@@ -875,10 +787,10 @@
 								7,
 								222,
 								4,
-								22,
-								22,
-								39,
-								13,
+								30,
+								23,
+								42,
+								33,
 								0,
 								0,
 								0,
@@ -897,12 +809,10 @@
 							"origin_encoding": "UTF-8",
 							"remote_loading": false,
 							"synced": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Python/Python.tmLanguage"
 						},
-						"translation.x": -0.0,
-						"translation.y": 855.0,
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -977,6 +887,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"hel",
+				"content\\posts\\hello-word.md"
+			],
 			[
 				"make",
 				"Makefile"

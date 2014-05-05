@@ -1,10 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+import os
+curdir = os.path.dirname(__file__)
 
 AUTHOR = u'Turbidsoul'
 SITENAME = u"Turbidsoul's 小黑屋"
 SITEURL = ''
+THEME=os.path.join(curdir, 'themes', 'pelican-sundown')
 
 ARTICLE_DIR='posts/'
 PAGE_DIR='pages/'
@@ -21,12 +24,12 @@ TRANSLATION_FEED_ATOM = None
 
 # Blogroll
 LINKS =  (('Turbidsoul\'s 小黑屋', 'http://blog.turbidsoul.me'),
-          ('Python.org', 'http://python.org/'),
-          ('Jinja2', 'http://jinja.pocoo.org/'),
-          ('You can modify those links in your config file', '#'),)
+          ('My Company Site', 'http://www.kaoshidian.com/'),
+          ('PyPI', 'https://pypi.python.org'),)
 
 # Social widget
 SOCIAL = (('Google+', 'https://plus.google.com/+TurbidsoulChen'),
+          ('Github', 'https://github.com/turbidsoul'),
           ('Twitter', 'https://twitter.com/Turbidsoul'),
           ('Facebook', 'https://facebook.com/turbidsoul'),
           ('微博', 'http://weibo.com/turbidsoul'),
@@ -39,3 +42,9 @@ DEFAULT_PAGINATION = 10
 
 ARTICLE_URL='posts/{slug}.html'
 ARTICLE_SAVE_AS='posts/{slug}.html'
+
+DEFAULT_METADATA = (('Content-Type', 'text/html; charset=utf-8'),)
+
+
+STATIC_PATHS = ["images", ]
+GRV_URL='/images/avatar.jpg'

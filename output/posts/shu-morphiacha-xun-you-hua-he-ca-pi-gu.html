@@ -1,58 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cn">
-<head>
-        <meta charset="utf-8" />
-        <title>树，morphia，查询，优化和擦屁股！</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>树，morphia，查询，优化和擦屁股！Turbidsoul's 小黑屋</title>
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+    <link rel="stylesheet" href="/theme/css/main.css">
+    <link rel="stylesheet" href="/theme/css/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div><img src="/images/avatar.jpg" class="grv-img"/></div>
+        <div class="title"><a href="/">Turbidsoul's 小黑屋 </a></div>
+        <div class="sub-title"></div>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Turbidsoul's 小黑屋 </a></h1>
-                <nav><ul>
-                    <li><a href="/category/firefox.html">firefox</a></li>
-                    <li class="active"><a href="/category/java.html">Java</a></li>
-                    <li><a href="/category/jekyll.html">jekyll</a></li>
-                    <li><a href="/category/jquery.html">jquery</a></li>
-                    <li><a href="/category/linux.html">Linux</a></li>
-                    <li><a href="/category/markdown.html">Markdown</a></li>
-                    <li><a href="/category/math.html">Math</a></li>
-                    <li><a href="/category/maven.html">Maven</a></li>
-                    <li><a href="/category/nginx.html">Nginx</a></li>
-                    <li><a href="/category/posts.html">posts</a></li>
-                    <li><a href="/category/python.html">Python</a></li>
-                    <li><a href="/category/rtmp.html">RTMP</a></li>
-                    <li><a href="/category/selenium.html">Selenium</a></li>
-                    <li><a href="/category/sublime.html">Sublime</a></li>
-                    <li><a href="/category/sublime2.html">Sublime2</a></li>
-                    <li><a href="/category/webrtc.html">WebRTC</a></li>
-                    <li><a href="/category/xian-liao.html">闲聊</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+<p>
+  <div class="view"><a href="/archives.html">Archives</a></div>
+</p>
+
+<!-- Social links -->
+<div class="social">
+<h4>Follow Me</h4>
+<ul>
+    <li><a href="https://plus.google.com/+TurbidsoulChen">Google+</a></li>
+    <li><a href="https://github.com/turbidsoul">Github</a></li>
+    <li><a href="https://twitter.com/Turbidsoul">Twitter</a></li>
+    <li><a href="https://facebook.com/turbidsoul">Facebook</a></li>
+    <li><a href="http://weibo.com/turbidsoul">微博</a></li>
+    <li><a href="http://instagram.com/turbidsoul">Instagram</a></li>
+</ul>
+</div>
+
+      </header>
+      <section>
 <section id="content" class="body">
   <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="/posts/shu-morphiacha-xun-you-hua-he-ca-pi-gu.html" rel="bookmark"
-           title="Permalink to 树，morphia，查询，优化和擦屁股！">树，morphia，查询，优化和擦屁股！</a></h1>
-    </header>
+      <div class="article-title">
+        树，morphia，查询，优化和擦屁股！
+      </div>
 
     <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-01-13T00:00:00">
-                周五 13 一月 2012
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
-        </address>
-<p>In <a href="/category/java.html">Java</a>. </p>
-<p>tags: <a href="/tag/java.html">java</a><a href="/tag/morphia.html">morphia</a><a href="/tag/mongo.html">mongo</a><a href="/tag/code.html">code</a></p>
-</footer><!-- /.post-info -->      <p>前天和昨天一直都在忙后台CMS树的优化和一些bug的修改，不过主要精力放在了树的优化上。</p>
+<p>
+<small>
+<abbr class="published" title="2012-01-13T00:00:00">
+  周五 13 一月 2012
+</abbr> | 
+  tags: 
+    <a href="/tag/java.html">java</a>, 
+    <a href="/tag/morphia.html">morphia</a>, 
+    <a href="/tag/mongo.html">mongo</a>, 
+    <a href="/tag/code.html">code</a>, 
+ -- (<a href="/posts/shu-morphiacha-xun-you-hua-he-ca-pi-gu.html" rel="bookmark">permalink</a>)
+</small>
+</p>      <p>前天和昨天一直都在忙后台CMS树的优化和一些bug的修改，不过主要精力放在了树的优化上。</p>
 <p>后台数据较多的树有两个，都是和视频相 关的，我们的树用的是dwz的树，但是这是一个同步树，也就是说，这个树是一次性取出数据，通过freemarker构建成html代码，然后在由dwz 渲染成树，在数据量小的时候还不觉得有什么，但是数据量一大就会发现，后台服务端数据查询还不用什么，但是dwz渲染那是一个慢啊，后来我一个同事找了个 jquery的一个异步树，然后由我来对树进行更换。</p>
 <p>在换掉dwz的树之后发现，虽然加载数据的速度提升很大，但是在某些数据量略大的节点上依然会有查询很慢的问题，长一点的有要到7－8秒的时间。这样长的时间主要是因为3个方面：</p>
 <ol>
@@ -64,36 +69,35 @@
 <p>我 现在无法给出具体的时间数据，因为我手上没有未优化的代码，但是在优化之前我清楚的记得，生成一次树的时间是几十秒甚至几分钟，加了异步树之后每次只加载 当前点击的节点，所以体验上好了很多，但是在打开节点下的时候，因为数据量有点大（大概有1k行的样子），虽然看着不多，但是这个表冗余了很多数据，说是 一千行，但是实际的数据可能会多几十倍，甚至过百倍，所以在只抓取id和name的时候，数据提升了很大，从8－15秒提升到了40－80ms，当然这里 面数值下线都是在chrome中测试的结果，在这里不得不在此赞叹一下V8引擎，真的是太TMD的快了。</p>
 <p>在最后的吐槽中，我实在是想骂娘，这代码是谁写的，让哥抗了一天没吃饭，一直到下午6点才做完去吃饭，饿死哥了！</p>
     </div><!-- /.entry-content -->
-
   </article>
 </section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://blog.turbidsoul.me">Turbidsoul's 小黑屋</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
+      </section>
+      <footer>
+        <p><small>&copy; Turbidsoul's 小黑屋 &mdash; Theme based on Sundown by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <!-- Scale fix -->
+    <script>
+      var metas = document.getElementsByTagName('meta');
+      var i;
+      
+      if (navigator.userAgent.match(/iPhone/i)) {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+          }
+        }
+      
+        document.addEventListener("gesturestart", gestureStart, false);
+      }
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+      function gestureStart() {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+          }
+        }
+      }
+    </script>
+  </body>
 </html>

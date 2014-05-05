@@ -1,59 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cn">
-<head>
-        <meta charset="utf-8" />
-        <title>nginx,uwsgi,bottlepy配置部署python应用</title>
-        <link rel="stylesheet" href="http://blog.turbidsoul.me/pelican-blog/theme/css/main.css" />
-        <link href="http://blog.turbidsoul.me/pelican-blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Turbidsoul's 小黑屋 Atom Feed" />
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>nginx,uwsgi,bottlepy配置部署python应用Turbidsoul's 小黑屋</title>
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+    <link rel="stylesheet" href="http://blog.turbidsoul.me/pelican-blog/theme/css/main.css">
+    <link rel="stylesheet" href="http://blog.turbidsoul.me/pelican-blog/theme/css/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div><img src="/images/avatar.jpg" class="grv-img"/></div>
+        <div class="title"><a href="http://blog.turbidsoul.me/pelican-blog/">Turbidsoul's 小黑屋 </a></div>
+        <div class="sub-title"></div>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="http://blog.turbidsoul.me/pelican-blog/">Turbidsoul's 小黑屋 </a></h1>
-                <nav><ul>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/firefox.html">firefox</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/java.html">Java</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jekyll.html">jekyll</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jquery.html">jquery</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/linux.html">Linux</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/markdown.html">Markdown</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/math.html">Math</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/maven.html">Maven</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/nginx.html">Nginx</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/posts.html">posts</a></li>
-                    <li class="active"><a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">Python</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/rtmp.html">RTMP</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/selenium.html">Selenium</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime.html">Sublime</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime2.html">Sublime2</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/webrtc.html">WebRTC</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/xian-liao.html">闲聊</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+<p>
+  <div class="view"><a href="http://blog.turbidsoul.me/pelican-blog/archives.html">Archives</a></div>
+</p>
+
+<!-- Social links -->
+<div class="social">
+<h4>Follow Me</h4>
+<ul>
+    <li><a href="https://plus.google.com/+TurbidsoulChen">Google+</a></li>
+    <li><a href="https://github.com/turbidsoul">Github</a></li>
+    <li><a href="https://twitter.com/Turbidsoul">Twitter</a></li>
+    <li><a href="https://facebook.com/turbidsoul">Facebook</a></li>
+    <li><a href="http://weibo.com/turbidsoul">微博</a></li>
+    <li><a href="http://instagram.com/turbidsoul">Instagram</a></li>
+</ul>
+</div>
+
+      </header>
+      <section>
 <section id="content" class="body">
   <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="http://blog.turbidsoul.me/pelican-blog/posts/nginxuwsgibottlepypei-zhi-bu-shu-pythonying-yong.html" rel="bookmark"
-           title="Permalink to nginx,uwsgi,bottlepy配置部署python应用">nginx,uwsgi,bottlepy配置部署python应用</a></h1>
-    </header>
+      <div class="article-title">
+        nginx,uwsgi,bottlepy配置部署python应用
+      </div>
 
     <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-11-13T00:00:00">
-                周三 13 十一月 2013
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="http://blog.turbidsoul.me/pelican-blog/author/turbidsoul.html">Turbidsoul</a>
-        </address>
-<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">Python</a>. </p>
-<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/nginx.html">nginx</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/uwsgi.html">uwsgi</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/python.html">python</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/web.html">web</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/bottlepy.html">bottlepy</a></p>
-</footer><!-- /.post-info -->      <p>这几天一直在写一个用户行为分析出席清晰代码的工具，我的本意是想把这个用python做成一个独立的应用，但是这么做其实是比较麻烦和有一定难度的，因为用户的行为分析是和要我们主数据库结合做的，如果做成独立应用的话需要从主库中找出大量的数据，这样会影响效率，所以就把用户端分析和cms系统做到以前，前期的日志清洗和数据初期简单的分析做到一个python实现的一个离线工具，这个不是我这篇blog的重点，这次的重点是如何使用nginx，uwsgi，python部署web应用，这只是这次工作的题外话，但是我认为这是这个用户行为分析模块将来的方向，所以研究留用计数备忘和初期探索。</p>
+<p>
+<small>
+<abbr class="published" title="2013-11-13T00:00:00">
+  周三 13 十一月 2013
+</abbr> | 
+  tags: 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/nginx.html">nginx</a>, 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/uwsgi.html">uwsgi</a>, 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/python.html">python</a>, 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/web.html">web</a>, 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/bottlepy.html">bottlepy</a>, 
+ -- (<a href="http://blog.turbidsoul.me/pelican-blog/posts/nginxuwsgibottlepypei-zhi-bu-shu-pythonying-yong.html" rel="bookmark">permalink</a>)
+</small>
+</p>      <p>这几天一直在写一个用户行为分析出席清晰代码的工具，我的本意是想把这个用python做成一个独立的应用，但是这么做其实是比较麻烦和有一定难度的，因为用户的行为分析是和要我们主数据库结合做的，如果做成独立应用的话需要从主库中找出大量的数据，这样会影响效率，所以就把用户端分析和cms系统做到以前，前期的日志清洗和数据初期简单的分析做到一个python实现的一个离线工具，这个不是我这篇blog的重点，这次的重点是如何使用nginx，uwsgi，python部署web应用，这只是这次工作的题外话，但是我认为这是这个用户行为分析模块将来的方向，所以研究留用计数备忘和初期探索。</p>
 <h2>搭建环境</h2>
 <p>因为uwsgi没有windows版的，所以这次是在linux下做的测试，我在虚拟机上装了arch linux。</p>
 <p><code>pacman -S python nginx</code>
@@ -155,37 +160,35 @@
 <h2>结论</h2>
 <p>uwsgi自创了一个uwsgi协议，与wsgi、fcgi不同，据说uwsgi的速度是fcgi的10倍，我没有那个环境测试。uwsgi旨在为分布式部署提供一套解决方案，他支持很多语言，也同时可以使用c,c++等来开发插件，我使用他纯粹是为了在我的VPS上部署我的python应用。</p>
     </div><!-- /.entry-content -->
-
   </article>
 </section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://blog.turbidsoul.me">Turbidsoul's 小黑屋</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="http://blog.turbidsoul.me/pelican-blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+      </section>
+      <footer>
+        <p><small>&copy; Turbidsoul's 小黑屋 &mdash; Theme based on Sundown by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <!-- Scale fix -->
+    <script>
+      var metas = document.getElementsByTagName('meta');
+      var i;
+      
+      if (navigator.userAgent.match(/iPhone/i)) {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+          }
+        }
+      
+        document.addEventListener("gesturestart", gestureStart, false);
+      }
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+      function gestureStart() {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+          }
+        }
+      }
+    </script>
+  </body>
 </html>

@@ -1,153 +1,76 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cn">
-<head>
-        <meta charset="utf-8" />
-        <title>Turbidsoul's 小黑屋 - maven</title>
-        <link rel="stylesheet" href="http://blog.turbidsoul.me/pelican-blog/theme/css/main.css" />
-        <link href="http://blog.turbidsoul.me/pelican-blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Turbidsoul's 小黑屋 Atom Feed" />
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Turbidsoul's 小黑屋 - mavenTurbidsoul's 小黑屋</title>
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+    <link rel="stylesheet" href="http://blog.turbidsoul.me/pelican-blog/theme/css/main.css">
+    <link rel="stylesheet" href="http://blog.turbidsoul.me/pelican-blog/theme/css/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div><img src="/images/avatar.jpg" class="grv-img"/></div>
+        <div class="title"><a href="http://blog.turbidsoul.me/pelican-blog/">Turbidsoul's 小黑屋 </a></div>
+        <div class="sub-title"></div>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="http://blog.turbidsoul.me/pelican-blog/">Turbidsoul's 小黑屋 </a></h1>
-                <nav><ul>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/firefox.html">firefox</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/java.html">Java</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jekyll.html">jekyll</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jquery.html">jquery</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/linux.html">Linux</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/markdown.html">Markdown</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/math.html">Math</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/maven.html">Maven</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/nginx.html">Nginx</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/posts.html">posts</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">Python</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/rtmp.html">RTMP</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/selenium.html">Selenium</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime.html">Sublime</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime2.html">Sublime2</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/webrtc.html">WebRTC</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/xian-liao.html">闲聊</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+<p>
+  <div class="view"><a href="http://blog.turbidsoul.me/pelican-blog/archives.html">Archives</a></div>
+</p>
 
-            <aside id="featured" class="body">
-                <article>
-                    <h1 class="entry-title"><a href="http://blog.turbidsoul.me/pelican-blog/posts/ge-csscuo-wu-yin-qi-de-maven-stackoverflowerror.html">一个css错误引起的maven StackOverflowError</a></h1>
-<footer class="post-info">
-        <abbr class="published" title="2013-06-18T00:00:00">
-                周二 18 六月 2013
-        </abbr>
+<!-- Social links -->
+<div class="social">
+<h4>Follow Me</h4>
+<ul>
+    <li><a href="https://plus.google.com/+TurbidsoulChen">Google+</a></li>
+    <li><a href="https://github.com/turbidsoul">Github</a></li>
+    <li><a href="https://twitter.com/Turbidsoul">Twitter</a></li>
+    <li><a href="https://facebook.com/turbidsoul">Facebook</a></li>
+    <li><a href="http://weibo.com/turbidsoul">微博</a></li>
+    <li><a href="http://instagram.com/turbidsoul">Instagram</a></li>
+</ul>
+</div>
 
-        <address class="vcard author">
-                By <a class="url fn" href="http://blog.turbidsoul.me/pelican-blog/author/turbidsoul.html">Turbidsoul</a>
-        </address>
-<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/java.html">Java</a>. </p>
-<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/java.html">java</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/maven.html">maven</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/css.html">css</a></p>
-</footer><!-- /.post-info --><p>这个问题是我的一个失误造成的，这是上一片文章的后续，我在使用正则做文本替换的时候没有注意到，这个正则在主干上是正常的，但是在分支上执行的时候使一行css少了一个引号，这个问题在浏览器中是暴露不出来的，之后在maven打包的时候对文件做压缩的时候才会出现，下面我们来看看是什么样的问题。</p>
+      </header>
+      <section>
+      <div class="front-title"><a href="http://blog.turbidsoul.me/pelican-blog/posts/ge-csscuo-wu-yin-qi-de-maven-stackoverflowerror.html">一个css错误引起的maven StackOverflowError</a></div>
+<p>
+<small>
+<abbr class="published" title="2013-06-18T00:00:00">
+  周二 18 六月 2013
+</abbr> | 
+  tags: 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/java.html">java</a>, 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/maven.html">maven</a>, 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/css.html">css</a>, 
+ -- (<a href="http://blog.turbidsoul.me/pelican-blog/posts/ge-csscuo-wu-yin-qi-de-maven-stackoverflowerror.html" rel="bookmark">permalink</a>)
+</small>
+</p>      <p>这个问题是我的一个失误造成的，这是上一片文章的后续，我在使用正则做文本替换的时候没有注意到，这个正则在主干上是正常的，但是在分支上执行的时候使一行css少了一个引号，这个问题在浏览器中是暴露不出来的，之后在maven打包的时候对文件做压缩的时候才会出现，下面我们来看看是什么样的问题。</p>
 <p>我们项目使用的是 <a href="https://github.com/davidB/yuicompressor-maven-plugin" title="yuicompressor-maven-plugin">yuicompressor-maven-plugin</a> 做js和css的压缩，在压缩的过程中出现了下面的错误：</p>
 <div class="highlight"><pre><span class="o">---------------------------------------------------</span>
 <span class="n">constituent</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">aether</span><span class="o">-</span><span class="n">api</span><span class="o">-</span><span class="mf">1.13.1</span><span class="p">.</span><span class="n">jar</span>
 <span class="n">constituent</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">aether</span><span class="o">-</span><span class="n">connector</span><span class="o">-</span><span class="n">wagon</span><span class="o">-</span><span class="mf">1.13.1</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">aether</span><span class="o">-</span><span class="n">impl</span><span class="o">-</span><span class="mf">1.13.1</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">aether</span><span class="o">-</span><span class="n">spi</span><span class="o">-</span><span class="mf">1.13.1</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">aether</span><span class="o">-</span><span class="n">util</span><span class="o">-</span><span class="mf">1.13.1</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">commons</span><span class="o">-</span><span class="n">cli</span><span class="o">-</span><span class="mf">1.2</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="n">aether</span><span class="o">-</span><span class="n">provider</span><span class="o">-</span><span class="mf">3.0.4</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">7</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="n">artifact</span><span class="o">-</span><span class="mf">3.0.4</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">8</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="n">compat</span><span class="o">-</span><span class="mf">3.0.4</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">9</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="n">core</span><span class="o">-</span><span class="mf">3.0.4</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="n">embedder</span><span class="o">-</span><span class="mf">3.0.4</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">11</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="n">model</span><span class="o">-</span><span class="mf">3.0.4</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="n">model</span><span class="o">-</span><span class="n">builder</span><span class="o">-</span><span class="mf">3.0.4</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">13</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="n">plugin</span><span class="o">-</span><span class="n">api</span><span class="o">-</span><span class="mf">3.0.4</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">14</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="n">repository</span><span class="o">-</span><span class="n">metadata</span><span class="o">-</span><span class="mf">3.0.4</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">15</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="n">settings</span><span class="o">-</span><span class="mf">3.0.4</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="n">settings</span><span class="o">-</span><span class="n">builder</span><span class="o">-</span><span class="mf">3.0.4</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">17</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">plexus</span><span class="o">-</span><span class="n">cipher</span><span class="o">-</span><span class="mf">1.7</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">18</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">plexus</span><span class="o">-</span><span class="n">component</span><span class="o">-</span><span class="n">annotations</span><span class="o">-</span><span class="mf">1.5.5</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">19</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">plexus</span><span class="o">-</span><span class="n">interpolation</span><span class="o">-</span><span class="mf">1.14</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">20</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">plexus</span><span class="o">-</span><span class="n">sec</span><span class="o">-</span><span class="n">dispatcher</span><span class="o">-</span><span class="mf">1.3</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">21</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">plexus</span><span class="o">-</span><span class="n">utils</span><span class="o">-</span><span class="mf">2.0.6</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">22</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">sisu</span><span class="o">-</span><span class="n">guava</span><span class="o">-</span><span class="mf">0.9.9</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">23</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">sisu</span><span class="o">-</span><span class="n">guice</span><span class="o">-</span><span class="mf">3.1.0</span><span class="o">-</span><span class="n">no_aop</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">24</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">sisu</span><span class="o">-</span><span class="n">inject</span><span class="o">-</span><span class="n">bean</span><span class="o">-</span><span class="mf">2.3.0</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">25</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">sisu</span><span class="o">-</span><span class="n">inject</span><span class="o">-</span><span class="n">plexus</span><span class="o">-</span><span class="mf">2.3.0</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">26</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">wagon</span><span class="o">-</span><span class="n">file</span><span class="o">-</span><span class="mf">2.2</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">27</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">wagon</span><span class="o">-</span><span class="n">http</span><span class="o">-</span><span class="mf">2.2</span><span class="o">-</span><span class="n">shaded</span><span class="p">.</span><span class="n">jar</span>
-<span class="n">constituent</span><span class="p">[</span><span class="mi">28</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">wagon</span><span class="o">-</span><span class="n">provider</span><span class="o">-</span><span class="n">api</span><span class="o">-</span><span class="mf">2.2</span><span class="p">.</span><span class="n">jar</span>
-<span class="o">---------------------------------------------------</span>
-<span class="n">Exception</span> <span class="n">in</span> <span class="kr">thread</span> <span class="s">&quot;main&quot;</span> <span class="n">java</span><span class="p">.</span><span class="n">lang</span><span class="p">.</span><span class="n">StackOverflowError</span>
-        <span class="n">at</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">regex</span><span class="p">.</span><span class="n">Pattern</span><span class="err">$</span><span class="n">Loop</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="n">Pattern</span><span class="p">.</span><span class="n">java</span><span class="o">:</span><span class="mi">4683</span><span class="p">)</span>
-        <span class="n">at</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">regex</span><span class="p">.</span><span class="n">Pattern</span><span class="err">$</span><span class="n">GroupTail</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="n">Pattern</span><span class="p">.</span><span class="n">java</span><span class="o">:</span><span class="mi">4615</span><span class="p">)</span>
-        <span class="n">at</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">regex</span><span class="p">.</span><span class="n">Pattern</span><span class="err">$</span><span class="n">BranchConn</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="n">Pattern</span><span class="p">.</span><span class="n">java</span><span class="o">:</span><span class="mi">4466</span><span class="p">)</span>
-        <span class="n">at</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">regex</span><span class="p">.</span><span class="n">Pattern</span><span class="err">$</span><span class="n">CharProperty</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="n">Pattern</span><span class="p">.</span><span class="n">java</span><span class="o">:</span><span class="mi">3694</span><span class="p">)</span>
-        <span class="n">at</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">regex</span><span class="p">.</span><span class="n">Pattern</span><span class="err">$</span><span class="n">Branch</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="n">Pattern</span><span class="p">.</span><span class="n">java</span><span class="o">:</span><span class="mi">4502</span><span class="p">)</span>
-        <span class="n">at</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">regex</span><span class="p">.</span><span class="n">Pattern</span><span class="err">$</span><span class="n">GroupHead</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="n">Pattern</span><span class="p">.</span><span class="n">java</span><span class="o">:</span><span class="mi">4556</span><span class="p">)</span>
-        <span class="n">at</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">regex</span><span class="p">.</span><span class="n">Pattern</span><span class="err">$</span><span class="n">Loop</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="n">Pattern</span><span class="p">.</span><span class="n">java</span><span class="o">:</span><span class="mi">4683</span><span class="p">)</span>
-        <span class="n">at</span> <span class="n">java</span><span class="p">.</span><span class="n">util</span><span class="p">.</span><span class="n">regex</span><span class="p">.</span><span class="n">Pattern</span><span class="err">$</span><span class="n">GroupTail</span><span class="p">.</span><span class="n">match</span><span class="p">(</span><span class="n">Pattern</span><span class="p">.</span><span class="n">java</span><span class="o">:</span><span class="mi">4615</span><span class="p">)</span>
-</pre></div>
-
-
-<p>google了一下，有过类似的问题，但是并不完全一样，而且我们项目中并没有使用别的一些插件，所以不会是网上说的哪些问题。</p>
-<p>我们项目有主干和一个分支，主干上是没有问题，问题只在分支上出现，当时替换的时候使用的是同一个正则，在主干上既然正常了，分支上应该也不会有问题，所以我觉得正则应该也不会有问题。</p>
-<p>我用sublime的diff插件比对了两个项目的 <em>pom.xml</em> 也没有差别，本来想用windiff比较两个项目下，style文件的差别，但是放弃了，一是文件还是比较多的，而且两个项目在样式上已经有了一些差别，这样比较很难看出问题所在。</p>
-<p>不过maven为我们提供了调试参数 <strong>-X</strong> 输入 <code>mvn yuicompressor:compress -X</code> maven就会打印出调试信息：</p>
-<div class="highlight"><pre><span class="p">[</span><span class="n">DEBUG</span><span class="p">]</span> <span class="n">compress</span> <span class="n">file</span> <span class="o">:</span><span class="n">F</span><span class="o">:</span><span class="err">\</span><span class="n">work</span><span class="err">\</span><span class="n">work1</span><span class="err">\</span><span class="n">old_ksdfront</span><span class="err">\</span><span class="n">src</span><span class="err">\</span><span class="n">main</span><span class="err">\</span><span class="n">webapp</span><span class="err">\</span><span class="n">resources</span><span class="err">\</span><span class="n">style</span><span class="err">\</span><span class="n">share</span><span class="err">\</span><span class="n">layout</span><span class="p">.</span><span class="n">css</span> <span class="n">to</span> <span class="n">F</span><span class="o">:</span><span class="err">\</span><span class="n">work</span><span class="err">\</span><span class="n">work1</span><span class="err">\</span><span class="n">old_ksdfront</span><span class="err">\</span><span class="n">targe</span>
-<span class="n">rces</span><span class="err">\</span><span class="n">style</span><span class="err">\</span><span class="n">share</span><span class="err">\</span><span class="n">layout</span><span class="p">.</span><span class="n">css</span>
-<span class="p">[</span><span class="n">DEBUG</span><span class="p">]</span> <span class="n">only</span> <span class="n">compress</span> <span class="k">if</span> <span class="n">input</span> <span class="n">file</span> <span class="n">is</span> <span class="n">younger</span> <span class="n">than</span> <span class="n">existing</span> <span class="n">output</span> <span class="n">file</span>
-<span class="p">[</span><span class="n">DEBUG</span><span class="p">]</span> <span class="n">use</span> <span class="n">a</span> <span class="n">temporary</span> <span class="n">outputfile</span> <span class="p">(</span><span class="n">in</span> <span class="k">case</span> <span class="n">in</span> <span class="o">==</span> <span class="n">out</span><span class="p">)</span>
-<span class="p">[</span><span class="n">DEBUG</span><span class="p">]</span> <span class="n">start</span> <span class="n">compression</span>
-<span class="p">[</span><span class="n">DEBUG</span><span class="p">]</span> <span class="n">end</span> <span class="n">compression</span>
-<span class="p">[</span><span class="n">INFO</span><span class="p">]</span> <span class="n">layout</span><span class="p">.</span><span class="n">css</span> <span class="p">(</span><span class="mi">12088</span><span class="n">b</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">layout</span><span class="p">.</span><span class="n">css</span> <span class="p">(</span><span class="mi">10582</span><span class="n">b</span><span class="p">)[</span><span class="mi">87</span><span class="o">%</span><span class="p">]</span>
-<span class="cp">###############################################################################</span>
-<span class="p">[</span><span class="n">DEBUG</span><span class="p">]</span> <span class="n">compress</span> <span class="n">file</span> <span class="o">:</span><span class="n">F</span><span class="o">:</span><span class="err">\</span><span class="n">work</span><span class="err">\</span><span class="n">work1</span><span class="err">\</span><span class="n">old_ksdfront</span><span class="err">\</span><span class="n">src</span><span class="err">\</span><span class="n">main</span><span class="err">\</span><span class="n">webapp</span><span class="err">\</span><span class="n">resources</span><span class="err">\</span><span class="n">style</span><span class="err">\</span><span class="n">share</span><span class="err">\</span><span class="n">page</span><span class="p">.</span><span class="n">css</span> <span class="n">to</span> <span class="n">F</span><span class="o">:</span><span class="err">\</span><span class="n">work</span><span class="err">\</span><span class="n">work1</span><span class="err">\</span><span class="n">old_ksdfront</span><span class="err">\</span><span class="n">target</span>\
-<span class="n">es</span><span class="err">\</span><span class="n">style</span><span class="err">\</span><span class="n">share</span><span class="err">\</span><span class="n">page</span><span class="p">.</span><span class="n">css</span>
-<span class="p">[</span><span class="n">DEBUG</span><span class="p">]</span> <span class="n">only</span> <span class="n">compress</span> <span class="k">if</span> <span class="n">input</span> <span class="n">file</span> <span class="n">is</span> <span class="n">younger</span> <span class="n">than</span> <span class="n">existing</span> <span class="n">output</span> <span class="n">file</span>
-<span class="p">[</span><span class="n">DEBUG</span><span class="p">]</span> <span class="n">use</span> <span class="n">a</span> <span class="n">temporary</span> <span class="n">outputfile</span> <span class="p">(</span><span class="n">in</span> <span class="k">case</span> <span class="n">in</span> <span class="o">==</span> <span class="n">out</span><span class="p">)</span>
-<span class="p">[</span><span class="n">DEBUG</span><span class="p">]</span> <span class="n">start</span> <span class="n">compression</span>
-<span class="cp">###############################################################################</span>
-<span class="o">---------------------------------------------------</span>
-</pre></div>
-
-
-<p>看我用 <em>#</em> 框出的几行和＃之上的只讲有什么差别，从<code>[DEBUG] start compression</code> 之后 就没有了，也就是说在业所page.css文件的时候报错了，这样文件就简单了，我需要检查一下这个page.css文件。</p>
-<p>我在此用diff比较了两个项目下的page.css文件的差别，唯一可能引起错的地方之后一个：</p>
-<div class="highlight"><pre><span class="nc">.new-commentsIco</span> <span class="p">{</span><span class="k">background</span><span class="o">:</span> <span class="sx">url(/resources/style/images/share/share_c.png&quot;)</span> <span class="m">-189px</span> <span class="m">-509px</span><span class="p">;</span> <span class="k">padding-left</span><span class="o">:</span> <span class="m">15px</span><span class="p">;}</span>
-</pre></div>
-
-
-<p>url之后的链接少了一个 "<strong>"</strong>",我加上引号之后在运行插件压缩css文件，这次成功了。看来问题就是出在这里。</p>
-<h4>结论</h4>
-<p>这个问题并不是一定会一定出现，可能需要特性的环境，我并没有做详细的求证，但是我昨晚在家里的时候就准备写这篇文章，但是我发现我用同样的方式是无法重现问题，可能是我家里的只用了一个css文件，而公司的项目css和js文件会比较多的原因造成的，我并不清楚，写这篇文章的目的只是给遇到这类问题的人提醒，凡事要小心，谨慎，细心和耐心，问题本身并不是什么高深问题，但是我却花了一下午的时间，检查了所有可能出问题的地方，刚开始的时候有些浮躁，并没有去注意这些细节上的问题，但是在两三个小时之后才发现这样并不能解决问题，去洗了个脸，清醒一下，回来沉下心仔细的重新整理一下，其实很快就能解决问题。</p>                </article>
-            </aside><!-- /#featured -->
-                <section id="content" class="body">
-                    <h1>Other articles</h1>
-                    <hr />
-                    <ol id="posts-list" class="hfeed">
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="http://blog.turbidsoul.me/pelican-blog/posts/lesscss-maven-pluginjian-dan-de-pei-zhi.html" rel="bookmark"
-                           title="Permalink to lesscss maven plugin简单的配置">lesscss maven plugin简单的配置</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-06-11T00:00:00">
-                周二 11 六月 2013
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="http://blog.turbidsoul.me/pelican-blog/author/turbidsoul.html">Turbidsoul</a>
-        </address>
-<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/maven.html">Maven</a>. </p>
-<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/lesscss.html">lesscss</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/maven.html">maven</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/java.html">java</a></p>
-</footer><!-- /.post-info -->                <p>这其实是一个很简单的问题，本来并不打算写成一片文章的，因为这个文件和另外一个问题是一起的，就是我们在nginx上做css和js文件合并时遇到的，不过在这之前我还遇到了另外一个问题，就是我们开发环境是windows7，而nginx下有个静态文件合并的模块: <strong>http_concat_module</strong> ，是<a href="https://github.com/alibaba/nginx-http-concat" title="HTTP Concatenation module for Nginx">淘宝</a>开源的，这个模块并不是nginx标准模块，所以要使用它需要自己重新编译nginx，具体如何编译我需要一段一点时间整理一下，在之后的文章中会写出来。</p>
+<span class="n">constituent ...</span></pre></div> 
+      <div class="read-more"><a href="http://blog.turbidsoul.me/pelican-blog/posts/ge-csscuo-wu-yin-qi-de-maven-stackoverflowerror.html">read more...</a></div>
+      <hr />
+      <div class="front-title"><a href="http://blog.turbidsoul.me/pelican-blog/posts/lesscss-maven-pluginjian-dan-de-pei-zhi.html">lesscss maven plugin简单的配置</a></div>
+<p>
+<small>
+<abbr class="published" title="2013-06-11T00:00:00">
+  周二 11 六月 2013
+</abbr> | 
+  tags: 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/lesscss.html">lesscss</a>, 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/maven.html">maven</a>, 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/java.html">java</a>, 
+ -- (<a href="http://blog.turbidsoul.me/pelican-blog/posts/lesscss-maven-pluginjian-dan-de-pei-zhi.html" rel="bookmark">permalink</a>)
+</small>
+</p>      <p>这其实是一个很简单的问题，本来并不打算写成一片文章的，因为这个文件和另外一个问题是一起的，就是我们在nginx上做css和js文件合并时遇到的，不过在这之前我还遇到了另外一个问题，就是我们开发环境是windows7，而nginx下有个静态文件合并的模块: <strong>http_concat_module</strong> ，是<a href="https://github.com/alibaba/nginx-http-concat" title="HTTP Concatenation module for Nginx">淘宝</a>开源的，这个模块并不是nginx标准模块，所以要使用它需要自己重新编译nginx，具体如何编译我需要一段一点时间整理一下，在之后的文章中会写出来。</p>
 <p>至于为什么要使用<a href="http://lesscss.org" title="The Dynamic Stylesheet language">less</a>是因为使用了 <strong>http_concat_module</strong> 之后css中文件的一些路径出现了错误，需要为css文件设置一些变量，其实使用maven的插件也可以进行变量替换，但是这样只能在maven打包的时候才能起作用，对于开发来说就不行，因为开发必须要求在编译的时候就生效。所以就需要使用maven的另一个插件<a href="https://github.com/marceloverdijk/lesscss-maven-plugin" title="Official LESS CSS Maven Plugin">lesscss-maven-plugin</a>，这个插件的作用就是在编译的时候就能把less转换成css，这样做对我们最大的好处就是需要修改的地方是最少的，而且能一劳永逸的解决这个问题。</p>
 <p>现在我们来说说这个插件如何配置：</p>
 <h4>添加插件</h4>
@@ -159,43 +82,37 @@
 </pre></div>
 
 
-<p>插件添加好后，就能在 <em>pom.xml ...</em></p>
-                <a class="readmore" href="http://blog.turbidsoul.me/pelican-blog/posts/lesscss-maven-pluginjian-dan-de-pei-zhi.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-            </ol><!-- /#posts-list -->
-<p class="paginator">
-    Page 1 / 1
-</p>
-            </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://blog.turbidsoul.me">Turbidsoul's 小黑屋</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="http://blog.turbidsoul.me/pelican-blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+<p>插件添加好后，就能在 <em>pom.xml ...</em></p> 
+      <div class="read-more"><a href="http://blog.turbidsoul.me/pelican-blog/posts/lesscss-maven-pluginjian-dan-de-pei-zhi.html">read more...</a></div>
+      <hr />
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+      </section>
+      <footer>
+        <p><small>&copy; Turbidsoul's 小黑屋 &mdash; Theme based on Sundown by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <!-- Scale fix -->
+    <script>
+      var metas = document.getElementsByTagName('meta');
+      var i;
+      
+      if (navigator.userAgent.match(/iPhone/i)) {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+          }
+        }
+      
+        document.addEventListener("gesturestart", gestureStart, false);
+      }
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+      function gestureStart() {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+          }
+        }
+      }
+    </script>
+  </body>
 </html>

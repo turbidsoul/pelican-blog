@@ -1,58 +1,63 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cn">
-<head>
-        <meta charset="utf-8" />
-        <title>python 2.7 的参数解析模块 argparse</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>python 2.7 的参数解析模块 argparseTurbidsoul's 小黑屋</title>
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+    <link rel="stylesheet" href="/theme/css/main.css">
+    <link rel="stylesheet" href="/theme/css/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div><img src="/images/avatar.jpg" class="grv-img"/></div>
+        <div class="title"><a href="/">Turbidsoul's 小黑屋 </a></div>
+        <div class="sub-title"></div>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Turbidsoul's 小黑屋 </a></h1>
-                <nav><ul>
-                    <li><a href="/category/firefox.html">firefox</a></li>
-                    <li><a href="/category/java.html">Java</a></li>
-                    <li><a href="/category/jekyll.html">jekyll</a></li>
-                    <li><a href="/category/jquery.html">jquery</a></li>
-                    <li><a href="/category/linux.html">Linux</a></li>
-                    <li><a href="/category/markdown.html">Markdown</a></li>
-                    <li><a href="/category/math.html">Math</a></li>
-                    <li><a href="/category/maven.html">Maven</a></li>
-                    <li><a href="/category/nginx.html">Nginx</a></li>
-                    <li><a href="/category/posts.html">posts</a></li>
-                    <li class="active"><a href="/category/python.html">Python</a></li>
-                    <li><a href="/category/rtmp.html">RTMP</a></li>
-                    <li><a href="/category/selenium.html">Selenium</a></li>
-                    <li><a href="/category/sublime.html">Sublime</a></li>
-                    <li><a href="/category/sublime2.html">Sublime2</a></li>
-                    <li><a href="/category/webrtc.html">WebRTC</a></li>
-                    <li><a href="/category/xian-liao.html">闲聊</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+<p>
+  <div class="view"><a href="/archives.html">Archives</a></div>
+</p>
+
+<!-- Social links -->
+<div class="social">
+<h4>Follow Me</h4>
+<ul>
+    <li><a href="https://plus.google.com/+TurbidsoulChen">Google+</a></li>
+    <li><a href="https://github.com/turbidsoul">Github</a></li>
+    <li><a href="https://twitter.com/Turbidsoul">Twitter</a></li>
+    <li><a href="https://facebook.com/turbidsoul">Facebook</a></li>
+    <li><a href="http://weibo.com/turbidsoul">微博</a></li>
+    <li><a href="http://instagram.com/turbidsoul">Instagram</a></li>
+</ul>
+</div>
+
+      </header>
+      <section>
 <section id="content" class="body">
   <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="/posts/python-27-de-can-shu-jie-xi-mo-kuai-argparse.html" rel="bookmark"
-           title="Permalink to python 2.7 的参数解析模块 argparse">python 2.7 的参数解析模块 argparse</a></h1>
-    </header>
+      <div class="article-title">
+        python 2.7 的参数解析模块 argparse
+      </div>
 
     <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-09-27T00:00:00">
-                周五 27 九月 2013
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
-        </address>
-<p>In <a href="/category/python.html">Python</a>. </p>
-<p>tags: <a href="/tag/python.html">python</a><a href="/tag/code.html">code</a><a href="/tag/argparse.html">argparse</a><a href="/tag/python27.html">python27</a></p>
-</footer><!-- /.post-info -->      <p>今天下午没事，就优化了一下以前写的一些工作上用的小工具，当然大多数都是python写的命令行下的小工具，之前命令行参数都是自己解析，虽然不是什么复杂的事情，但是自己临时写出来的东西毕竟不如人家写出来的好，正好前短时间看到python2.7把 <strong>argparse</strong> 加入到了标准模块中，所以这次对这些工具的代码重构就是使用了 <strong>argparse</strong> 替代自己写的那个简陋名两行解析工具。</p>
+<p>
+<small>
+<abbr class="published" title="2013-09-27T00:00:00">
+  周五 27 九月 2013
+</abbr> | 
+  tags: 
+    <a href="/tag/python.html">python</a>, 
+    <a href="/tag/code.html">code</a>, 
+    <a href="/tag/argparse.html">argparse</a>, 
+    <a href="/tag/python27.html">python27</a>, 
+ -- (<a href="/posts/python-27-de-can-shu-jie-xi-mo-kuai-argparse.html" rel="bookmark">permalink</a>)
+</small>
+</p>      <p>今天下午没事，就优化了一下以前写的一些工作上用的小工具，当然大多数都是python写的命令行下的小工具，之前命令行参数都是自己解析，虽然不是什么复杂的事情，但是自己临时写出来的东西毕竟不如人家写出来的好，正好前短时间看到python2.7把 <strong>argparse</strong> 加入到了标准模块中，所以这次对这些工具的代码重构就是使用了 <strong>argparse</strong> 替代自己写的那个简陋名两行解析工具。</p>
 <h2>入门</h2>
 <p>上面已经说了在 <strong>Python 2.7</strong> 中已经内置了这个模块，所以就不用安装了。可以直接使用<code>import argparse</code>导入模块使用，我们先看一个简单的例子：</p>
 <div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">argparse</span>
@@ -431,36 +436,35 @@
 <h2>结论</h2>
 <p>argparse 还有很多其他功能，我这里之说了连个最常用的，当然我的小工具里也就用了这么多，如果还有兴趣可以自己试一试，python本身确实提供了很多不错的模块，有时候完全没有必要舍本逐末。</p>
     </div><!-- /.entry-content -->
-
   </article>
 </section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://blog.turbidsoul.me">Turbidsoul's 小黑屋</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
+      </section>
+      <footer>
+        <p><small>&copy; Turbidsoul's 小黑屋 &mdash; Theme based on Sundown by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <!-- Scale fix -->
+    <script>
+      var metas = document.getElementsByTagName('meta');
+      var i;
+      
+      if (navigator.userAgent.match(/iPhone/i)) {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+          }
+        }
+      
+        document.addEventListener("gesturestart", gestureStart, false);
+      }
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+      function gestureStart() {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+          }
+        }
+      }
+    </script>
+  </body>
 </html>

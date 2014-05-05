@@ -1,59 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cn">
-<head>
-        <meta charset="utf-8" />
-        <title>Spring配置文件加载的疑问和annotation加载的问题</title>
-        <link rel="stylesheet" href="http://blog.turbidsoul.me/pelican-blog/theme/css/main.css" />
-        <link href="http://blog.turbidsoul.me/pelican-blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Turbidsoul's 小黑屋 Atom Feed" />
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Spring配置文件加载的疑问和annotation加载的问题Turbidsoul's 小黑屋</title>
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+    <link rel="stylesheet" href="http://blog.turbidsoul.me/pelican-blog/theme/css/main.css">
+    <link rel="stylesheet" href="http://blog.turbidsoul.me/pelican-blog/theme/css/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div><img src="/images/avatar.jpg" class="grv-img"/></div>
+        <div class="title"><a href="http://blog.turbidsoul.me/pelican-blog/">Turbidsoul's 小黑屋 </a></div>
+        <div class="sub-title"></div>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="http://blog.turbidsoul.me/pelican-blog/">Turbidsoul's 小黑屋 </a></h1>
-                <nav><ul>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/firefox.html">firefox</a></li>
-                    <li class="active"><a href="http://blog.turbidsoul.me/pelican-blog/category/java.html">Java</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jekyll.html">jekyll</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jquery.html">jquery</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/linux.html">Linux</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/markdown.html">Markdown</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/math.html">Math</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/maven.html">Maven</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/nginx.html">Nginx</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/posts.html">posts</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">Python</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/rtmp.html">RTMP</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/selenium.html">Selenium</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime.html">Sublime</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime2.html">Sublime2</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/webrtc.html">WebRTC</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/xian-liao.html">闲聊</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+<p>
+  <div class="view"><a href="http://blog.turbidsoul.me/pelican-blog/archives.html">Archives</a></div>
+</p>
+
+<!-- Social links -->
+<div class="social">
+<h4>Follow Me</h4>
+<ul>
+    <li><a href="https://plus.google.com/+TurbidsoulChen">Google+</a></li>
+    <li><a href="https://github.com/turbidsoul">Github</a></li>
+    <li><a href="https://twitter.com/Turbidsoul">Twitter</a></li>
+    <li><a href="https://facebook.com/turbidsoul">Facebook</a></li>
+    <li><a href="http://weibo.com/turbidsoul">微博</a></li>
+    <li><a href="http://instagram.com/turbidsoul">Instagram</a></li>
+</ul>
+</div>
+
+      </header>
+      <section>
 <section id="content" class="body">
   <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="http://blog.turbidsoul.me/pelican-blog/posts/springpei-zhi-wen-jian-jia-zai-de-yi-wen-he-annotationjia-zai-de-wen-ti.html" rel="bookmark"
-           title="Permalink to Spring配置文件加载的疑问和annotation加载的问题">Spring配置文件加载的疑问和annotation加载的问题</a></h1>
-    </header>
+      <div class="article-title">
+        Spring配置文件加载的疑问和annotation加载的问题
+      </div>
 
     <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2012-02-24T00:00:00">
-                周五 24 二月 2012
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="http://blog.turbidsoul.me/pelican-blog/author/turbidsoul.html">Turbidsoul</a>
-        </address>
-<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/java.html">Java</a>. </p>
-<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/java.html">java</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/sprint.html">sprint</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/annotation.html">annotation</a></p>
-</footer><!-- /.post-info -->      <p>前几天在做一个异步的模块，简单点说就是上传文件后，后台异步解析，前台定时请求解析的日志，并显示，算是一个实时的给用户看到解析的情况和日志，很简单的一个工作，但是我却遇到了一个让我郁闷了2天的问题。</p>
+<p>
+<small>
+<abbr class="published" title="2012-02-24T00:00:00">
+  周五 24 二月 2012
+</abbr> | 
+  tags: 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/java.html">java</a>, 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/sprint.html">sprint</a>, 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/annotation.html">annotation</a>, 
+ -- (<a href="http://blog.turbidsoul.me/pelican-blog/posts/springpei-zhi-wen-jian-jia-zai-de-yi-wen-he-annotationjia-zai-de-wen-ti.html" rel="bookmark">permalink</a>)
+</small>
+</p>      <p>前几天在做一个异步的模块，简单点说就是上传文件后，后台异步解析，前台定时请求解析的日志，并显示，算是一个实时的给用户看到解析的情况和日志，很简单的一个工作，但是我却遇到了一个让我郁闷了2天的问题。</p>
 <p>问题的起因是在我做完所有工作后发现异步没有执行，也就是说文件的解析方法是同步运行的，也就是说先解析文件，解析完毕后在返回页面，页面才能请求到解析的日志，但是这会已经解析完了文件，没有达打到之前的需求。</p>
 <p>这 里先简单的说下Spring异步的用法，Spring异步的用法很简单，在需要异步的方法加上annotation  <code>@Async</code> 声明自方法是异步调用的，同时还要在方法所在类上加上annotation <code>@Service</code>或<code>@Component</code> 在Spring在加载的时候可以扫描到这个类，然后需要在配置文件中加入<code>&lt;task:annotation-driven /&gt;</code>，这样就可以在Spring启动的时候，将异步处理器加入全局中，并在调用到有@Async的时候，异步调用。</p>
 <p>上面简单说了下如何配置Spring异步，现在我说下我的问题，问题很简单就是配置类Spring 异步，并且确定配置正确，但是异步配置没有起效！问什么呢？我百思不得其解，没有办法，那就debug跟踪Spring的源代码。</p>
@@ -109,37 +112,35 @@
 <p>从上面可以清除看到，我是直接在家的root-context.xml，在root中import了application- context.xml，异步的的配置就在application-context.xml运行之后发现，没有问题，异步执行完全正确，这个测试用例也验 证了我的一个想法，两个Spring Context是可以互相共享，但是确实相对独立的，为了进一步验证我的想法，我在action中，写了一个测试例子，没有用@Autowired注入进 来的，而是使用了WebApplicationContext， 即:<code>WebApplicationContextUtils.getWebApplicationContext(request.getSession().getServletContext());</code>， 用它得到Spring Context，然后直接异步方法，保存，运行，结果正确！这样就完全确认了我的想法是正确的，虽然两个Spring Context是可以共享的但是两个Spring的配置和加载确实相对独立的，也就是说ContextLoaderListener和 DispatcherServlet两个都会把配置文件声明要加载的东西加载一边，当这个其中一个没有的时候就会去另一个里面查找（这个我没有确认，只是 我猜测的，因为工作忙，这个问题上已经耽误太多时间，所以就没有继续下去。)，当这个里面有就不会去另一个里面找。</p>
 <p>所以，我把配置启动异步 的配置，换到了servlet-context.xml中（也就就是DispatcherServlet），并删掉原来异步配置（这里一定要保证在整个系统中<code>&lt;task:annotation-driven /&gt;</code>只能出现一次，如果出现两次，或者被加载了两次，Spring就会抛出一个异常指示这个东西只能加载一次），再次重启服务器，上传文件，OK， 成功了！</p>
     </div><!-- /.entry-content -->
-
   </article>
 </section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://blog.turbidsoul.me">Turbidsoul's 小黑屋</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="http://blog.turbidsoul.me/pelican-blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+      </section>
+      <footer>
+        <p><small>&copy; Turbidsoul's 小黑屋 &mdash; Theme based on Sundown by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <!-- Scale fix -->
+    <script>
+      var metas = document.getElementsByTagName('meta');
+      var i;
+      
+      if (navigator.userAgent.match(/iPhone/i)) {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+          }
+        }
+      
+        document.addEventListener("gesturestart", gestureStart, false);
+      }
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+      function gestureStart() {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+          }
+        }
+      }
+    </script>
+  </body>
 </html>

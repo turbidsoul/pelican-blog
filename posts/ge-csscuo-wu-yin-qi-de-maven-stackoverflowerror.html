@@ -1,59 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cn">
-<head>
-        <meta charset="utf-8" />
-        <title>一个css错误引起的maven StackOverflowError</title>
-        <link rel="stylesheet" href="http://blog.turbidsoul.me/pelican-blog/theme/css/main.css" />
-        <link href="http://blog.turbidsoul.me/pelican-blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Turbidsoul's 小黑屋 Atom Feed" />
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>一个css错误引起的maven StackOverflowErrorTurbidsoul's 小黑屋</title>
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+    <link rel="stylesheet" href="http://blog.turbidsoul.me/pelican-blog/theme/css/main.css">
+    <link rel="stylesheet" href="http://blog.turbidsoul.me/pelican-blog/theme/css/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div><img src="/images/avatar.jpg" class="grv-img"/></div>
+        <div class="title"><a href="http://blog.turbidsoul.me/pelican-blog/">Turbidsoul's 小黑屋 </a></div>
+        <div class="sub-title"></div>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="http://blog.turbidsoul.me/pelican-blog/">Turbidsoul's 小黑屋 </a></h1>
-                <nav><ul>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/firefox.html">firefox</a></li>
-                    <li class="active"><a href="http://blog.turbidsoul.me/pelican-blog/category/java.html">Java</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jekyll.html">jekyll</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/jquery.html">jquery</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/linux.html">Linux</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/markdown.html">Markdown</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/math.html">Math</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/maven.html">Maven</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/nginx.html">Nginx</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/posts.html">posts</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/python.html">Python</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/rtmp.html">RTMP</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/selenium.html">Selenium</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime.html">Sublime</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/sublime2.html">Sublime2</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/webrtc.html">WebRTC</a></li>
-                    <li><a href="http://blog.turbidsoul.me/pelican-blog/category/xian-liao.html">闲聊</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+<p>
+  <div class="view"><a href="http://blog.turbidsoul.me/pelican-blog/archives.html">Archives</a></div>
+</p>
+
+<!-- Social links -->
+<div class="social">
+<h4>Follow Me</h4>
+<ul>
+    <li><a href="https://plus.google.com/+TurbidsoulChen">Google+</a></li>
+    <li><a href="https://github.com/turbidsoul">Github</a></li>
+    <li><a href="https://twitter.com/Turbidsoul">Twitter</a></li>
+    <li><a href="https://facebook.com/turbidsoul">Facebook</a></li>
+    <li><a href="http://weibo.com/turbidsoul">微博</a></li>
+    <li><a href="http://instagram.com/turbidsoul">Instagram</a></li>
+</ul>
+</div>
+
+      </header>
+      <section>
 <section id="content" class="body">
   <article>
-    <header>
-      <h1 class="entry-title">
-        <a href="http://blog.turbidsoul.me/pelican-blog/posts/ge-csscuo-wu-yin-qi-de-maven-stackoverflowerror.html" rel="bookmark"
-           title="Permalink to 一个css错误引起的maven StackOverflowError">一个css错误引起的maven StackOverflowError</a></h1>
-    </header>
+      <div class="article-title">
+        一个css错误引起的maven StackOverflowError
+      </div>
 
     <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-06-18T00:00:00">
-                周二 18 六月 2013
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="http://blog.turbidsoul.me/pelican-blog/author/turbidsoul.html">Turbidsoul</a>
-        </address>
-<p>In <a href="http://blog.turbidsoul.me/pelican-blog/category/java.html">Java</a>. </p>
-<p>tags: <a href="http://blog.turbidsoul.me/pelican-blog/tag/java.html">java</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/maven.html">maven</a><a href="http://blog.turbidsoul.me/pelican-blog/tag/css.html">css</a></p>
-</footer><!-- /.post-info -->      <p>这个问题是我的一个失误造成的，这是上一片文章的后续，我在使用正则做文本替换的时候没有注意到，这个正则在主干上是正常的，但是在分支上执行的时候使一行css少了一个引号，这个问题在浏览器中是暴露不出来的，之后在maven打包的时候对文件做压缩的时候才会出现，下面我们来看看是什么样的问题。</p>
+<p>
+<small>
+<abbr class="published" title="2013-06-18T00:00:00">
+  周二 18 六月 2013
+</abbr> | 
+  tags: 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/java.html">java</a>, 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/maven.html">maven</a>, 
+    <a href="http://blog.turbidsoul.me/pelican-blog/tag/css.html">css</a>, 
+ -- (<a href="http://blog.turbidsoul.me/pelican-blog/posts/ge-csscuo-wu-yin-qi-de-maven-stackoverflowerror.html" rel="bookmark">permalink</a>)
+</small>
+</p>      <p>这个问题是我的一个失误造成的，这是上一片文章的后续，我在使用正则做文本替换的时候没有注意到，这个正则在主干上是正常的，但是在分支上执行的时候使一行css少了一个引号，这个问题在浏览器中是暴露不出来的，之后在maven打包的时候对文件做压缩的时候才会出现，下面我们来看看是什么样的问题。</p>
 <p>我们项目使用的是 <a href="https://github.com/davidB/yuicompressor-maven-plugin" title="yuicompressor-maven-plugin">yuicompressor-maven-plugin</a> 做js和css的压缩，在压缩的过程中出现了下面的错误：</p>
 <div class="highlight"><pre><span class="o">---------------------------------------------------</span>
 <span class="n">constituent</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">:</span> <span class="n">file</span><span class="o">:/</span><span class="n">E</span><span class="o">:/</span><span class="n">opensource</span><span class="o">/</span><span class="n">apache</span><span class="o">/</span><span class="n">maven</span><span class="o">-</span><span class="mf">2.2.1</span><span class="p">.</span><span class="n">RELEASE</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">aether</span><span class="o">-</span><span class="n">api</span><span class="o">-</span><span class="mf">1.13.1</span><span class="p">.</span><span class="n">jar</span>
@@ -130,37 +133,35 @@
 <h4>结论</h4>
 <p>这个问题并不是一定会一定出现，可能需要特性的环境，我并没有做详细的求证，但是我昨晚在家里的时候就准备写这篇文章，但是我发现我用同样的方式是无法重现问题，可能是我家里的只用了一个css文件，而公司的项目css和js文件会比较多的原因造成的，我并不清楚，写这篇文章的目的只是给遇到这类问题的人提醒，凡事要小心，谨慎，细心和耐心，问题本身并不是什么高深问题，但是我却花了一下午的时间，检查了所有可能出问题的地方，刚开始的时候有些浮躁，并没有去注意这些细节上的问题，但是在两三个小时之后才发现这样并不能解决问题，去洗了个脸，清醒一下，回来沉下心仔细的重新整理一下，其实很快就能解决问题。</p>
     </div><!-- /.entry-content -->
-
   </article>
 </section>
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://blog.turbidsoul.me">Turbidsoul's 小黑屋</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
-                            <li><a href="http://blog.turbidsoul.me/pelican-blog/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+      </section>
+      <footer>
+        <p><small>&copy; Turbidsoul's 小黑屋 &mdash; Theme based on Sundown by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <!-- Scale fix -->
+    <script>
+      var metas = document.getElementsByTagName('meta');
+      var i;
+      
+      if (navigator.userAgent.match(/iPhone/i)) {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+          }
+        }
+      
+        document.addEventListener("gesturestart", gestureStart, false);
+      }
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
-
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
-
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+      function gestureStart() {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+          }
+        }
+      }
+    </script>
+  </body>
 </html>

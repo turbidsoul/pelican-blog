@@ -1,59 +1,56 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="cn">
-<head>
-        <meta charset="utf-8" />
-        <title>Turbidsoul's 小黑屋 - Python</title>
-        <link rel="stylesheet" href="/theme/css/main.css" />
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Turbidsoul's 小黑屋 - PythonTurbidsoul's 小黑屋</title>
 
-        <!--[if IE]>
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-</head>
+    <link rel="stylesheet" href="/theme/css/main.css">
+    <link rel="stylesheet" href="/theme/css/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div><img src="/images/avatar.jpg" class="grv-img"/></div>
+        <div class="title"><a href="/">Turbidsoul's 小黑屋 </a></div>
+        <div class="sub-title"></div>
 
-<body id="index" class="home">
-        <header id="banner" class="body">
-                <h1><a href="/">Turbidsoul's 小黑屋 </a></h1>
-                <nav><ul>
-                    <li><a href="/category/firefox.html">firefox</a></li>
-                    <li><a href="/category/java.html">Java</a></li>
-                    <li><a href="/category/jekyll.html">jekyll</a></li>
-                    <li><a href="/category/jquery.html">jquery</a></li>
-                    <li><a href="/category/linux.html">Linux</a></li>
-                    <li><a href="/category/markdown.html">Markdown</a></li>
-                    <li><a href="/category/math.html">Math</a></li>
-                    <li><a href="/category/maven.html">Maven</a></li>
-                    <li><a href="/category/nginx.html">Nginx</a></li>
-                    <li><a href="/category/posts.html">posts</a></li>
-                    <li class="active"><a href="/category/python.html">Python</a></li>
-                    <li><a href="/category/rtmp.html">RTMP</a></li>
-                    <li><a href="/category/selenium.html">Selenium</a></li>
-                    <li><a href="/category/sublime.html">Sublime</a></li>
-                    <li><a href="/category/sublime2.html">Sublime2</a></li>
-                    <li><a href="/category/webrtc.html">WebRTC</a></li>
-                    <li><a href="/category/xian-liao.html">闲聊</a></li>
-                </ul></nav>
-        </header><!-- /#banner -->
+<p>
+  <div class="view"><a href="/archives.html">Archives</a></div>
+</p>
 
-                <section id="content" class="body">
-                    <ol id="posts-list" class="hfeed" start="9">
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/posts/fnshi-xian-wu-xian-ji-suan-deng-bi-ji-shu.html" rel="bookmark"
-                           title="Permalink to fn实现无限计算等比级数">fn实现无限计算等比级数</a></h1>
-                </header>
+<!-- Social links -->
+<div class="social">
+<h4>Follow Me</h4>
+<ul>
+    <li><a href="https://plus.google.com/+TurbidsoulChen">Google+</a></li>
+    <li><a href="https://github.com/turbidsoul">Github</a></li>
+    <li><a href="https://twitter.com/Turbidsoul">Twitter</a></li>
+    <li><a href="https://facebook.com/turbidsoul">Facebook</a></li>
+    <li><a href="http://weibo.com/turbidsoul">微博</a></li>
+    <li><a href="http://instagram.com/turbidsoul">Instagram</a></li>
+</ul>
+</div>
 
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-04-28T00:00:00">
-                周日 28 四月 2013
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
-        </address>
-<p>In <a href="/category/python.html">Python</a>. </p>
-<p>tags: <a href="/tag/python.html">python</a><a href="/tag/arithmetic.html">arithmetic</a><a href="/tag/functional.html">functional</a></p>
-</footer><!-- /.post-info -->                <p>今天看InfoQ上的一篇关于 <a href="http://www.infoq.com/cn/articles/fn.py-functional-programming-python">Fn.py</a> 的文章，Fn中的Stream可以实现无限序列，例如文章中的代码：</p>
+      </header>
+      <section>
+      <div class="front-title"><a href="/posts/fnshi-xian-wu-xian-ji-suan-deng-bi-ji-shu.html">fn实现无限计算等比级数</a></div>
+<p>
+<small>
+<abbr class="published" title="2013-04-28T00:00:00">
+  周日 28 四月 2013
+</abbr> | 
+  tags: 
+    <a href="/tag/python.html">python</a>, 
+    <a href="/tag/arithmetic.html">arithmetic</a>, 
+    <a href="/tag/functional.html">functional</a>, 
+ -- (<a href="/posts/fnshi-xian-wu-xian-ji-suan-deng-bi-ji-shu.html" rel="bookmark">permalink</a>)
+</small>
+</p>      <p>今天看InfoQ上的一篇关于 <a href="http://www.infoq.com/cn/articles/fn.py-functional-programming-python">Fn.py</a> 的文章，Fn中的Stream可以实现无限序列，例如文章中的代码：</p>
 <div class="highlight"><pre><span class="n">f</span> <span class="o">=</span> <span class="n">Stream</span><span class="p">()</span>
 <span class="n">fib</span> <span class="o">=</span> <span class="n">f</span> <span class="o">&lt;&lt;</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;&lt;</span> <span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">drop</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span>
 </pre></div>
@@ -65,29 +62,21 @@
     <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="k">while</span> <span class="mi">1</span><span class="p">:</span>
         <span class="k">yield</span> <span class="n">b</span> <span class="o">**</span> <span class="p">(</span><span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span>
-        <span class="n">n ...</span></pre></div>
-                <a class="readmore" href="/posts/fnshi-xian-wu-xian-ji-suan-deng-bi-ji-shu.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/posts/pythonshi-xian-pai-lie-he-zu-he.html" rel="bookmark"
-                           title="Permalink to Python实现排列和组合">Python实现排列和组合</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-03-24T00:00:00">
-                周日 24 三月 2013
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
-        </address>
-<p>In <a href="/category/python.html">Python</a>. </p>
-<p>tags: <a href="/tag/python.html">python</a><a href="/tag/arithmetic.html">arithmetic</a></p>
-</footer><!-- /.post-info -->                <p>无事可做用python实现的的排列和组合的算法，顺便也复习以下2.7中yield的用法</p>
+        <span class="n">n ...</span></pre></div> 
+      <div class="read-more"><a href="/posts/fnshi-xian-wu-xian-ji-suan-deng-bi-ji-shu.html">read more...</a></div>
+      <hr />
+      <div class="front-title"><a href="/posts/pythonshi-xian-pai-lie-he-zu-he.html">Python实现排列和组合</a></div>
+<p>
+<small>
+<abbr class="published" title="2013-03-24T00:00:00">
+  周日 24 三月 2013
+</abbr> | 
+  tags: 
+    <a href="/tag/python.html">python</a>, 
+    <a href="/tag/arithmetic.html">arithmetic</a>, 
+ -- (<a href="/posts/pythonshi-xian-pai-lie-he-zu-he.html" rel="bookmark">permalink</a>)
+</small>
+</p>      <p>无事可做用python实现的的排列和组合的算法，顺便也复习以下2.7中yield的用法</p>
 <div class="highlight"><pre><span class="c"># coding: utf8</span>
 
 <span class="k">def</span> <span class="nf">perm</span><span class="p">(</span><span class="n">items</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
@@ -102,70 +91,61 @@
             <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">perm</span><span class="p">(</span><span class="n">_items</span><span class="p">):</span>
                 <span class="k">yield</span> <span class="n">v</span> <span class="o">+</span> <span class="n">p</span>
 
-<span class="k">def</span> <span class="nf">comp ...</span></pre></div>
-                <a class="readmore" href="/posts/pythonshi-xian-pai-lie-he-zu-he.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-
-            <li><article class="hentry">
-                <header>
-                    <h1><a href="/posts/kuai-su-ji-suan-er-jin-zhi-wei-1de-ge-shu.html" rel="bookmark"
-                           title="Permalink to 快速计算二进制位1的个数">快速计算二进制位1的个数</a></h1>
-                </header>
-
-                <div class="entry-content">
-<footer class="post-info">
-        <abbr class="published" title="2013-02-01T00:00:00">
-                周五 01 二月 2013
-        </abbr>
-
-        <address class="vcard author">
-                By <a class="url fn" href="/author/turbidsoul.html">Turbidsoul</a>
-        </address>
-<p>In <a href="/category/python.html">Python</a>. </p>
-<p>tags: <a href="/tag/python.html">python</a><a href="/tag/arithmetic.html">arithmetic</a></p>
-</footer><!-- /.post-info -->                <p>昨天在G+上看到的一个算法题: &gt; Returns the number of 1bits in any integer, for example, bits(2) = 1, &gt; bits(3) = 2, bits(4) = 1, bits(5) = 2, bits(6) = 2, bits(7) = 3 我用python简单的实现了一下，实现的还是有点冗长，应该还能优化。</p>
+<span class="k">def</span> <span class="nf">comp ...</span></pre></div> 
+      <div class="read-more"><a href="/posts/pythonshi-xian-pai-lie-he-zu-he.html">read more...</a></div>
+      <hr />
+      <div class="front-title"><a href="/posts/kuai-su-ji-suan-er-jin-zhi-wei-1de-ge-shu.html">快速计算二进制位1的个数</a></div>
+<p>
+<small>
+<abbr class="published" title="2013-02-01T00:00:00">
+  周五 01 二月 2013
+</abbr> | 
+  tags: 
+    <a href="/tag/python.html">python</a>, 
+    <a href="/tag/arithmetic.html">arithmetic</a>, 
+ -- (<a href="/posts/kuai-su-ji-suan-er-jin-zhi-wei-1de-ge-shu.html" rel="bookmark">permalink</a>)
+</small>
+</p>      <p>昨天在G+上看到的一个算法题: &gt; Returns the number of 1bits in any integer, for example, bits(2) = 1, &gt; bits(3) = 2, bits(4) = 1, bits(5) = 2, bits(6) = 2, bits(7) = 3 我用python简单的实现了一下，实现的还是有点冗长，应该还能优化。</p>
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">bits</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
     <span class="n">t</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="n">f1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
     <span class="n">f2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span>
-    <span class="k">if ...</span></pre></div>
-                <a class="readmore" href="/posts/kuai-su-ji-suan-er-jin-zhi-wei-1de-ge-shu.html">read more</a>
-                </div><!-- /.entry-content -->
-            </article></li>
-            </ol><!-- /#posts-list -->
-<p class="paginator">
-        <a href="/category\python.html">&laquo;</a>
-    Page 2 / 2
-</p>
-            </section><!-- /#content -->
-        <section id="extras" class="body">
-                <div class="blogroll">
-                        <h2>blogroll</h2>
-                        <ul>
-                            <li><a href="http://blog.turbidsoul.me">Turbidsoul's 小黑屋</a></li>
-                            <li><a href="http://python.org/">Python.org</a></li>
-                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
-                            <li><a href="#">You can modify those links in your config file</a></li>
-                        </ul>
-                </div><!-- /.blogroll -->
-                <div class="social">
-                        <h2>social</h2>
-                        <ul>
+    <span class="k">if ...</span></pre></div> 
+      <div class="read-more"><a href="/posts/kuai-su-ji-suan-er-jin-zhi-wei-1de-ge-shu.html">read more...</a></div>
+      <hr />
 
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
-                </div><!-- /.social -->
-        </section><!-- /#extras -->
+<span class="paginator">
+    <a href="/category/python.html">&laquo;</a>
 
-        <footer id="contentinfo" class="body">
-                <address id="about" class="vcard body">
-                Proudly powered by <a href="http://getpelican.com/">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.
-                </address><!-- /#about -->
+  Page 2 / 2
+</span>
+      </section>
+      <footer>
+        <p><small>&copy; Turbidsoul's 小黑屋 &mdash; Theme based on Sundown by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <!-- Scale fix -->
+    <script>
+      var metas = document.getElementsByTagName('meta');
+      var i;
+      
+      if (navigator.userAgent.match(/iPhone/i)) {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=1.0, maximum-scale=1.0";
+          }
+        }
+      
+        document.addEventListener("gesturestart", gestureStart, false);
+      }
 
-                <p>The theme is by <a href="http://coding.smashingmagazine.com/2009/08/04/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
-        </footer><!-- /#contentinfo -->
-
-</body>
+      function gestureStart() {
+        for (i=0; i<metas.length; i++) {
+          if (metas[i].name == "viewport") {
+            metas[i].content = "width=device-width, minimum-scale=0.25, maximum-scale=1.6";
+          }
+        }
+      }
+    </script>
+  </body>
 </html>
