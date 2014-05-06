@@ -7,7 +7,7 @@ curdir = os.path.dirname(__file__)
 AUTHOR = u'Turbidsoul'
 SITENAME = u"Turbidsoul's 小黑屋"
 SITEURL = ''
-THEME=os.path.join(curdir, 'themes', 'pelican-sundown')
+THEME=os.path.join(curdir, 'pelican-sundown')
 
 ARTICLE_DIR='posts/'
 PAGE_DIR='pages/'
